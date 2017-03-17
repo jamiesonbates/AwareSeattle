@@ -13,7 +13,7 @@ import store, { history } from './store';
 
 
 // Import components
-import App from './App';
+import App from './components/App';
 
 const router = (
   <Provider store={store}>

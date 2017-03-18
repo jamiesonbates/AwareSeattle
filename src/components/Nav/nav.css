@@ -1,0 +1,28 @@
+.Nav-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.Nav-title {
+  padding: 5px
+}
+
+.Nav-btn-container {
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.Nav-btn {
+  padding: 8px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-size: 20px;
+  margin-right: 10px;
+}

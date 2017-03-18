@@ -1,20 +1,11 @@
-'use strict';
+import { applyMiddleware, createStore } from 'redux';
 
-// Import dependencies
-import { createStore, compose} from 'redux';
-import { syncHistoryWithStore } from 'react-router-redux';
-import { browserHistory } from 'react-router';
+import logger from 'redux-logger';
+import thunk from 'redux-thunk';
+import promise from 'redux-promise-middleware';
 
-// Import route reducer
-import rootReducer from './reducers/index';
+import reducer from './reducers';
 
-// Create an object for default data
-const defaultState = {
+const middleware = applyMiddleware(promise(), thunk, logger());
 
-}
-
-const store = createStore(rootReducer, defaultState);
-
-export const history = syncHistoryWithStore(browserHistory, store);
-
-export default store;
+export default createStore(reducer, middleware);

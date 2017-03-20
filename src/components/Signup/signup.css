@@ -1,0 +1,27 @@
+.Signup-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Signup-form {
+  height: 50%;
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Signup-input-container {
+  display: flex;
+  flex-direction: column;
+  height: 10%;
+  width: 40%;
+}
+
+.Signup-input-container input {
+
+}

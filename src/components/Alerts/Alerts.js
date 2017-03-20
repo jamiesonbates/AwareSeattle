@@ -18,7 +18,7 @@ class Alerts extends Component {
         <h1>Aware Seattle</h1>
         <div className="Alerts-location-container">
           {
-            
+
           }
         </div>
         <div>
@@ -31,7 +31,7 @@ class Alerts extends Component {
 
 const mapStateToProps = function(store) {
   return {
-    locations: store.user.locations,
+    locations: store.locations.locations,
     areLocations: store.user.areLocations,
     userId: store.user.userId,
     alerts: store.alerts

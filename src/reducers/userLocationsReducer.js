@@ -4,6 +4,7 @@ export default function reducer(state={
 
   switch(action.type) {
     case 'FETCH_USER_LOCATIONS_SUCCESS':
+    console.log(action.payload);
       return {
         ...state,
         locations: action.payload

@@ -15,6 +15,14 @@ class Alerts extends Component {
     this.props.dispatch(getAlerts(this.props.userId))
   }
 
+  deleteLocation() {
+    console.log('delete location');
+  }
+
+  deleteAlert() {
+    console.log('delete alert');
+  }
+
   render() {
     let areLocations = false;
 
@@ -27,15 +35,17 @@ class Alerts extends Component {
       <div className="Alerts-container">
         <h1>Aware Seattle</h1>
         <div className="Alerts-location-container">
+          <h2>Locations</h2>
           {
             areLocations ?
-              <LocationList {...this.props} />
+              <LocationList deleteLocation={this.deleteLocation} {...this.props} />
             :
               <Geosuggest />
           }
         </div>
         <div className="Alerts-list-container">
-          <AlertsList {...this.props} />
+          <h2>Alerts</h2>
+          <AlertsList deleteAlert={this.deleteAlert} {...this.props} />
         </div>
       </div>
     )

@@ -18,6 +18,7 @@ function AlertsList(props) {
             <p>{alert.locationType}</p>
             <p>{alert.offense_name}</p>
             <p>{alert.range}</p>
+            <button onClick={props.deleteAlert}>Delete</button>
           </div>
         ))
       }

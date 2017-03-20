@@ -14,9 +14,7 @@ function LocationsList(props) {
               {location.location}
             </p>
 
-            <p className="Alerts-location-data">
-              {location.lat}, {location.lng}
-            </p>
+            <button onClick={props.deleteLocation}>Delete</button>
           </div>
         ))
       }

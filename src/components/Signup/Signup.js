@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import signupNewUser from '../../actions/signupAction';
+
 import './signup.css';
 
 class Signup extends Component {
@@ -11,8 +13,10 @@ class Signup extends Component {
     const email = this.refs.email.value;
     const password = this.refs.password.value;
 
+    this.props.dispatch(signupNewUser(username, email, password));
+    this.refs.signupForm.reset();
   }
-
+  
   render() {
     return (
       <div className="Signup-container">
@@ -42,7 +46,7 @@ class Signup extends Component {
 
 const mapStateToProps = function(store) {
   return {
-
+    signupNewUser
   }
 }
 

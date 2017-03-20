@@ -2,8 +2,6 @@ export default function reducer(state={
   userId: null,
   username: null,
   email: null,
-  homeLat: null,
-  homeLng: null,
   isAuthenticated: false
 }, action) {
 
@@ -14,7 +12,7 @@ export default function reducer(state={
       if (action.payload.home_lat && action.payload.home_lng) {
         isHomeLocation = true;
       }
-      
+
       return {
         ...state,
         userId: action.payload.id,

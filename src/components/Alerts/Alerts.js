@@ -18,13 +18,7 @@ class Alerts extends Component {
         <h1>Aware Seattle</h1>
         <div className="Alerts-location-container">
           {
-            this.props.isHomeLocation ?
-            'There is a location' :
-            (<h2>Enter a location to track</h2>
-            <Geosuggest
-              placeholder=""
-            />)
-
+            
           }
         </div>
         <div>
@@ -37,11 +31,8 @@ class Alerts extends Component {
 
 const mapStateToProps = function(store) {
   return {
-    homeLocation: {
-      lat: store.user.homeLat,
-      lng: store.user.homeLng
-    },
-    isHomeLocation: store.user.isHomeLocation,
+    locations: store.user.locations,
+    areLocations: store.user.areLocations,
     userId: store.user.userId,
     alerts: store.alerts
   }

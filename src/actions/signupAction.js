@@ -13,7 +13,7 @@ export function signupNewUser(username, email, password) {
         type: 'USER_SIGNUP_SUCCESS',
         payload: res.data
       })
-      browserHistory.push('/');
+      browserHistory.push('/alerts');
     })
     .catch((err) => {
       dispatch({

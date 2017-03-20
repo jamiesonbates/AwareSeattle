@@ -13,7 +13,7 @@ export function loginUser(email, password) {
         payload: res.data
       })
 
-      browserHistory.push('/');
+      browserHistory.push('/alerts');
     })
     .catch((err) => {
       dispatch({

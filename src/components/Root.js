@@ -4,6 +4,7 @@ import { Router, Route, browserHistory } from 'react-router';
 import Dashboard from './Dashboard/Dashboard';
 import Signup from './Signup/Signup';
 import Login from './Login/Login';
+import Alerts from './Alerts/Alerts';
 
 const Root = ({ store }) => (
   <Provider store={store}>
@@ -11,6 +12,7 @@ const Root = ({ store }) => (
       <Route path="/" component={Dashboard} />
       <Route path="/signup" component={Signup} />
       <Route path="/login" component={Login} />
+      <Route path="/alerts" component={Alerts} />
     </Router>
   </Provider>
 );

@@ -34,7 +34,7 @@ export default function reducer(state={
       }
     case 'USER_SIGNUP_FAILURE':
       return {
-        ..state
+        ...state
       }
   }
 

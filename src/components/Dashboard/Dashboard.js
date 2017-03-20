@@ -11,6 +11,7 @@ import './dashboard.css';
 class Dashboard extends Component {
   componentWillMount() {
     this.props.dispatch(fetchPoliceReports());
+    this.props.dispatch(attemptAuthentication());
   }
 
   render() {

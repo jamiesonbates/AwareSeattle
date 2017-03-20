@@ -1,4 +1,4 @@
-.Signup-container {
+.Login-container {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.Signup-form {
+.Login-form {
   height: 50%;
   width: 75vw;
   display: flex;
@@ -15,7 +15,7 @@
   align-items: center;
 }
 
-.Signup-input-container {
+.Login-input-container {
   display: flex;
   flex-direction: column;
   height: 10%;

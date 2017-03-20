@@ -6,24 +6,13 @@ import Geosuggest from 'react-geosuggest';
 import { getAlerts } from '../../actions/alertsAction';
 
 import LocationList from './Locations/LocationList';
+import AlertsList from './AlertsList/AlertsList';
 
 import './alerts.css';
 
 class Alerts extends Component {
   componentWillMount() {
     this.props.dispatch(getAlerts(this.props.userId))
-  }
-
-  mapLocationsToAlerts(alert) {
-    for (const location of this.props.locations) {
-      if (location.id === alert.user_alert_location_id) {
-        alert.location = location;
-
-        return alert;
-      }
-    }
-
-    return alert;
   }
 
   render() {
@@ -33,6 +22,7 @@ class Alerts extends Component {
       areLocations = true;
     }
 
+    console.log(this.props);
     return (
       <div className="Alerts-container">
         <h1>Aware Seattle</h1>
@@ -44,8 +34,8 @@ class Alerts extends Component {
               <Geosuggest />
           }
         </div>
-        <div>
-        
+        <div className="Alerts-list-container">
+          <AlertsList {...this.props} />
         </div>
       </div>
     )
@@ -56,7 +46,7 @@ const mapStateToProps = function(store) {
   return {
     locations: store.locations.locations,
     userId: store.user.userId,
-    alerts: store.alerts
+    alerts: store.alerts.alerts
   }
 }
 

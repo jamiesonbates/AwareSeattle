@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import './locationList.css';
-
 function LocationsList(props) {
   return (
     <div>

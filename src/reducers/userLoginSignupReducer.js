@@ -9,6 +9,12 @@ export default function reducer(state={
 
   switch(action.type) {
     case 'USER_LOGIN_SUCCESS':
+      const isHomeLocation = false;
+
+      if (action.payload.home_lat && action.payload.home_lng) {
+        isHomeLocation = true;
+      }
+      
       return {
         ...state,
         userId: action.payload.id,
@@ -16,6 +22,7 @@ export default function reducer(state={
         email: action.payload.email,
         homeLat: action.payload.home_lat,
         homeLng: action.payload.home_lng,
+        isHomeLocation,
         isAuthenticated: true
       }
     case 'USER_LOGIN_FAILURE':

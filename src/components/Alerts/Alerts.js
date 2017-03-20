@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
+import Geosuggest from 'react-geosuggest';
 
 import { getAlerts } from '../../actions/alertsAction';
 
@@ -13,13 +14,34 @@ class Alerts extends Component {
   render() {
     console.log(this.props);
     return (
-      <h1>Aware Seattle</h1>
+      <div className="Alerts-container">
+        <h1>Aware Seattle</h1>
+        <div className="Alerts-location-container">
+          {
+            this.props.isHomeLocation ?
+            'There is a location' :
+            (<h2>Enter a location to track</h2>
+            <Geosuggest
+              placeholder=""
+            />)
+
+          }
+        </div>
+        <div>
+          This is where a list of alerts will go
+        </div>
+      </div>
     )
   }
 }
 
 const mapStateToProps = function(store) {
   return {
+    homeLocation: {
+      lat: store.user.homeLat,
+      lng: store.user.homeLng
+    },
+    isHomeLocation: store.user.isHomeLocation,
     userId: store.user.userId,
     alerts: store.alerts
   }

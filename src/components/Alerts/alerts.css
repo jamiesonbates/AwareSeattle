@@ -1,0 +1,9 @@
+.Alerts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Alerts-location-container {
+  
+}

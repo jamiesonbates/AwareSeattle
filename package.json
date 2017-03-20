@@ -10,6 +10,7 @@
     "axios": "^0.15.3",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-geosuggest": "^2.1.0",
     "react-google-maps": "^4.11.0",
     "react-logger": "^1.1.0",
     "react-redux": "^4.4.5",

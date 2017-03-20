@@ -24,7 +24,7 @@ class Dashboard extends Component {
         </div>
 
         <Map
-          reports={this.props.policeReports.policeReports}
+          reports={this.props.policeReports}
           className="Dashboard-Map"
         />
       </div>
@@ -34,7 +34,7 @@ class Dashboard extends Component {
 
 const mapStateToProps = function(store) {
   return {
-    policeReports: store.policeReports
+    policeReports: store.policeReports.reports
   };
 };
 

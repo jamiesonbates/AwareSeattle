@@ -1,5 +1,5 @@
 export default function reducer(state={
-  policeReports: [],
+  reports: [],
   fetching: false,
   fetched: false,
   error: null,
@@ -17,7 +17,7 @@ export default function reducer(state={
         ...state,
         fetching: false,
         fetched: true,
-        policeReports: action.payload
+        reports: action.payload
       }
     }
   }

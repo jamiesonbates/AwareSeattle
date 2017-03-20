@@ -1,8 +1,9 @@
 import axios from 'axios';
+import { browserHistory } from 'react-router';
 
 export function loginUser(email, password) {
   return function(dispatch) {
-    axios.post('https://awareseattle-backend.herokuapp.com/api/token', {
+    axios.post('/api/token', {
       email,
       password
     })
@@ -11,6 +12,8 @@ export function loginUser(email, password) {
         type: 'USER_LOGIN_SUCCESS',
         payload: res.data
       })
+
+      browserHistory.push('/');
     })
     .catch((err) => {
       dispatch({

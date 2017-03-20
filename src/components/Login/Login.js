@@ -6,13 +6,6 @@ import { loginUser } from '../../actions/loginAction';
 import './login.css';
 
 class Login extends Component {
-  // constructor() {
-    // this.state: {
-    //   email: '',
-    //   password: ''
-    // }
-  // }
-
   handleSubmit(e) {
     e.preventDefault();
 

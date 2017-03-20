@@ -1,8 +1,9 @@
 import axios from 'axios';
+import { browserHistory } from 'react-router';
 
 export function signupNewUser(username, email, password) {
   return function(dispatch) {
-    axios.post('https://awareseattle-backend.herokuapp.com/api/users', {
+    axios.post('/api/users', {
       username,
       email,
       password
@@ -12,6 +13,7 @@ export function signupNewUser(username, email, password) {
         type: 'USER_SIGNUP_SUCCESS',
         payload: res.data
       })
+      browserHistory.push('/');
     })
     .catch((err) => {
       dispatch({

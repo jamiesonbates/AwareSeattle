@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { fetchPoliceReports } from '../../actions/policeReportsAction';
+import { authenticateUser } from '../../actions/authenticateAction';
 
 import Map from '../Map/Map';
 import Nav from '../Nav/Nav';
@@ -11,7 +12,7 @@ import './dashboard.css';
 class Dashboard extends Component {
   componentWillMount() {
     this.props.dispatch(fetchPoliceReports());
-    this.props.dispatch(attemptAuthentication());
+    this.props.dispatch(authenticateUser());
   }
 
   render() {

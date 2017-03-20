@@ -1,9 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import loginUser from '../../actions/loginAction';
+
 import './login.css';
 
 class Login extends Component {
+  handleSubmit(e) {
+    e.preventDefault();
+
+    const email = this.refs.email.value;
+    const password = this.refs.password.value;
+
+    this.props.dispatch(loginUser(email, password));
+    this.refs.loginForm.reset();
+  }
+
   render() {
     return (
       <div className="Login-container">
@@ -26,7 +38,7 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps(store) {
+const mapStateToProps = function(store) {
   return {
 
   }

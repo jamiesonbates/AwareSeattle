@@ -7,9 +7,21 @@ export default function reducer(state={
   userLoggedIn: false
 }, action) {
 
-  // const { userId, username, email, homeLat, homeLng } = action.payload;
-
   switch(action.type) {
+    case 'USER_LOGIN_SUCCESS':
+      return {
+        ...state,
+        userId: action.payload.id,
+        username: action.payload.username,
+        email: action.payload.email,
+        homeLat: action.payload.home_lat,
+        homeLng: action.payload.home_lng,
+        userLoggedIn: true
+      }
+    case 'USER_LOGIN_FAILURE':
+      return {
+        ...state
+      }
     case 'USER_SIGNUP_SUCCESS':
       return {
         ...state,
@@ -22,7 +34,7 @@ export default function reducer(state={
       }
     case 'USER_SIGNUP_FAILURE':
       return {
-        ...state,
+        ..state
       }
   }
 

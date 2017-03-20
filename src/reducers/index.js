@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
 import policeReports from './policeReportsReducer';
-import userLoginSignupReducer from './userLoginSignupReducer';
+import user from './userLoginSignupReducer';
 
 export default combineReducers({
   policeReports,
-  userLoginSignupReducer
+  user
 })

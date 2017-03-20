@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import signupNewUser from '../../actions/signupAction';
+import { signupNewUser } from '../../actions/signupAction';
 
 import './signup.css';
 
@@ -21,7 +21,7 @@ class Signup extends Component {
     return (
       <div className="Signup-container">
         <h1>AwareSeattle</h1>
-        <form onSubmit={this.handleSubmit} ref="signupForm" className="Signup-form">
+        <form onSubmit={this.handleSubmit.bind(this)} ref="signupForm" className="Signup-form">
           <div className="Signup-input-container">
             <label>Username</label>
             <input type="text" ref="username" />

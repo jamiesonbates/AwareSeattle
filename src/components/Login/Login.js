@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import loginUser from '../../actions/loginAction';
+import { loginUser } from '../../actions/loginAction';
 
 import './login.css';
 
 class Login extends Component {
+  // constructor() {
+    // this.state: {
+    //   email: '',
+    //   password: ''
+    // }
+  // }
+
   handleSubmit(e) {
     e.preventDefault();
 
@@ -20,7 +27,7 @@ class Login extends Component {
     return (
       <div className="Login-container">
         <h1>AwareSeattle</h1>
-        <form onSubmit={this.handleSubmit} ref="loginForm" className="Login-form">
+        <form onSubmit={this.handleSubmit.bind(this)} ref="loginForm" className="Login-form">
           <div className="Login-input-container">
             <label>Email</label>
             <input type="text" ref="email" />

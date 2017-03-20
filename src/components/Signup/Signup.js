@@ -16,25 +16,25 @@ class Signup extends Component {
     this.props.dispatch(signupNewUser(username, email, password));
     this.refs.signupForm.reset();
   }
-  
+
   render() {
     return (
       <div className="Signup-container">
         <h1>AwareSeattle</h1>
         <form onSubmit={this.handleSubmit} ref="signupForm" className="Signup-form">
           <div className="Signup-input-container">
-            <label for="username">Username</label>
-            <input type="text" ref="username" id="username"/>
+            <label>Username</label>
+            <input type="text" ref="username" />
           </div>
 
           <div className="Signup-input-container">
-            <label for="email">Email</label>
-            <input type="text" ref="email" id="email"/>
+            <label>Email</label>
+            <input type="text" ref="email" />
           </div>
 
           <div className="Signup-input-container">
-            <label for="password">Password</label>
-            <input type="text" ref="password" id="password"/>
+            <label>Password</label>
+            <input type="text" ref="password" />
           </div>
 
           <button type="submit">Signup</button>
@@ -46,8 +46,8 @@ class Signup extends Component {
 
 const mapStateToProps = function(store) {
   return {
-    signupNewUser
+
   }
 }
 
-export default Signup;
+export default connect(mapStateToProps)(Signup);

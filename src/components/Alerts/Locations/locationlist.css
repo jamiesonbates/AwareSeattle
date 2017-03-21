@@ -4,6 +4,8 @@
 
 .LocationList-titles {
   display: flex;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
 }
 
 .LocationList-locationtitle, .LocationList-addresstitle, .LocationList-deletetitle {
@@ -12,7 +14,7 @@
 }
 
 .LocationList-locationtitle {
-  width: 20%;
+  width: 15%;
 }
 
 .LocationList-addresstitle {
@@ -32,7 +34,7 @@
 .Location-name {
   display: flex;
   justify-content: center;
-  width: 20%;
+  width: 15%;
 }
 
 .Location-address {

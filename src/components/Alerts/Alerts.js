@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import Geosuggest from 'react-geosuggest';
 
 import { getAlerts } from '../../actions/alertsAction';
+import { deleteLocation } from '../../actions/deleteLocationAction';
 
 import LocationList from './Locations/LocationList';
 import AlertsList from './AlertsList/AlertsList';
@@ -16,12 +17,12 @@ class Alerts extends Component {
     this.props.dispatch(getAlerts(this.props.userId))
   }
 
-  deleteLocation() {
-    console.log('delete location');
+  deleteLocation(location_id) {
+    console.log(location_id);
+    this.props.dispatch(deleteLocation(location_id));
   }
 
   deleteAlert() {
-    console.log('delete alert');
   }
 
   render() {
@@ -39,7 +40,10 @@ class Alerts extends Component {
           <h2>Locations</h2>
           {
             areLocations ?
-              <LocationList deleteLocation={this.deleteLocation} {...this.props} />
+              <LocationList
+                deleteLocation={this.deleteLocation.bind(this)}
+                {...this.props}
+              />
             :
               <AddLocation {...this.props} />
           }

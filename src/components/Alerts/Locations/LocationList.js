@@ -14,7 +14,7 @@ function LocationsList(props) {
               {location.location}
             </p>
 
-            <button onClick={props.deleteLocation}>Delete</button>
+            <button onClick={() => props.deleteLocation(location.id)}>Delete</button>
           </div>
         ))
       }

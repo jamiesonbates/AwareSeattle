@@ -11,8 +11,23 @@ import Nav from '../Nav/Nav';
 import './dashboard.css';
 
 class Dashboard extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      defaultCircle: {
+        lat: 47.617756,
+        lng: -122.326560,
+        range: 5000
+      }
+    }
+  }
   componentWillMount() {
-    this.props.dispatch(fetchPoliceReports());
+    const lat = this.state.defaultCircle.lat;
+    const lng = this.state.defaultCircle.lng;
+    const range = this.state.defaultCircle.range;
+
+    this.props.dispatch(fetchPoliceReports(lat, lng, range));
     this.props.dispatch(authenticateUser());
     this.props.dispatch(fetchOffenseTypes());
   }
@@ -26,6 +41,7 @@ class Dashboard extends Component {
 
         <Map
           reports={this.props.policeReports}
+          mergedReports={this.props.mergedReports}
           className="Dashboard-Map"
         />
       </div>
@@ -35,7 +51,8 @@ class Dashboard extends Component {
 
 const mapStateToProps = function(store) {
   return {
-    policeReports: store.policeReports.reports
+    policeReports: store.policeReports.reports,
+    mergedReports: store.policeReports.mergedReports
   };
 };
 

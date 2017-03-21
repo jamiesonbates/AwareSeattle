@@ -1,5 +1,6 @@
 export default function reducer(state={
-  reports: []
+  reports: [],
+  mergedReports: []
 }, action) {
 
   switch (action.type) {
@@ -14,9 +15,20 @@ export default function reducer(state={
       }
     }
     case 'FETCH_POLICE_REPORTS_FULFILLED': {
+      const reports = state.reports;
+      reports.push(action.payload);
+      
+      const nextReports = reports;
+      const nextMergedReports = nextReports.reduce((acc, report) => {
+        acc = acc.concat(report);
+
+        return acc;
+      }, []);
+
       return {
         ...state,
-        reports: action.payload
+        reports: nextReports,
+        mergedReports: nextMergedReports
       }
     }
   }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { GoogleMapLoader, GoogleMap, Marker } from 'react-google-maps';
+import { GoogleMapLoader, GoogleMap, Marker, Circle } from 'react-google-maps';
 
 
 function Map(props) {
@@ -15,10 +15,10 @@ function Map(props) {
         }
         googleMapElement={
           <GoogleMap
-            defaultZoom={12}
+            defaultZoom={13}
             center={{ lat: 47.6062, lng: -122.3321 }}
           >
-            {props.reports.map((report, i) => {
+            {props.mergedReports.map((report, i) => {
               const position = {
                 lat: parseFloat(report.latitude),
                 lng: parseFloat(report.longitude)
@@ -31,6 +31,11 @@ function Map(props) {
                 />
               );
             })}
+
+            <Circle
+              center={{ lat: 47.6062, lng: -122.3321 }}
+              radius={200}
+            />
           </GoogleMap>
         }
       />

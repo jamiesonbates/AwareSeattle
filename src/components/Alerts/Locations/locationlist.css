@@ -6,6 +6,23 @@
   display: flex;
 }
 
+.LocationList-locationtitle, .LocationList-addresstitle, .LocationList-deletetitle {
+  display: flex;
+  justify-content: center;
+}
+
+.LocationList-locationtitle {
+  width: 20%;
+}
+
+.LocationList-addresstitle {
+  width: 60%;
+}
+
+.LocationList-deletetitle {
+  width: 20%;
+}
+
 .Location {
   display: flex;
 }

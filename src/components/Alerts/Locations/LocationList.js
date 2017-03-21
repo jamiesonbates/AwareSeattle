@@ -6,9 +6,17 @@ function LocationsList(props) {
   return (
     <div className="LocationList-container">
       <div className="LocationList-titles">
-        <h3>Location</h3>
-        <h3>Address</h3>
-        <h3>Delete</h3>
+        <div className="LocationList-locationtitle">
+          <h3>Location</h3>
+        </div>
+
+        <div className="LocationList-addresstitle">
+          <h3>Address</h3>
+        </div>
+
+        <div className="LocationList-deletetitle">
+          <h3>Delete</h3>
+        </div>
       </div>
       {
         props.locations.map(location => (

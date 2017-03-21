@@ -4,6 +4,29 @@
 
 .AlertsList-titles {
   display: flex;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.AlertsList-locationtitle, .AlertsList-crimetitle, .AlertsList-distancetitle, .AlertsList-deletetitle {
+  display: flex;
+  justify-content: center;
+}
+
+.AlertsList-locationtitle {
+  width: 20%;
+}
+
+.AlertsList-crimetitle {
+  width: 40%;
+}
+
+.AlertsList-distancetitle {
+  width: 20%;
+}
+
+.AlertsList-deletetitle {
+  width: 20%;
 }
 
 .Alerts {
@@ -33,5 +56,5 @@
 .AlertsList-deletealert {
   display: flex;
   justify-content: center;
-  width: 25%;
+  width: 20%;
 }

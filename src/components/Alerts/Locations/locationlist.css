@@ -4,7 +4,6 @@
 
 .LocationList-titles {
   display: flex;
-  justify-content: space-between;
 }
 
 .Location {

@@ -6,10 +6,21 @@ function AlertsList(props) {
   return (
     <div className="AlertsList-container">
       <div className="AlertsList-titles">
-        <h3>Location</h3>
-        <h3>Crime</h3>
-        <h3>Distance from Location</h3>
-        <h3>Delete Alert</h3>
+        <div className="AlertsList-locationtitle">
+          <h3>Location</h3>
+        </div>
+
+        <div className="AlertsList-crimetitle">
+          <h3>Crime</h3>
+        </div>
+
+        <div className="AlertsList-distancetitle">
+          <h3>Distance from Location</h3>
+        </div>
+
+        <div className="AlertsList-deletetitle">
+          <h3>Delete Alert</h3>
+        </div>
       </div>
       {
         props.alerts.map(alert => {

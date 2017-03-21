@@ -1,10 +1,12 @@
 import axios from 'axios';
 
-export function deleteLocation(location_id) {
+import { getUserLocations } from './userLocationsAction';
+
+export function deleteLocation(location_id, user_id) {
   return function(dispatch) {
     axios.delete(`/api/locations/${location_id}`)
       .then((res) => {
-        console.log(res);
+        dispatch(getUserLocations(user_id))
       })
       .catch((err) => {
         console.log(err);

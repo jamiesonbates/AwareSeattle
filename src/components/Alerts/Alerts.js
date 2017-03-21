@@ -20,12 +20,15 @@ class Alerts extends Component {
   }
 
   deleteLocation(location_id) {
-    console.log(location_id);
-    this.props.dispatch(deleteLocation(location_id));
+    const userId = this.props.userId;
+
+    this.props.dispatch(deleteLocation(location_id, userId));
   }
 
   deleteAlert(alert_id) {
-    this.props.dispatch(deleteAlert(alert_id))
+    const userId = this.props.userId;
+
+    this.props.dispatch(deleteAlert(alert_id, userId))
   }
 
   render() {

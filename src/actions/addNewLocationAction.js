@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import { getUserLocations } from './userLocationsAction';
+
 export function addNewLocation(user_id, location_title, location, lat, lng) {
   return function(dispatch) {
     axios.post('/api/locations', {
@@ -10,9 +12,10 @@ export function addNewLocation(user_id, location_title, location, lat, lng) {
       lng
     })
     .then((res) => {
-      console.log('Success');
+      console.log('got here');
+      dispatch(getUserLocations(user_id));
     })
-    .then((err) => {
+    .catch((err) => {
       console.log('Failure');
     })
   }

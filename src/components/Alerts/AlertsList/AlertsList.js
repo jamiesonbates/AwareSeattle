@@ -3,6 +3,7 @@ import React from 'react';
 import './alertslist.css';
 
 function AlertsList(props) {
+  console.log(props);
   return (
     <div className="AlertsList-container">
       <div className="AlertsList-titles">
@@ -24,12 +25,9 @@ function AlertsList(props) {
       </div>
       {
         props.alerts.map(alert => {
-          console.log(alert);
           for (const location of props.locations) {
             if (alert.user_alert_location_id === location.id) {
               alert.locationType = location.location_title;
-              console.log(location);
-              console.log(alert);
               return alert;
             }
           }

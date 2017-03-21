@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Geosuggest from 'react-geosuggest';
+import { connect } from 'react-redux';
 
 import { addNewLocation } from '../../../actions/addNewLocationAction';
 
@@ -73,4 +74,10 @@ class AddLocation extends Component {
   }
 }
 
-export default AddLocation;
+const mapStateToProps = function(store) {
+  return {
+    locations: store.locations.locations
+  }
+}
+
+export default connect(mapStateToProps)(AddLocation);

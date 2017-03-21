@@ -109,10 +109,6 @@ class AddAlert extends Component {
             <button className="AddAlert-btn">Add Alert</button>
           </div>
         </form>
-
-        {/* <div className="AddAlert-range-data-container">
-          <p>{this.state.rangeVal} meters</p>
-        </div> */}
       </div>
     )
   }

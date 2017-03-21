@@ -1,0 +1,37 @@
+.AlertsList-container {
+  border-top: 1px solid black;
+}
+
+.AlertsList-titles {
+  display: flex;
+}
+
+.Alerts {
+  display: flex;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.AlertsList-locationtype {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+}
+
+.AlertsList-offensename {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+}
+
+.AlertsList-range {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+}
+
+.AlertsList-deletealert {
+  display: flex;
+  justify-content: center;
+  width: 25%;
+}

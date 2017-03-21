@@ -10,6 +10,7 @@ import LocationList from './Locations/LocationList';
 import AlertsList from './AlertsList/AlertsList';
 import AddLocation from './AddLocation/AddLocation';
 import AddAlert from './AddAlert/AddAlert';
+import Nav from '../Nav/Nav';
 
 import './alerts.css';
 
@@ -42,37 +43,39 @@ class Alerts extends Component {
 
     console.log(this.props);
     return (
-      <div className="Alerts-container">
-        <h1>Aware Seattle</h1>
-        <div className="Alerts-location-container">
-          <h2>Locations</h2>
-          {
-            areLocations ?
-              <div>
+      <div>
+        <Nav />
+        <div className="Alerts-container">
+          <div className="Alerts-location-container">
+            <h2>Locations</h2>
+            {
+              areLocations ?
+                <div className="Alerts-wrapper">
+                  <AddLocation {...this.props} />
+                  <LocationList
+                    deleteLocation={this.deleteLocation.bind(this)}
+                    {...this.props}
+                  />
+                </div>
+              :
                 <AddLocation {...this.props} />
-                <LocationList
-                  deleteLocation={this.deleteLocation.bind(this)}
-                  {...this.props}
-                />
-              </div>
-            :
-              <AddLocation {...this.props} />
-          }
-        </div>
-        <div className="Alerts-list-container">
-          <h2>Alerts</h2>
-          {
-            areAlerts ?
-              <div>
+            }
+          </div>
+          <div className="Alerts-list-container">
+            <h2>Alerts</h2>
+            {
+              areAlerts ?
+                <div>
+                  <AddAlert />
+                  <AlertsList
+                    deleteAlert={this.deleteAlert.bind(this)}
+                    {...this.props}
+                  />
+                </div>
+              :
                 <AddAlert />
-                <AlertsList
-                  deleteAlert={this.deleteAlert.bind(this)}
-                  {...this.props}
-                />
-              </div>
-            :
-              <AddAlert />
-          }
+            }
+          </div>
         </div>
       </div>
     )

@@ -15,7 +15,7 @@
 .AddLocation-input {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  width: 50%;
 }
 
 /**
@@ -27,12 +27,12 @@
   font-size: 1rem;
   position: relative;
   width: 100%;
-  /*margin: 1em auto;*/
   text-align: left;
 }
-.geosuggest__input {
+.geosuggest__input, .location-input {
   width: 100%;
   border: 2px solid transparent;
+  box-sizing: border-box;
   box-shadow: 0 0 1px #3d464d;
   padding: .5em 1em;
   -webkit-transition: border 0.2s, box-shadow 0.2s;

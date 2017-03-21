@@ -53,7 +53,10 @@ class AddLocation extends Component {
           <div className="AddLocation-input-container">
             <div className="AddLocation-input">
               <label>Name this location</label>
-              <input type="text" value={this.state.locationTitle} onChange={this.handleTextInputChange}/>
+              <input
+                type="text"
+                value={this.state.locationTitle} onChange={this.handleTextInputChange}
+                className="location-input"/>
             </div>
 
             <div className="AddLocation-input">

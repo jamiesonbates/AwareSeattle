@@ -1,0 +1,30 @@
+.LocationList-container {
+  border-top: 1px solid black;
+}
+
+.LocationList-titles {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Location {
+  display: flex;
+}
+
+.Location-name {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+}
+
+.Location-address {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+}
+
+.Location-deletelocation {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+}

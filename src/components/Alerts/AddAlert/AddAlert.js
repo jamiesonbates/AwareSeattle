@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { addNewAlert } from '../../../actions/addAlertAction';
 
 import './addalert.css';
 
@@ -34,13 +37,23 @@ class AddAlert extends Component {
   }
 
   handleSubmit(e) {
-    console.log(this.props.user);
     e.preventDefault();
-    console.log(this.state);
+    const userId = this.props.userId;
+    const offenseTypeId = this.state.offenseTypeId;
+    const range = this.state.rangeVal;
+    let userAlertLocationId;
+
+    if (this.props.locations.length === 1) {
+      userAlertLocationId = this.props.locations[0].id;
+    }
+    else {
+      userAlertLocationId = this.state.userAlertLocationId;
+    }
+
+    this.props.dispatch(addNewAlert(userId, userAlertLocationId, offenseTypeId, range));
   }
 
   render() {
-    const locations = this.props.locations;
 
     return (
       <div className="AddAlert-container">
@@ -97,4 +110,12 @@ class AddAlert extends Component {
   }
 }
 
-export default AddAlert;
+const mapStateToProps = function(store) {
+  return {
+    offenseTypes: store.offenseTypes.offenseTypes,
+    locations: store.locations.locations,
+    userId: store.user.userId
+  }
+}
+
+export default connect(mapStateToProps)(AddAlert);

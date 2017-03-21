@@ -60,7 +60,7 @@ class Alerts extends Component {
             areAlerts ?
               <AlertsList deleteAlert={this.deleteAlert} {...this.props} />
             :
-              <AddAlert {...this.props} />
+              <AddAlert />
           }
         </div>
       </div>

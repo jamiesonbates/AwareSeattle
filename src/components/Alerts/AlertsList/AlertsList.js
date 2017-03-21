@@ -5,10 +5,12 @@ function AlertsList(props) {
     <div>
       {
         props.alerts.map(alert => {
+          console.log(alert);
           for (const location of props.locations) {
-            console.log(location);
             if (alert.user_alert_location_id === location.id) {
               alert.locationType = location.location_title;
+              console.log(location);
+              console.log(alert);
               return alert;
             }
           }
@@ -18,7 +20,7 @@ function AlertsList(props) {
             <p>{alert.locationType}</p>
             <p>{alert.offense_name}</p>
             <p>{alert.range}</p>
-            <button onClick={props.deleteAlert}>Delete</button>
+            <button onClick={() => props.deleteAlert(alert.id)}>Delete</button>
           </div>
         ))
       }

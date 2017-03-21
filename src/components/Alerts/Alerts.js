@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 
 import { getAlerts } from '../../actions/alertsAction';
 import { deleteLocation } from '../../actions/deleteLocationAction';
+import { deleteAlert } from '../../actions/deleteAlertAction';
 
 import LocationList from './Locations/LocationList';
 import AlertsList from './AlertsList/AlertsList';
@@ -22,7 +23,8 @@ class Alerts extends Component {
     this.props.dispatch(deleteLocation(location_id));
   }
 
-  deleteAlert() {
+  deleteAlert(alert_id) {
+    this.props.dispatch(deleteAlert(alert_id))
   }
 
   render() {
@@ -58,7 +60,10 @@ class Alerts extends Component {
           <h2>Alerts</h2>
           {
             areAlerts ?
-              <AlertsList deleteAlert={this.deleteAlert} {...this.props} />
+              <AlertsList
+                deleteAlert={this.deleteAlert.bind(this)}
+                {...this.props}
+              />
             :
               <AddAlert />
           }

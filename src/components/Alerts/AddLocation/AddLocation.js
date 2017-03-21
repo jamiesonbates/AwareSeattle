@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Geosuggest from 'react-geosuggest';
 
+import { addNewLocation } from '../../../actions/addNewLocationAction';
+
 import './addlocation.css';
 
-class addLocation extends Component {
+class AddLocation extends Component {
   constructor() {
     super();
 
@@ -11,12 +13,10 @@ class addLocation extends Component {
       locationTitle: '',
       locationName: '',
       lat: '',
-      lng: '',
-      offenseTypeId: ''
+      lng: ''
     }
 
     this.updatePlace = this.updatePlace.bind(this);
-    this.handleSelectChange = this.handleSelectChange.bind(this);
     this.handleTextInputChange = this.handleTextInputChange.bind(this);
   }
 
@@ -25,12 +25,6 @@ class addLocation extends Component {
       locationName: place.label,
       lat: place.location.lat,
       lng: place.location.lng
-    })
-  }
-
-  handleSelectChange(e) {
-    this.setState({
-      offenseTypeId: e.target.value
     })
   }
 
@@ -43,7 +37,13 @@ class addLocation extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    console.log(this.state);
+    const userId = this.props.userId;
+    const locationTitle = this.state.locationTitle;
+    const locationName = this.state.locationName;
+    const lat = this.state.lat;
+    const lng = this.state.lng;
+
+    this.props.dispatch(addNewLocation(userId, locationTitle, locationName, lat, lng));
   }
 
   render() {
@@ -54,17 +54,6 @@ class addLocation extends Component {
             <div className="AddLocation-input">
               <label>Name this location</label>
               <input type="text" value={this.state.locationTitle} onChange={this.handleTextInputChange}/>
-            </div>
-
-            <div className="AddLocation-input">
-              <label>Select a crime</label>
-              <select name="offenseTypes" onChange={this.handleSelectChange}>
-                {
-                  this.props.offenseTypes.map(offense => (
-                    <option key={offense.id} value={offense.id}>{offense.offense_name}</option>
-                  ))
-                }
-              </select>
             </div>
 
             <div className="AddLocation-input">
@@ -80,4 +69,26 @@ class addLocation extends Component {
   }
 }
 
-export default addLocation;
+export default AddLocation;
+
+{/* <div className="AddLocation-input">
+  <label>Select a crime</label>
+  <select name="offenseTypes" onChange={this.handleSelectChange}>
+    {
+      this.props.offenseTypes.map(offense => (
+        <option key={offense.id} value={offense.id}>{offense.offense_name}</option>
+      ))
+    }
+  </select>
+</div> */}
+
+{/* <div className="AddLocation-input">
+  <label>Range</label>
+  <input
+    type="range"
+    value={this.state.rangeVal}
+    onChange={this.handleRangeChange}
+    min={this.state.rangeMin}
+    max={this.state.rangeMax}
+  />
+</div> */}

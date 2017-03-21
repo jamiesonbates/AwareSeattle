@@ -47,7 +47,9 @@ class Alerts extends Component {
         <Nav />
         <div className="Alerts-container">
           <div className="Alerts-location-container">
-            <h2>Locations</h2>
+            <div className="Alerts-location-title">
+              <h2>Locations</h2>
+            </div>
             {
               areLocations ?
                 <div className="Alerts-wrapper">

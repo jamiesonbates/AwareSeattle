@@ -1,6 +1,14 @@
 .AddLocation-container {
   height: 100%;
-  width: 100%;
+  width: 95%;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.AddLocation-container h3 {
+  font-family: 'Bree Serif';
+  font-size: 1.25em;
 }
 
 .AddLocation-container form {
@@ -15,7 +23,35 @@
 .AddLocation-input {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 45%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+.AddLocation-input label {
+  font-family: 'Bree Serif';
+  font-size: 1em;
+}
+
+.AddLocation-btn {
+  width: 35%;
+  min-width: 160px;
+  margin: 0 auto;
+  margin-top: 2.5%;
+  border: 1px solid #BEC2BE;
+  padding: 20px 12px;
+  background-color: #E9EDE9;
+  border-radius: 5px;
+  line-height: 75%;
+  font-size: 1.25em;
+  font-family: 'Bree Serif';
+  color: #22FF44;
+}
+
+.AddLocation-btn:hover {
+  background-color: #22FF44;
+  color: white;
+  cursor: pointer;
 }
 
 /**
@@ -30,7 +66,11 @@
   text-align: left;
 }
 .geosuggest__input, .location-input {
+  margin-top: 2%;
+  border-radius: 3px;
   width: 100%;
+  font-size: 1em;
+  font-family: Helvetica;
   border: 2px solid transparent;
   box-sizing: border-box;
   box-shadow: 0 0 1px #3d464d;

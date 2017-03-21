@@ -78,4 +78,5 @@
 .AlertsList-delete-btn:hover {
   background-color: #FF311F;
   color: white;
+  cursor: pointer;
 }

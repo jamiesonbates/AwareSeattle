@@ -4,8 +4,6 @@
 
 .LocationList-titles {
   display: flex;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
 }
 
 .LocationList-locationtitle, .LocationList-addresstitle, .LocationList-deletetitle {
@@ -65,4 +63,5 @@
 .LocationList-delete-btn:hover {
   background-color: #FF311F;
   color: white;
+  cursor: pointer;
 }

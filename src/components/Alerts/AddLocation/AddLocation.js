@@ -49,6 +49,7 @@ class AddLocation extends Component {
   render() {
     return (
       <div className="AddLocation-container">
+        <h3>Add a New Location</h3>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <div className="AddLocation-input-container">
             <div className="AddLocation-input">
@@ -65,7 +66,7 @@ class AddLocation extends Component {
             </div>
           </div>
 
-        <button>Add Location</button>
+        <button className="AddLocation-btn">Add Location</button>
         </form>
       </div>
     )

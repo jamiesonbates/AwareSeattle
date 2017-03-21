@@ -4,13 +4,14 @@
 
 .AlertsList-titles {
   display: flex;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
 }
 
 .AlertsList-locationtitle, .AlertsList-crimetitle, .AlertsList-distancetitle, .AlertsList-deletetitle {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .AlertsList-locationtitle {
@@ -18,21 +19,23 @@
 }
 
 .AlertsList-crimetitle {
-  width: 40%;
+  width: 35%;
 }
 
 .AlertsList-distancetitle {
-  width: 20%;
+  width: 25%;
 }
 
 .AlertsList-deletetitle {
-  width: 20%;
+  width: 15%;
 }
 
 .Alerts {
   display: flex;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  margin-bottom: 0.5%;
+  margin-top: 0.5%;
 }
 
 .AlertsList-locationtype {
@@ -44,17 +47,35 @@
 .AlertsList-offensename {
   display: flex;
   justify-content: center;
-  width: 40%;
+  width: 35%;
 }
 
 .AlertsList-range {
   display: flex;
   justify-content: center;
-  width: 20%;
+  width: 25%;
 }
 
 .AlertsList-deletealert {
   display: flex;
   justify-content: center;
-  width: 20%;
+  align-items: center;
+  width: 15%;
+}
+
+.AlertsList-delete-btn {
+  height: 75%;
+  border: 1px solid #BEC2BE;
+  padding: 2px 12px;
+  background-color: #E9EDE9;
+  border-radius: 5px;
+  line-height: 75%;
+  font-size: 1.25em;
+  font-family: 'Bree Serif';
+  color: #FF311F;
+}
+
+.AlertsList-delete-btn:hover {
+  background-color: #FF311F;
+  color: white;
 }

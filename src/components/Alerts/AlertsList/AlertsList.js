@@ -15,11 +15,11 @@ function AlertsList(props) {
         </div>
 
         <div className="AlertsList-distancetitle">
-          <h3>Distance from Location</h3>
+          <h3>Range</h3>
         </div>
 
         <div className="AlertsList-deletetitle">
-          <h3>Delete Alert</h3>
+          <h3>Delete</h3>
         </div>
       </div>
       {
@@ -50,7 +50,8 @@ function AlertsList(props) {
 
             <div className="AlertsList-deletealert">
               <button
-                onClick={() => props.deleteAlert(alert.id)}>
+                onClick={() => props.deleteAlert(alert.id)}
+                className="AlertsList-delete-btn">
                 Delete
               </button>
             </div>

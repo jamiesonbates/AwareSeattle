@@ -35,7 +35,8 @@ function LocationsList(props) {
 
             <div className="Location-deletelocation">
               <button
-                onClick={() => props.deleteLocation(location.id)}>
+                onClick={() => props.deleteLocation(location.id)}
+                className="LocationList-delete-btn">
                 Delete
               </button>
             </div>

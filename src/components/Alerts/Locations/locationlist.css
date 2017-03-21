@@ -25,6 +25,8 @@
 
 .Location {
   display: flex;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
 }
 
 .Location-name {
@@ -42,5 +44,23 @@
 .Location-deletelocation {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 20%;
+}
+
+.LocationList-delete-btn {
+  height: 75%;
+  border: 1px solid #BEC2BE;
+  padding: 2px 12px;
+  background-color: #E9EDE9;
+  border-radius: 5px;
+  line-height: 75%;
+  font-size: 1.25em;
+  font-family: 'Bree Serif';
+  color: #FF311F;
+}
+
+.LocationList-delete-btn:hover {
+  background-color: #FF311F;
+  color: white;
 }

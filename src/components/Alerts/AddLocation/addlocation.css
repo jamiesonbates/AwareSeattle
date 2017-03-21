@@ -1,0 +1,19 @@
+AaddLocation-container {
+  height: 100%;
+  width: 100%;
+}
+
+.AddLocation-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.AddLocation-input-container {
+  display: flex;
+}
+
+.AddLocation-input {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}

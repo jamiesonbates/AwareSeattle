@@ -7,6 +7,7 @@ import { getAlerts } from '../../actions/alertsAction';
 
 import LocationList from './Locations/LocationList';
 import AlertsList from './AlertsList/AlertsList';
+import AddLocation from './AddLocation/AddLocation';
 
 import './alerts.css';
 
@@ -40,7 +41,7 @@ class Alerts extends Component {
             areLocations ?
               <LocationList deleteLocation={this.deleteLocation} {...this.props} />
             :
-              <Geosuggest />
+              <AddLocation {...this.props} />
           }
         </div>
         <div className="Alerts-list-container">
@@ -56,7 +57,8 @@ const mapStateToProps = function(store) {
   return {
     locations: store.locations.locations,
     userId: store.user.userId,
-    alerts: store.alerts.alerts
+    alerts: store.alerts.alerts,
+    offenseTypes: store.offenseTypes.offenseTypes
   }
 }
 

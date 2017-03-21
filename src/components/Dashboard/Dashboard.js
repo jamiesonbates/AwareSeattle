@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { fetchPoliceReports } from '../../actions/policeReportsAction';
 import { authenticateUser } from '../../actions/authenticateAction';
+import { fetchOffenseTypes } from '../../actions/offenseTypes';
 
 import Map from '../Map/Map';
 import Nav from '../Nav/Nav';
@@ -13,6 +14,7 @@ class Dashboard extends Component {
   componentWillMount() {
     this.props.dispatch(fetchPoliceReports());
     this.props.dispatch(authenticateUser());
+    this.props.dispatch(fetchOffenseTypes());
   }
 
   render() {

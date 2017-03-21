@@ -45,11 +45,11 @@
   line-height: 75%;
   font-size: 1.25em;
   font-family: 'Bree Serif';
-  color: #22FF44;
+  color: #1BCC36;
 }
 
 .AddLocation-btn:hover {
-  background-color: #22FF44;
+  background-color: #1BCC36;
   color: white;
   cursor: pointer;
 }

@@ -1,6 +1,15 @@
 .AddAlert-container {
   height: 100%;
-  width: 100%;
+  width: 95%;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.AddAlert-container h3 {
+  font-family: 'Bree Serif';
+  font-size: 1.25em;
 }
 
 .AddAlert-container form {
@@ -16,4 +25,51 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
+  width: 30%;
+}
+
+.AddAlert-input label {
+  font-family: 'Bree Serif';
+  font-size: 1em;
+}
+
+.AddAlert-input select {
+  font-size: 1.25em;
+  margin-top: 2%;
+}
+
+.AddAlert-input input {
+  margin-top: 2%;
+}
+
+.AddAlert-btn-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.AddAlert-btn {
+  width: 35%;
+  min-width: 160px;
+  max-height: 57px;
+  margin: 0 auto;
+  margin-top: 2.5%;
+  border: 1px solid #BEC2BE;
+  padding: 20px 12px;
+  background-color: #E9EDE9;
+  border-radius: 5px;
+  line-height: 75%;
+  font-size: 1.25em;
+  font-family: 'Bree Serif';
+  color: #1BCC36;
+}
+
+.AddAlert-btn:hover {
+  background-color: #1BCC36;
+  color: white;
+  cursor: pointer;
+}
+
+.AddAlert-range-val {
+  color: #454544;
 }

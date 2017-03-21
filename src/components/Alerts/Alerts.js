@@ -64,10 +64,12 @@ class Alerts extends Component {
             }
           </div>
           <div className="Alerts-list-container">
-            <h2>Alerts</h2>
+            <div className="Alerts-list-title">
+              <h2>Alerts</h2>
+            </div>
             {
               areAlerts ?
-                <div>
+                <div className="Alerts-wrapper">
                   <AddAlert />
                   <AlertsList
                     deleteAlert={this.deleteAlert.bind(this)}

@@ -57,6 +57,7 @@ class AddAlert extends Component {
 
     return (
       <div className="AddAlert-container">
+        <h3>Add a New Alert</h3>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <div className="AddAlert-input-container">
             <div className="AddAlert-input">
@@ -93,7 +94,7 @@ class AddAlert extends Component {
             </div>
 
             <div className="AddAlert-input">
-              <label>Choose a range</label>
+              <label>Range: <span className="AddAlert-range-val">{this.state.rangeVal} meters</span></label>
               <input
                 type="range"
                 value={this.state.rangeVal}
@@ -104,8 +105,14 @@ class AddAlert extends Component {
             </div>
           </div>
 
-          <button>Add Alert</button>
+          <div className="AddAlert-btn-container">
+            <button className="AddAlert-btn">Add Alert</button>
+          </div>
         </form>
+
+        {/* <div className="AddAlert-range-data-container">
+          <p>{this.state.rangeVal} meters</p>
+        </div> */}
       </div>
     )
   }

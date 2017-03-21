@@ -48,10 +48,13 @@ class Alerts extends Component {
           <h2>Locations</h2>
           {
             areLocations ?
-              <LocationList
-                deleteLocation={this.deleteLocation.bind(this)}
-                {...this.props}
-              />
+              <div>
+                <AddLocation {...this.props} />
+                <LocationList
+                  deleteLocation={this.deleteLocation.bind(this)}
+                  {...this.props}
+                />
+              </div>
             :
               <AddLocation {...this.props} />
           }
@@ -60,10 +63,13 @@ class Alerts extends Component {
           <h2>Alerts</h2>
           {
             areAlerts ?
-              <AlertsList
-                deleteAlert={this.deleteAlert.bind(this)}
-                {...this.props}
-              />
+              <div>
+                <AddAlert />
+                <AlertsList
+                  deleteAlert={this.deleteAlert.bind(this)}
+                  {...this.props}
+                />
+              </div>
             :
               <AddAlert />
           }

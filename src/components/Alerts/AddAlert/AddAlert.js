@@ -60,8 +60,9 @@ class AddAlert extends Component {
         <form onSubmit={this.handleSubmit.bind(this)}>
           <div className="AddAlert-input-container">
             <div className="AddAlert-input">
-              <label>Select a crime</label>
-              <select name="offenseTypes" onChange={this.handleLocationChange.bind(this)}>
+              <label>Select a location</label>
+              <select
+                name="offenseTypes" onChange={this.handleLocationChange.bind(this)}>
                 {
                   this.props.locations.map(location => (
                     <option

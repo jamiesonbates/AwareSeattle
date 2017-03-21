@@ -60,7 +60,7 @@ class AddLocation extends Component {
               <label>Enter a location</label>
               <Geosuggest onSuggestSelect={(place) => this.updatePlace(place)} />
             </div>
-        </div>
+          </div>
 
         <button>Add Location</button>
         </form>
@@ -70,25 +70,3 @@ class AddLocation extends Component {
 }
 
 export default AddLocation;
-
-{/* <div className="AddLocation-input">
-  <label>Select a crime</label>
-  <select name="offenseTypes" onChange={this.handleSelectChange}>
-    {
-      this.props.offenseTypes.map(offense => (
-        <option key={offense.id} value={offense.id}>{offense.offense_name}</option>
-      ))
-    }
-  </select>
-</div> */}
-
-{/* <div className="AddLocation-input">
-  <label>Range</label>
-  <input
-    type="range"
-    value={this.state.rangeVal}
-    onChange={this.handleRangeChange}
-    min={this.state.rangeMin}
-    max={this.state.rangeMax}
-  />
-</div> */}

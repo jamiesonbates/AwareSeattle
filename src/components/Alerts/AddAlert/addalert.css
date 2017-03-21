@@ -1,18 +1,18 @@
-.AddLocation-container {
+.AddAlert-container {
   height: 100%;
   width: 100%;
 }
 
-.AddLocation-container form {
+.AddAlert-container form {
   display: flex;
   flex-direction: column;
 }
 
-.AddLocation-input-container {
+.AddAlert-input-container {
   display: flex;
 }
 
-.AddLocation-input {
+.AddAlert-input {
   display: flex;
   flex-direction: column;
   padding: 10px;

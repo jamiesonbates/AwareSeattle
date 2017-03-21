@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import Geosuggest from 'react-geosuggest';
 
 import { getAlerts } from '../../actions/alertsAction';
 import { deleteLocation } from '../../actions/deleteLocationAction';
@@ -9,6 +8,7 @@ import { deleteLocation } from '../../actions/deleteLocationAction';
 import LocationList from './Locations/LocationList';
 import AlertsList from './AlertsList/AlertsList';
 import AddLocation from './AddLocation/AddLocation';
+import AddAlert from './AddAlert/AddAlert';
 
 import './alerts.css';
 
@@ -32,6 +32,12 @@ class Alerts extends Component {
       areLocations = true;
     }
 
+    let areAlerts = false;
+
+    if (this.props.alerts.length) {
+      areAlerts = true;
+    }
+
     console.log(this.props);
     return (
       <div className="Alerts-container">
@@ -50,7 +56,12 @@ class Alerts extends Component {
         </div>
         <div className="Alerts-list-container">
           <h2>Alerts</h2>
-          <AlertsList deleteAlert={this.deleteAlert} {...this.props} />
+          {
+            areAlerts ?
+              <AlertsList deleteAlert={this.deleteAlert} {...this.props} />
+            :
+              <AddAlert {...this.props} />
+          }
         </div>
       </div>
     )

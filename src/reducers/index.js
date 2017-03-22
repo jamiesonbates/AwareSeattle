@@ -8,6 +8,7 @@ import offenseTypes from './offenseTypes';
 import localLocations from './addLocalLocationReducer';
 import currentReport from './currentReportReducer';
 import mapDetails from './mapDetailsReducer';
+import offenseFilter from './filterByOffensesReducer';
 
 export default combineReducers({
   policeReports,
@@ -17,5 +18,6 @@ export default combineReducers({
   offenseTypes,
   localLocations,
   currentReport,
-  mapDetails
+  mapDetails,
+  offenseFilter
 })

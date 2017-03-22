@@ -36,12 +36,13 @@ class LocationsOnMap extends Component {
     console.log('allLocations', allLocations);
 
     return (
-      <div>
+      <div className="LocationsOnMap-container">
         {
           allLocations.map((location, i) => (
             <button
               key={i}
-              onClick={() => this.handleLocationClick(15, { lat: location.lat, lng: location.lng })}>
+              onClick={() => this.handleLocationClick(16, { lat: location.lat, lng: location.lng })}
+              className="LocationsOnMap-btn">
               {location.location_title}
             </button>
           ))

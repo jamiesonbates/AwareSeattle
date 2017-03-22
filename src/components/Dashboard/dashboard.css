@@ -10,6 +10,7 @@
 .Dashboard-map-container {
   height: 100%;
   width: 70vw;
+  position: relative;
 }
 
 .Dashboard-tools-container {

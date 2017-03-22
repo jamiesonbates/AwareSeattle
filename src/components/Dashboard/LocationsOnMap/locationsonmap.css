@@ -1,0 +1,12 @@
+.LocationsOnMap-container {
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  top: 15%;
+  display: flex;
+  flex-direction: column;
+}
+
+.LocationsOnMap-btn {
+  
+}

@@ -10,6 +10,7 @@ import Nav from '../Nav/Nav';
 import NewLocation from './NewLocation/NewLocation';
 import LocationsOnMap from './LocationsOnMap/LocationsOnMap';
 import ReportInfo from './ReportInfo/ReportInfo';
+import OffenseTypeFilter from './OffenseTypeFilter/OffenseTypeFilter';
 
 import './dashboard.css';
 
@@ -51,6 +52,7 @@ class Dashboard extends Component {
           </div>
           <div className="Dashboard-tools-container">
             <NewLocation />
+            <OffenseTypeFilter />
             <ReportInfo report={this.props.currentReport}/>
           </div>
         </div>

@@ -8,6 +8,7 @@ import { fetchOffenseTypes } from '../../actions/offenseTypes';
 import Map from '../Map/Map';
 import Nav from '../Nav/Nav';
 import NewLocation from './NewLocation/NewLocation';
+import LocationsOnMap from './LocationsOnMap/LocationsOnMap';
 
 import './dashboard.css';
 
@@ -45,6 +46,7 @@ class Dashboard extends Component {
               reports={this.props.policeReports}
               mergedReports={this.props.mergedReports}
             />
+            <LocationsOnMap />
           </div>
           <div className="Dashboard-tools-container">
             <NewLocation {...this.props}/>

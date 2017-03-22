@@ -19,19 +19,37 @@ class Map extends Component {
               zoom={13}
               center={{ lat: 47.6062, lng: -122.3321 }}
               >
-                {this.props.mergedReports.map((report, i) => {
-                  const position = {
-                    lat: parseFloat(report.latitude),
-                    lng: parseFloat(report.longitude)
-                  }
-                  return (
-                    <Marker
-                      key={i}
-                      position={position}
-                      info={report}
-                    />
-                  );
-                })}
+                {
+                  this.props.userLocations.map((location, i) => {
+                    const position = {
+                      lat: parseFloat(location.lat),
+                      lng: parseFloat(location.lng)
+                    }
+                    return (
+                      <Marker
+                        key={i}
+                        position={position}
+                        info={location}
+                        color={'green'}
+                      />
+                    );
+                  })
+                }
+                {
+                  this.props.mergedReports.map((report, i) => {
+                    const position = {
+                      lat: parseFloat(report.latitude),
+                      lng: parseFloat(report.longitude)
+                    }
+                    return (
+                      <Marker
+                        key={i}
+                        position={position}
+                        info={report}
+                      />
+                    );
+                  })
+                }
 
                 <Circle
                   center={{ lat: 47.6062, lng: -122.3321 }}
@@ -48,7 +66,7 @@ class Map extends Component {
 
 const mapStateToProps = function(store) {
   return {
-    locations: store.locations.locations,
+    userLocations: store.locations.locations,
     reports: store.policeReports.reports,
     mergedReports: store.policeReports.mergedReports
   }

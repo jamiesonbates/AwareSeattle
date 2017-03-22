@@ -51,7 +51,7 @@ class Dashboard extends Component {
           </div>
           <div className="Dashboard-tools-container">
             <NewLocation {...this.props}/>
-            <ReportInfo />
+            <ReportInfo report={this.props.currentReport}/>
           </div>
         </div>
       </div>
@@ -62,7 +62,8 @@ class Dashboard extends Component {
 const mapStateToProps = function(store) {
   return {
     policeReports: store.policeReports.reports,
-    mergedReports: store.policeReports.mergedReports
+    mergedReports: store.policeReports.mergedReports,
+    currentReport: store.currentReport.currentReports
   };
 };
 

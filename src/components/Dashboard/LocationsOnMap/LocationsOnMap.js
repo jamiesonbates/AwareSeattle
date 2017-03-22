@@ -24,8 +24,8 @@ class LocationsOnMap extends Component {
     return (
       <div>
         {
-          allLocations.map(location => (
-            <p>{location.lat}</p>
+          allLocations.map((location, i) => (
+            <p key={i}>{location.lat}</p>
           ))
         }
       </div>

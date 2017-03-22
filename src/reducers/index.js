@@ -6,6 +6,7 @@ import alerts from './alertsReducer';
 import locations from './userLocationsReducer';
 import offenseTypes from './offenseTypes';
 import localLocations from './addLocalLocationReducer';
+import currentReport from './currentReportReducer';
 
 export default combineReducers({
   policeReports,
@@ -13,5 +14,6 @@ export default combineReducers({
   alerts,
   locations,
   offenseTypes,
-  localLocations
+  localLocations,
+  currentReport
 })

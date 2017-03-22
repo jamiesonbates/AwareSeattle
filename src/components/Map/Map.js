@@ -16,7 +16,6 @@ class Map extends Component {
   }
 
   render() {
-    console.log(this.props.offenseFilter);
     return (
       <div style={{ height: '100%', width: '100%' }}>
         <GoogleMapLoader
@@ -69,13 +68,6 @@ class Map extends Component {
                       strokeWeight: 0.1
                     }
 
-                    const offenseFilter = this.props.offenseFilter;
-
-                    if (offenseFilter !== undefined && offenseFilter.includes(report.offense_type_id)) {
-                      console.log();
-                      return;
-                    }
-
                     return (
                       <Marker
                         key={i}
@@ -110,7 +102,7 @@ const mapStateToProps = function(store) {
     mergedReports: store.policeReports.mergedReports,
     offenseTypes: store.offenseTypes.offenseTypes,
     mapDetails: store.mapDetails,
-    offenseFilter: store.offenseFilter.offenseFilter
+    offenseFilter: store.offenseFilter.filterByOffenses
   }
 }
 

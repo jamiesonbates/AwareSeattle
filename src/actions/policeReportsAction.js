@@ -1,14 +1,21 @@
 import axios from 'axios';
 
+import { generateMarkersList } from './generateMarkersListAction';
+
 export function fetchPoliceReports(lat, lng, range, identity) {
-  return function(dispatch) {
+  return function(dispatch, getState) {
     axios.get(`/api/police_reports/${lat}/${lng}/${range}`)
       .then((res) => {
+        const nextReports = getState().policeReports.reports;
+
+        nextReports[`'${identity}'`] = res.data;
+
         dispatch({
           type: 'FETCH_POLICE_REPORTS_FULFILLED',
-          payload: res.data,
-          identity
+          payload: nextReports
         })
+
+        dispatch(generateMarkersList());
       })
       .catch((err) => {
         dispatch({

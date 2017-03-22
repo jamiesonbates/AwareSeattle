@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Geosuggest from 'react-geosuggest';
 
+import { addLocalLocation } from '../../../actions/addLocalLocationAction';
+
 import './newlocation.css';
 
-class NewLocation extends  {
+class NewLocation extends Component {
   constructor() {
     super();
 
@@ -34,6 +36,11 @@ class NewLocation extends  {
   handleSubmit(e) {
     e.preventDefault();
 
+    const locationName = this.state.locationName;
+    const lat = this.state.lat;
+    const lng = this.state.lng;
+
+    this.props.dispatch(addLocalLocation(locationName, lat, lng))
   }
 
   render() {
@@ -59,10 +66,4 @@ class NewLocation extends  {
   }
 }
 
-const mapStateToProps = function(store) {
-  return {
-
-  }
-}
-
-export default connect(mapStateToProps)(NewLocation);
+export default NewLocation;

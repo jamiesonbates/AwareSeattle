@@ -7,6 +7,7 @@ export default function reducer(state={
       localLocations.push(action.payload);
 
       const nextLocalLocations = localLocations;
+      console.log(nextLocalLocations);
 
       return {
         ...state,

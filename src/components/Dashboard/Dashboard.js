@@ -7,6 +7,7 @@ import { fetchOffenseTypes } from '../../actions/offenseTypes';
 
 import Map from '../Map/Map';
 import Nav from '../Nav/Nav';
+import NewLocation from './NewLocation/NewLocation';
 
 import './dashboard.css';
 
@@ -43,6 +44,7 @@ class Dashboard extends Component {
           mergedReports={this.props.mergedReports}
           className="Dashboard-Map"
         />
+        <NewLocation {...this.props}/>
       </div>
     )
   }

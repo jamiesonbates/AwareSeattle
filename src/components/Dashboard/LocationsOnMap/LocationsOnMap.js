@@ -1,9 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { setMapZoom } from '../../../actions/mapZoomAction';
+import { setMapCenter } from '../../../actions/mapCenterAction';
+
 import './locationsonmap.css';
 
 class LocationsOnMap extends Component {
+  constructor() {
+    super();
+
+    this.handleLocationClick = this.handleLocationClick.bind(this);;
+  }
+
+  handleLocationClick(zoom, location) {
+    this.props.dispatch(setMapZoom(zoom));
+    this.props.dispatch(setMapCenter(location));
+  }
+
   render() {
     const newLocalLocations = this.props.localLocations.map(location => {
       location.isLocal = true;
@@ -25,7 +39,11 @@ class LocationsOnMap extends Component {
       <div>
         {
           allLocations.map((location, i) => (
-            <p key={i}>{location.lat}</p>
+            <button
+              key={i}
+              onClick={() => this.handleLocationClick(15, { lat: location.lat, lng: location.lng })}>
+              {location.location_title}
+            </button>
           ))
         }
       </div>

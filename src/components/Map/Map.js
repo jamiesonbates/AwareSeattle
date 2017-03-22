@@ -27,8 +27,8 @@ class Map extends Component {
           }
           googleMapElement={
             <GoogleMap
-              zoom={13}
-              center={{ lat: 47.6062, lng: -122.3321 }}
+              zoom={this.props.mapDetails.mapZoom}
+              center={this.props.mapDetails.mapCenter}
               >
                 {
                   this.props.userLocations.map((location, i) => {
@@ -63,8 +63,8 @@ class Map extends Component {
                       path: window.google.maps.SymbolPath.CIRCLE,
                       fillOpacity: 1,
                       fillColor: report.color,
-                      scale: 4,
-                      strokeWeight: 1
+                      scale: (4 * (this.props.mapDetails.mapZoom / 13)),
+                      strokeWeight: 0.1
                     }
 
                     return (
@@ -97,7 +97,8 @@ const mapStateToProps = function(store) {
     userLocations: store.locations.locations,
     reports: store.policeReports.reports,
     mergedReports: store.policeReports.mergedReports,
-    offenseTypes: store.offenseTypes.offenseTypes
+    offenseTypes: store.offenseTypes.offenseTypes,
+    mapDetails: store.mapDetails
   }
 }
 

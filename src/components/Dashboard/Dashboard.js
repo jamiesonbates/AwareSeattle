@@ -50,7 +50,7 @@ class Dashboard extends Component {
             <LocationsOnMap />
           </div>
           <div className="Dashboard-tools-container">
-            <NewLocation {...this.props}/>
+            <NewLocation />
             <ReportInfo report={this.props.currentReport}/>
           </div>
         </div>

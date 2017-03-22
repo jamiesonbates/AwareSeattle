@@ -1,5 +1,5 @@
 export default function reducer(state={
-  reports: [],
+  reports: {},
   mergedReports: []
 }, action) {
 
@@ -15,15 +15,15 @@ export default function reducer(state={
       }
     }
     case 'FETCH_POLICE_REPORTS_FULFILLED': {
-      const reports = state.reports;
-      reports.push(action.payload);
-      
-      const nextReports = reports;
-      const nextMergedReports = nextReports.reduce((acc, report) => {
-        acc = acc.concat(report);
+      const nextReports = state.reports;
 
-        return acc;
-      }, []);
+      nextReports[`'${action.identity}'`] = action.payload;
+
+      const nextMergedReports = [];
+
+      for (const identity in nextReports) {
+        nextMergedReports.push(nextReports[identity]);
+      }
 
       return {
         ...state,

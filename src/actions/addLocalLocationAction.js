@@ -1,10 +1,11 @@
 import { fetchPoliceReports } from './policeReportsAction';
 
-export function addLocalLocation(locationName, lat, lng) {
+export function addLocalLocation(locationName, lat, lng, length) {
   const location = {
     locationName,
     lat,
-    lng
+    lng,
+    identity: `temp${length + 1}`
   }
   return function(dispatch) {
     dispatch({

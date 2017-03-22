@@ -8,6 +8,12 @@ export function getUserLocations(userId) {
       .then((res) => {
         const locations = res.data;
 
+        const identifiedLocations = locations.map(location => {
+          location.identity = location.id;
+
+          return location;
+        })
+
         dispatch({
           type: 'FETCH_USER_LOCATIONS_SUCCESS',
           payload: locations
@@ -17,7 +23,8 @@ export function getUserLocations(userId) {
           const lat = location.lat;
           const lng = location.lng;
           const range = 500;
-          dispatch(fetchPoliceReports(lat, lng, range));
+          const identity = location.identity;
+          dispatch(fetchPoliceReports(lat, lng, range, identity));
         }
       })
       .catch((err) => {

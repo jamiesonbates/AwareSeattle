@@ -36,11 +36,13 @@ class NewLocation extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
+    const length = this.props.localLocations.length;
+
     const locationName = this.state.locationName;
     const lat = this.state.lat;
     const lng = this.state.lng;
 
-    this.props.dispatch(addLocalLocation(locationName, lat, lng))
+    this.props.dispatch(addLocalLocation(locationName, lat, lng, length))
   }
 
   render() {
@@ -66,4 +68,10 @@ class NewLocation extends Component {
   }
 }
 
-export default NewLocation;
+const mapStateToProps = function(store) {
+  return {
+    localLocations: store.localLocations.localLocations
+  }
+}
+
+export default connect(mapStateToProps)(NewLocation);

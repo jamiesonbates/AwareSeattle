@@ -13,6 +13,6 @@ export function addLocalLocation(locationName, lat, lng, length) {
       payload: location
     })
 
-    dispatch(fetchPoliceReports(lat, lng, 500));
+    dispatch(fetchPoliceReports(lat, lng, 500, location.identity));
   }
 }

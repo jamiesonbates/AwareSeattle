@@ -2,7 +2,17 @@
   height: 100vh;
 }
 
-.Dashboard-Map {
+.Dashboard-main-container {
   height: 80vh;
+  display: flex;
+}
+
+.Dashboard-map-container {
+  height: 100%;
   width: 75vw;
+}
+
+.Dashboard-tools-container {
+  height: 100%;
+  width: 25vw;
 }

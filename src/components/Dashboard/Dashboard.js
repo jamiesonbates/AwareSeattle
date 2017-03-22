@@ -39,12 +39,17 @@ class Dashboard extends Component {
           <Nav />
         </div>
 
-        <Map
-          reports={this.props.policeReports}
-          mergedReports={this.props.mergedReports}
-          className="Dashboard-Map"
-        />
-        <NewLocation {...this.props}/>
+        <div className="Dashboard-main-container">
+          <div className="Dashboard-map-container">
+            <Map
+              reports={this.props.policeReports}
+              mergedReports={this.props.mergedReports}
+            />
+          </div>
+          <div className="Dashboard-tools-container">
+            <NewLocation {...this.props}/>
+          </div>
+        </div>
       </div>
     )
   }

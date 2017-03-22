@@ -19,11 +19,17 @@ export default function reducer(state={
 
       nextReports[`'${action.identity}'`] = action.payload;
 
-      const nextMergedReports = [];
+      const reportsAsArray = [];
 
       for (const identity in nextReports) {
-        nextMergedReports.push(nextReports[identity]);
+        reportsAsArray.push(nextReports[identity]);
       }
+      
+      const nextMergedReports = reportsAsArray.reduce((acc, report) => {
+        acc = acc.concat(report);
+
+        return acc;
+      }, []);
 
       return {
         ...state,

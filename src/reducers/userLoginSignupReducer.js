@@ -2,7 +2,7 @@ export default function reducer(state={
   userId: null,
   username: null,
   email: null,
-  isAuthenticated: false;
+  isAuthenticated: false
 }, action) {
 
   switch(action.type) {

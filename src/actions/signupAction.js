@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 
+import { authenticateUser } from './authenticateAction';
+
 export function signupNewUser(username, email, password) {
   return function(dispatch) {
     axios.post('/api/users', {
@@ -13,6 +15,9 @@ export function signupNewUser(username, email, password) {
         type: 'USER_SIGNUP_SUCCESS',
         payload: res.data
       })
+
+      dispatch(authenticateUser());
+      
       browserHistory.push('/alerts');
     })
     .catch((err) => {

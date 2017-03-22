@@ -27,7 +27,6 @@ class Dashboard extends Component {
     const lng = this.state.defaultCircle.lng;
     const range = this.state.defaultCircle.range;
 
-    this.props.dispatch(fetchPoliceReports(lat, lng, range));
     this.props.dispatch(authenticateUser());
     this.props.dispatch(fetchOffenseTypes());
   }

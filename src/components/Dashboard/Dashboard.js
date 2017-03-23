@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { fetchPoliceReports } from '../../actions/policeReportsAction';
 import { authenticateUser } from '../../actions/authenticateAction';
 import { fetchOffenseTypes } from '../../actions/offenseTypes';
+import { addLocalLocation } from '../../actions/addLocalLocationAction';
 
 import Map from '../Map/Map';
 import Nav from '../Nav/Nav';
@@ -28,9 +29,18 @@ class Dashboard extends Component {
     }
   }
   componentWillMount() {
-    const lat = this.state.defaultCircle.lat;
-    const lng = this.state.defaultCircle.lng;
-    const range = this.state.defaultCircle.range;
+    setTimeout((2000) => {
+      if (!this.props.isAuthenticated) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          const lat = position.coords.latitude;
+          const lng = position.coords.longitude;
+
+          this.props.dispatch(addLocalLocation(lat, lng, 0));
+        })
+      }
+    });
+
+
 
     this.props.dispatch(authenticateUser());
     this.props.dispatch(fetchOffenseTypes());
@@ -44,13 +54,25 @@ class Dashboard extends Component {
         </div>
 
         <div className="Dashboard-main-container">
-          <div className="Dashboard-map-container">
-            <Map
-              reports={this.props.policeReports}
-              mergedReports={this.props.mergedReports}
-            />
-            <LocationsOnMap />
+          <div className="Dashboard-features-container">
+            <div className="Dashboard-map-container">
+              <Map
+                reports={this.props.policeReports}
+                mergedReports={this.props.mergedReports}
+              />
+              <LocationsOnMap />
+            </div>
+
+            <div className="Dashboard-location-summary-container">
+              {
+                this.props.areStats ?
+                  <LocationSummary {...this.props} />
+                :
+                <h4>Waiting...</h4>
+              }
+            </div>
           </div>
+
           <div className="Dashboard-tools-container">
             <div className="Dashboard-tools-reportinfo">
               <ReportInfo report={this.props.currentReport}/>
@@ -59,19 +81,11 @@ class Dashboard extends Component {
             <div className="Dashboard-tools-newlocation">
               <NewLocation />
             </div>
-            
+
             <div className="Dashboard-tools-offensetype">
               <OffenseTypeFilter />
             </div>
           </div>
-        </div>
-        <div className="Dashboard-location-summary-container">
-          {
-            this.props.areStats ?
-              <LocationSummary {...this.props} />
-            :
-            <h4>Waiting...</h4>
-          }
         </div>
       </div>
     )
@@ -84,7 +98,8 @@ const mapStateToProps = function(store) {
     mergedReports: store.policeReports.mergedReports,
     currentReport: store.currentReport.currentReports,
     areStats: store.locations.areStats,
-    locations: store.locations
+    locations: store.locations,
+    isAuthenticated: store.user.isAuthenticated
   };
 };
 

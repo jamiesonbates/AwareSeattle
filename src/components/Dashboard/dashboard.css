@@ -12,13 +12,17 @@
 }
 
 .Dashboard-main-container {
-  height: 75vh;
   display: flex;
   background-color: #EDE9ED;
 }
 
-.Dashboard-map-container {
+.Dashboard-features-container {
   width: 65vw;
+}
+
+.Dashboard-map-container {
+  height: 75vh;
+  width: 100%;
   position: relative;
 }
 

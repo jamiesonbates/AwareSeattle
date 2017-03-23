@@ -1,6 +1,6 @@
 .ReportInfo-container {
   width: 100%;
-  border: 2px solid #B0AEAD;
+  border: 1px solid #191919;
   border-radius: 3px;
   background-color: white;
 }
@@ -8,11 +8,16 @@
 .ReportInfo-header {
   width: 100%;
   box-sizing: border-box;
-  background-color: #B0AEAD;
+  background-color: #191919;
   padding: 5px;
   padding-left: 10px;
   border-bottom: 1px solid #D9D6D5;
 
+}
+
+.ReportInfo-header h3 {
+  color: white;
+  font-weight: 700;
 }
 
 .ReportInfo-body-container {

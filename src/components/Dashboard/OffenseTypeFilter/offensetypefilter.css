@@ -1,15 +1,21 @@
 .OffenseTypeFilter-container {
   width: 100%;
-  border: 2px solid #B0AEAD;
+  border: 1px solid #191919;
   border-radius: 3px;
   background-color: white;
 }
 
 .OffenseTypeFilter-header {
-  background-color: #B0AEAD;
+  background-color: #191919;
   padding: 5px;
   padding-left: 10px;
   border-bottom: 1px solid #D9D6D5;
+}
+
+.OffenseTypeFilter-header h3 {
+  color: white;
+  font-weight: 700;
+  margin: 0;
 }
 
 .OffenseTypeFilter-container h3 {

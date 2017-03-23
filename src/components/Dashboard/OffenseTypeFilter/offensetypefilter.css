@@ -1,10 +1,22 @@
 .OffenseTypeFilter-container {
-  height: 100%;
   width: 100%;
+  border: 1px solid #D9D6D5;
+  border-radius: 3px;
+}
+
+.OffenseTypeFilter-header {
+  background-color: #B0AEAD;
+  padding: 5px;
+  padding-left: 10px;
+  border-bottom: 1px solid #D9D6D5;
 }
 
 .OffenseTypeFilter-container h3 {
   margin: 0;
+}
+
+.OffenseTypeFilter-btns {
+  padding: 10px;
 }
 
 .OffenseTypeFilter-btn-pressed {
@@ -27,4 +39,8 @@
 .OffenseTypeFilter-btn:hover {
   color: white;
   cursor: pointer;
+}
+
+.OffenseTypeFilter-btn:focus {
+  outline: 0;
 }

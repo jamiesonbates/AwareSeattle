@@ -4,6 +4,8 @@ import { GoogleMapLoader, GoogleMap, Marker, Circle } from 'react-google-maps';
 
 import { setCurrentReport } from '../../actions/currentReportAction';
 
+import MapStyles from './mapStyles';
+
 class Map extends Component {
   constructor() {
     super();
@@ -27,6 +29,7 @@ class Map extends Component {
           }
           googleMapElement={
             <GoogleMap
+              defaultOptions={{styles: MapStyles}}
               zoom={this.props.mapDetails.mapZoom}
               center={this.props.mapDetails.mapCenter}
               >

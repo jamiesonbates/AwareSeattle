@@ -1,0 +1,62 @@
+.LocationSummary-container {
+  height: 100%;
+  width: 100%;
+}
+
+.LocationSummary-stats-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.LocationSummary-stats-container h5, .LocationSummary-stats-container p {
+  margin: 0;
+}
+
+.LocationSummary-stats-header {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.LocationSummary-stats-header h4 {
+  margin: 0;
+  font-size: 1.4em;
+  font-family: 'News Cycle';
+  font-weight: 700;
+}
+
+.LocationSummary-stats {
+  height: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.LocationSummary-single-stat-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  min-width: 175px;
+  background-color: white;
+}
+
+.LocationSummary-single-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.LocationSummary-single-stat h5 {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.LocationSummary-single-stat p {
+  font-size: 1.5em;
+}

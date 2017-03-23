@@ -31,26 +31,31 @@ class OffenseTypeFilter extends Component {
   render() {
     return (
       <div className="OffenseTypeFilter-container">
-        <h3>Filter by Crime</h3>
-        {
-          this.props.offenseTypes.map((offense, i) => {
-            const style = {
-              backgroundColor: offense.color
-            }
+        <div className="OffenseTypeFilter-header">
+          <h3>Filter by Crime</h3>
+        </div>
 
-            const offenseId = offense.id;
+        <div className="OffenseTypeFilter-btns">
+          {
+            this.props.offenseTypes.map((offense, i) => {
+              const style = {
+                backgroundColor: offense.color
+              }
 
-            return (
-            <button
-              key={i}
-              style={style}
-              onClick={(e) => this.handleOffenseSelection(offenseId, e)}
-              className="OffenseTypeFilter-btn">
-              {offense.offense_name}
-            </button>
-            )
-          })
-        }
+              const offenseId = offense.id;
+
+              return (
+              <button
+                key={i}
+                style={style}
+                onClick={(e) => this.handleOffenseSelection(offenseId, e)}
+                className="OffenseTypeFilter-btn">
+                {offense.offense_name}
+              </button>
+              )
+            })
+          }
+        </div>
       </div>
     )
   }

@@ -38,16 +38,20 @@ class NewLocation extends Component {
 
   render() {
     return (
-      <div>
-        <h3>Create a Location to See Crime Nearby</h3>
+      <div className="NewLocation-container">
+        <div className="NewLocation-header">
+          <h3>Create a Location to See Crime Nearby</h3>
+        </div>
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <div>
-            <Geosuggest
-              ref={el => this.geoSuggest = el}
-              onSuggestSelect={(place) => this.updatePlace(place)}
-              placeholder={'Enter an address or place'}/>
-          </div>
-          <button onClick={() => this.geoSuggest.clear()}>Create Location</button>
+          <Geosuggest
+            ref={el => this.geoSuggest = el}
+            onSuggestSelect={(place) => this.updatePlace(place)}
+            placeholder={'Enter an address or place'}/>
+          <button
+            onClick={() => this.geoSuggest.clear()}
+            className="NewLocation-btn">
+            Create Location
+          </button>
         </form>
       </div>
     )

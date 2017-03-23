@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=News+Cycle:400,700');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+
 .Dashboard-container {
   height: 100vh;
+  font-family: 'News Cycle';
 }
 
 .Dashboard-nav-container {
@@ -8,39 +12,31 @@
 }
 
 .Dashboard-main-container {
-  height: 80vh;
+  height: 75vh;
   display: flex;
 }
 
 .Dashboard-map-container {
-  height: 100%;
-  width: 70vw;
+  width: 65vw;
   position: relative;
 }
 
 .Dashboard-tools-container {
-  height: 100%;
-  width: 30vw;
+  width: 35vw;
   padding: 10px;
   box-sizing: border-box;
 }
 
 .Dashboard-tools-newlocation {
-  height: 30%;
   width: 100%;
+  margin-bottom: 2%;
 }
-
-.Dashboard-tools-container h2 {
-  margin: 0;
-}
-
 .Dashboard-tools-offensetype {
-  height: 35%;
   width: 100%;
+  margin-bottom: 2%;
 }
 
 .Dashboard-tools-reportinfo {
-  height: 35%;
   width: 100%;
 }
 
@@ -49,6 +45,9 @@
 }
 
 .Dashboard-location-summary-container {
-  height: 12vh;
-  width: 100vw;
+  /*height: 30vh;*/
+  min-height: 17vh;
+  width: 65vw;
+  padding: 10px;
+  box-sizing: border-box;
 }

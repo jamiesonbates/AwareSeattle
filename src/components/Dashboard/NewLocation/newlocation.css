@@ -1,7 +1,8 @@
 .NewLocation-container {
   width: 100%;
-  border: 1px solid #D9D6D5;
+  border: 2px solid #B0AEAD;
   border-radius: 3px;
+  background-color: white;
 }
 
 .NewLocation-header {

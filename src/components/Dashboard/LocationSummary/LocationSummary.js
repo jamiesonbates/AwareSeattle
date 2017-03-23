@@ -8,6 +8,9 @@ function LocationSummary(props) {
 
   return (
     <div className="LocationSummary-container">
+      <div>
+        <h4></h4>
+      </div>
       {
         areLocations ?
           locationIsSelected ?

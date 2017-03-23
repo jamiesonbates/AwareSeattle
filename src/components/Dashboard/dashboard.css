@@ -14,6 +14,7 @@
 .Dashboard-main-container {
   height: 75vh;
   display: flex;
+  background-color: #EDE9ED;
 }
 
 .Dashboard-map-container {
@@ -33,11 +34,11 @@
 }
 .Dashboard-tools-offensetype {
   width: 100%;
-  margin-bottom: 2%;
 }
 
 .Dashboard-tools-reportinfo {
   width: 100%;
+  margin-bottom: 2%;
 }
 
 .Dashboard-tools-reportinfo h4, .Dashboard-tools-reportinfo p, .Dashboard-tools-reportinfo h3 {

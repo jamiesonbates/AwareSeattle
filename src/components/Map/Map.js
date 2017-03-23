@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { GoogleMapLoader, GoogleMap, Marker, Circle } from 'react-google-maps';
+import { GoogleMapLoader, GoogleMap, Marker, Circle, InfoWindow } from 'react-google-maps';
 
 import { setCurrentReport } from '../../actions/currentReportAction';
 

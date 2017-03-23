@@ -1,0 +1,41 @@
+.ReportInfo-container {
+  width: 100%;
+  border: 2px solid #B0AEAD;
+  border-radius: 3px;
+  background-color: white;
+}
+
+.ReportInfo-header {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #B0AEAD;
+  padding: 5px;
+  padding-left: 10px;
+  border-bottom: 1px solid #D9D6D5;
+
+}
+
+.ReportInfo-body-container {
+  width: 100%;
+  padding: 10px;
+  box-sizing:   border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+}
+
+.ReportInfo-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.ReportInfo-stat {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

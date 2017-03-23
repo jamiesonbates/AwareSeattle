@@ -52,14 +52,16 @@ class Dashboard extends Component {
             <LocationsOnMap />
           </div>
           <div className="Dashboard-tools-container">
+            <div className="Dashboard-tools-reportinfo">
+              <ReportInfo report={this.props.currentReport}/>
+            </div>
+
             <div className="Dashboard-tools-newlocation">
               <NewLocation />
             </div>
+            
             <div className="Dashboard-tools-offensetype">
               <OffenseTypeFilter />
-            </div>
-            <div className="Dashboard-tools-reportinfo">
-              <ReportInfo report={this.props.currentReport}/>
             </div>
           </div>
         </div>

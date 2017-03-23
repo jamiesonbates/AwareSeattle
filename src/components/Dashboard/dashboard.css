@@ -21,6 +21,8 @@
 .Dashboard-tools-container {
   height: 100%;
   width: 30vw;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .Dashboard-tools-newlocation {
@@ -35,8 +37,6 @@
 .Dashboard-tools-offensetype {
   height: 35%;
   width: 100%;
-  box-sizing: border-box;
-  padding: 10px;
 }
 
 .Dashboard-tools-reportinfo {

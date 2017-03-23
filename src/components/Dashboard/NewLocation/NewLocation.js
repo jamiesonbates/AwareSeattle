@@ -43,10 +43,11 @@ class NewLocation extends Component {
         <form onSubmit={this.handleSubmit.bind(this)}>
           <div>
             <Geosuggest
+              ref={el => this.geoSuggest = el}
               onSuggestSelect={(place) => this.updatePlace(place)}
               placeholder={'Enter an address or place'}/>
           </div>
-          <button>Create Location</button>
+          <button onClick={() => this.geoSuggest.clear()}>Create Location</button>
         </form>
       </div>
     )

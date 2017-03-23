@@ -5,7 +5,6 @@ import user from './userLoginSignupReducer';
 import alerts from './alertsReducer';
 import locations from './userLocationsReducer';
 import offenseTypes from './offenseTypes';
-import localLocations from './addLocalLocationReducer';
 import currentReport from './currentReportReducer';
 import mapDetails from './mapDetailsReducer';
 import offenseFilter from './filterByOffensesReducer';
@@ -16,7 +15,6 @@ export default combineReducers({
   alerts,
   locations,
   offenseTypes,
-  localLocations,
   currentReport,
   mapDetails,
   offenseFilter

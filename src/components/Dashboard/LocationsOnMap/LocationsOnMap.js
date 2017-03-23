@@ -19,26 +19,10 @@ class LocationsOnMap extends Component {
   }
 
   render() {
-    const newLocalLocations = this.props.localLocations.map(location => {
-      location.isLocal = true;
-
-      return location;
-    })
-
-    const newLocations = this.props.locations.map(location => {
-      location.isLocal = false;
-
-      return location;
-    })
-
-    const allLocations = newLocalLocations.concat(newLocations);
-
-    console.log('allLocations', allLocations);
-
     return (
       <div className="LocationsOnMap-container">
         {
-          allLocations.map((location, i) => (
+          this.props.locations.combinedLocations.map((location, i) => (
             <button
               key={i}
               onClick={() => this.handleLocationClick(16, { lat: location.lat, lng: location.lng })}
@@ -54,8 +38,7 @@ class LocationsOnMap extends Component {
 
 const mapStateToProps = function(store) {
   return {
-    locations: store.locations.locations,
-    localLocations: store.localLocations.localLocations
+    locations: store.locations,
   }
 }
 

@@ -70,7 +70,7 @@ class NewLocation extends Component {
 
 const mapStateToProps = function(store) {
   return {
-    localLocations: store.localLocations.localLocations
+    localLocations: store.locations.localLocations
   }
 }
 

@@ -31,7 +31,7 @@ class Map extends Component {
               center={this.props.mapDetails.mapCenter}
               >
                 {
-                  this.props.userLocations.map((location, i) => {
+                  this.props.locations.combinedLocations.map((location, i) => {
                     const position = {
                       lat: parseFloat(location.lat),
                       lng: parseFloat(location.lng)
@@ -97,7 +97,7 @@ class Map extends Component {
 
 const mapStateToProps = function(store) {
   return {
-    userLocations: store.locations.locations,
+    locations: store.locations,
     reports: store.policeReports.reports,
     mergedReports: store.policeReports.mergedReports,
     offenseTypes: store.offenseTypes.offenseTypes,

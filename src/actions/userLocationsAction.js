@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import { fetchPoliceReports } from './policeReportsAction';
+import { combineLocations } from './combineLocationsAction';
 
 export function getUserLocations(userId) {
   return function(dispatch) {
@@ -18,6 +19,8 @@ export function getUserLocations(userId) {
           type: 'FETCH_USER_LOCATIONS_SUCCESS',
           payload: locations
         })
+
+        dispatch(combineLocations());
 
         for (const location of locations) {
           const lat = location.lat;

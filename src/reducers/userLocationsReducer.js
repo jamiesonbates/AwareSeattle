@@ -1,17 +1,28 @@
 export default function reducer(state={
-  locations: []
+  userLocations: [],
+  localLocations: [],
+  combinedLocations: []
 }, action) {
 
   switch(action.type) {
     case 'FETCH_USER_LOCATIONS_SUCCESS':
-    console.log(action.payload);
       return {
         ...state,
-        locations: action.payload
+        userLocations: action.payload
       }
     case 'FETCH_USER_LOCATIONS_FAILURE':
       return {
         ...state
+      }
+    case 'CREATE_LOCAL_LOCATION':
+      return {
+        ...state,
+        localLocations: action.payload
+      }
+    case 'COMBINE_LOCATIONS':
+      return {
+        ...state,
+        combinedLocations: action.payload
       }
   }
 

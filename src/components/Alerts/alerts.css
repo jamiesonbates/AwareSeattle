@@ -4,6 +4,7 @@
 .Alerts-container {
   display: flex;
   align-items: flex-start;
+  background-color: #EDE9ED;
 }
 
 .Alerts-wrapper {
@@ -11,10 +12,12 @@
 }
 
 .Alerts-location-container {
-  border: 1px solid black;
+  border: 1px solid #2B2B2B;
+  background-color: white;
   border-radius: 3px;
   margin-left: 1.5%;
   margin-right: 1%;
+  margin-top: 2.5%;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -23,11 +26,11 @@
 
 .Alerts-location-title, .Alerts-list-title {
   width: 100%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #2B2B2B;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #191919;
+  background-color: #2B2B2B;
 }
 
 .Alerts-location-title h2, .Alerts-list-title h2 {
@@ -47,9 +50,11 @@
 }
 
 .Alerts-list-container {
-  border: 1px solid black;
+  border: 1px solid #2B2B2B;
+  background-color: white;
   margin-left: 1%;
   margin-right: 1.5%;
+  margin-top: 2.5%;
   display: flex;
   flex-direction: column;
   align-items: center;

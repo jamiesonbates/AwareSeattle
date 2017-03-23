@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=News+Cycle:400,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif');
 
 .Dashboard-container {
   height: 100vh;
-  font-family: 'News Cycle';
+  font-family: 'Raleway';
 }
 
 .Dashboard-nav-container {
@@ -24,9 +25,8 @@
   height: 75vh;
   width: 100%;
   position: relative;
-  border-right: 3px solid #4C4B4C;
-  border-bottom: 3px solid #4C4B4C;
-  border-bottom-right-radius: 3px;
+  border-right: 1px solid #4C4B4C;
+  border-bottom: 1px solid #4C4B4C;
 }
 
 .Dashboard-tools-container {

@@ -20,18 +20,33 @@ function Nav(props) {
         {
           props.isAuthenticated ?
             onDashboard ?
-              <NavHelper linkTo={'/Alerts'} name="Alerts" />
+              <NavHelper
+                linkTo={'/Alerts'}
+                name="Alerts"
+                class="Nav-Alerts-btn"/>
             :
               onAlerts ?
-                <NavHelper linkTo={'/'} name="Dashboard" />
+                <NavHelper
+                  linkTo={'/'}
+                  name="Dashboard"
+                  class="Nav-Dashboard-btn"/>
               :
                 onLogin ?
-                  <NavHelper linkTo={'/signup'} name="Sign Up" />
+                  <NavHelper
+                    linkTo={'/signup'}
+                    name="Sign Up"
+                    class="Nav-Signup-btn"/>
                 :
                   onSignup ?
-                    <NavHelper linkTo={'/login'} name="Login" />
+                    <NavHelper
+                      linkTo={'/login'}
+                      name="Login"
+                      class="Nav-Login-btn"/>
                   :
-                    <NavHelper linkTo={'/'} name="Dashboard" />
+                    <NavHelper
+                      linkTo={'/'}
+                      name="Dashboard"
+                      class="Nav-Dashboard-btn"/>
           :
             <div className="Nav-btns">
               <NavHelper linkTo={'/login'} name="Login" />

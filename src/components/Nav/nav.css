@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  background-color: black;
+  background-color: #2B2B2B;
 }
 
 .Nav-title {
@@ -23,10 +23,46 @@
 }
 
 .Nav-btn {
-  padding: 8px;
-  background-color: white;
+  padding: 8px 15px;
+  background-color: #CC3527;
   border-radius: 5px;
   border: 1px solid black;
   font-size: 20px;
   margin-right: 10px;
+}
+
+.Nav-btn:hover {
+  cursor: pointer;
+}
+
+.Nav-Alerts-btn {
+  background-color: #CC3527;
+}
+
+.Nav-Alerts-btn:hover {
+  background-color: #A32A1F;
+}
+
+.Nav-Dashboard-btn {
+  background-color: #313DE3;
+}
+
+.Nav-Dashboard-btn:hover {
+  background-color: #202896;
+}
+
+.Nav-Login-btn {
+  background-color: #FADE28;
+}
+
+.Nav-Login-btn:hover {
+  background-color: #CCB521;
+}
+
+.Nav-Signup-btn {
+  background-color: #25D63C;
+}
+
+.Nav-Signup-btn:hover {
+  background-color: #1EAD31;
 }

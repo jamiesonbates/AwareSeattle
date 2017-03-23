@@ -8,5 +8,32 @@
 }
 
 .LocationsOnMap-btn {
-  
+  border: none;
+  margin-top: 5%;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  padding: 9px 15px;
+  background-color: #454545;
+  border-radius: 5px;
+  line-height: 75%;
+  font-size: 1em;
+  font-family: 'Bree Serif';
+  color: white;
+}
+
+.LocationsOnMap-btn:hover {
+  background-color: #1C1C1C;
+  cursor: pointer;
+}
+
+.LocationsOnMap-btn:focus {
+  outline: 0;
+}
+
+.LocationsOnMap-btn-selected {
+  background-color: #2BBA3F;
+}
+
+.LocationsOnMap-btn-selected:hover {
+  background-color: #2BBA3F;
 }

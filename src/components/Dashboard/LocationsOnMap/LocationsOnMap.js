@@ -14,7 +14,18 @@ class LocationsOnMap extends Component {
     this.handleLocationClick = this.handleLocationClick.bind(this);;
   }
 
-  handleLocationClick(zoom, coords, identity) {
+  handleLocationClick(zoom, coords, identity, e) {
+    const buttons = document.querySelectorAll('.LocationsOnMap-btn');
+
+    buttons.forEach((button) => {
+      if (button === e.target) {
+        e.target.classList.add('LocationsOnMap-btn-selected');
+      }
+      else {
+        button.classList.remove('LocationsOnMap-btn-selected');
+      }
+    });
+
     this.props.dispatch(setMapZoom(zoom));
     this.props.dispatch(setMapCenter(coords));
     this.props.dispatch(setSelectedLocation(identity))
@@ -27,7 +38,7 @@ class LocationsOnMap extends Component {
           this.props.locations.combinedLocations.map((location, i) => (
             <button
               key={i}
-              onClick={() => this.handleLocationClick(16, { lat: location.lat, lng: location.lng }, location.identity)}
+              onClick={(e) => this.handleLocationClick(16, { lat: location.lat, lng: location.lng }, location.identity, e)}
               className="LocationsOnMap-btn">
               {location.location_title}
             </button>

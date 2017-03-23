@@ -5,7 +5,7 @@ export default function reducer(state={
   locationStats: {},
   areStats: false,
   areLocations: false,
-  selectedLocation: '',
+  selectedLocation: {},
   locationIsSelected: false
 }, action) {
 

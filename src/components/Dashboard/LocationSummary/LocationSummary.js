@@ -3,12 +3,8 @@ import React from 'react';
 import './locationsummary.css';
 
 function LocationSummary(props) {
-  console.log(props);
-  const locationStats = props.locations.locationStats;
-  const identity = props.locations.selectedLocation;
-  const selectedLocation = locationStats[identity];
-  const areLocations = props.locations.areLocations;
   const locationIsSelected = props.locations.locationIsSelected;
+  const areLocations = props.locations.areLocations;
 
   return (
     <div>
@@ -16,7 +12,21 @@ function LocationSummary(props) {
         areLocations ?
           locationIsSelected ?
             <div>
-              <h4>These stats detail crimes that occured near your {selectedLocation.name}</h4>
+              <h4>These stats detail crimes that occured near your {props.locations.selectedLocation.name} location within 500 meters in the last month</h4>
+              <div>
+                <div>
+                  <h5>Total Crimes</h5>
+                  <p>{props.locations.selectedLocation.totalCrimes}</p>
+                </div>
+                {
+                  props.locations.selectedLocation.offenseBreakdown.map((offense, i) => (
+                    <div key={i}>
+                      <h5>{offense.title}</h5>
+                      <p>{offense.totalOffenses}</p>
+                    </div>
+                  ))
+                }
+              </div>
             </div>
           :
           <h4>Select a location to see statistics about crime nearby</h4>

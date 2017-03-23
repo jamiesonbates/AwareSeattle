@@ -3,7 +3,8 @@ export default function reducer(state={
   localLocations: [],
   combinedLocations: [],
   locationStats: {},
-  areLocations: false
+  areLocations: false,
+  selectedLocation: ''
 }, action) {
 
   switch(action.type) {
@@ -35,6 +36,12 @@ export default function reducer(state={
       return {
         ...state,
         locationStats: action.payload
+      }
+    case 'SET_SELECTED_LOCATION':
+      return {
+        ...state,
+        selectedLocation: action.payload
+
       }
   }
 

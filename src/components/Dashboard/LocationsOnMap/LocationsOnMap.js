@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { setMapZoom } from '../../../actions/mapZoomAction';
 import { setMapCenter } from '../../../actions/mapCenterAction';
-import { setSelectLocation } from '../../../actions/setSelectedLocation';
+import { setSelectedLocation } from '../../../actions/setSelectedLocationAction';
 
 import './locationsonmap.css';
 
@@ -14,10 +14,10 @@ class LocationsOnMap extends Component {
     this.handleLocationClick = this.handleLocationClick.bind(this);;
   }
 
-  handleLocationClick(zoom, location) {
+  handleLocationClick(zoom, coords, identity) {
     this.props.dispatch(setMapZoom(zoom));
-    this.props.dispatch(setMapCenter(location));
-    this.props.dispatch()
+    this.props.dispatch(setMapCenter(coords));
+    this.props.dispatch(setSelectedLocation(identity))
   }
 
   render() {
@@ -27,7 +27,7 @@ class LocationsOnMap extends Component {
           this.props.locations.combinedLocations.map((location, i) => (
             <button
               key={i}
-              onClick={() => this.handleLocationClick(16, { lat: location.lat, lng: location.lng })}
+              onClick={() => this.handleLocationClick(16, { lat: location.lat, lng: location.lng }, location.identity)}
               className="LocationsOnMap-btn">
               {location.location_title}
             </button>

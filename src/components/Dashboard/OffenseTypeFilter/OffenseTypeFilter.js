@@ -30,7 +30,8 @@ class OffenseTypeFilter extends Component {
 
   render() {
     return (
-      <div>
+      <div className="OffenseTypeFilter-container">
+        <h3>Filter by Crime</h3>
         {
           this.props.offenseTypes.map((offense, i) => {
             const style = {
@@ -43,7 +44,8 @@ class OffenseTypeFilter extends Component {
             <button
               key={i}
               style={style}
-              onClick={(e) => this.handleOffenseSelection(offenseId, e)}>
+              onClick={(e) => this.handleOffenseSelection(offenseId, e)}
+              className="OffenseTypeFilter-btn">
               {offense.offense_name}
             </button>
             )

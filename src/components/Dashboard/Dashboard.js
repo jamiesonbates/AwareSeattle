@@ -39,7 +39,7 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="Dashboard-container">
-        <div>
+        <div className="Dashboard-nav-container">
           <Nav />
         </div>
 
@@ -52,17 +52,25 @@ class Dashboard extends Component {
             <LocationsOnMap />
           </div>
           <div className="Dashboard-tools-container">
-            <NewLocation />
-            <OffenseTypeFilter />
-            <ReportInfo report={this.props.currentReport}/>
+            <div className="Dashboard-tools-newlocation">
+              <NewLocation />
+            </div>
+            <div className="Dashboard-tools-offensetype">
+              <OffenseTypeFilter />
+            </div>
+            <div className="Dashboard-tools-reportinfo">
+              <ReportInfo report={this.props.currentReport}/>
+            </div>
           </div>
         </div>
-        {
-          this.props.areStats ?
-            <LocationSummary {...this.props} />
-          :
-          <h4>Waiting...</h4>
-        }
+        <div className="Dashboard-location-summary-container">
+          {
+            this.props.areStats ?
+              <LocationSummary {...this.props} />
+            :
+            <h4>Waiting...</h4>
+          }
+        </div>
       </div>
     )
   }

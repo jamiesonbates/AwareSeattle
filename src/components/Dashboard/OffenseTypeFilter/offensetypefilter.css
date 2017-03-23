@@ -1,3 +1,30 @@
+.OffenseTypeFilter-container {
+  height: 100%;
+  width: 100%;
+}
+
+.OffenseTypeFilter-container h3 {
+  margin: 0;
+}
+
 .OffenseTypeFilter-btn-pressed {
   opacity: 0.5;
+}
+
+.OffenseTypeFilter-btn {
+  margin-top: 1%;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  border: 1px solid #BEC2BE;
+  padding: 10px 6px;
+  background-color: #E9EDE9;
+  border-radius: 5px;
+  line-height: 75%;
+  font-size: 1em;
+  font-family: 'Bree Serif';
+}
+
+.OffenseTypeFilter-btn:hover {
+  color: white;
+  cursor: pointer;
 }

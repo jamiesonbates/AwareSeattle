@@ -17,7 +17,6 @@ class NewLocation extends Component {
     }
 
     this.updatePlace = this.updatePlace.bind(this);
-    this.handleNameChange = this.handleNameChange.bind(this);
   }
 
   updatePlace(place) {
@@ -27,41 +26,27 @@ class NewLocation extends Component {
     })
   }
 
-  handleNameChange(e) {
-    this.setState({
-      locationName: e.target.value
-    })
-  }
-
   handleSubmit(e) {
     e.preventDefault();
 
     const length = this.props.localLocations.length;
-
-    const locationName = this.state.locationName;
     const lat = this.state.lat;
     const lng = this.state.lng;
 
-    this.props.dispatch(addLocalLocation(locationName, lat, lng, length))
+    this.props.dispatch(addLocalLocation(lat, lng, length))
   }
 
   render() {
     return (
       <div>
-        <h2>Add a Location to the Map</h2>
+        <h3>Create a Location to See Crime Nearby</h3>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <div>
-            <Geosuggest onSuggestSelect={(place) => this.updatePlace(place)} />
+            <Geosuggest
+              onSuggestSelect={(place) => this.updatePlace(place)}
+              placeholder={'Enter an address or place'}/>
           </div>
-
-          <div>
-            <input
-              type="text"
-              value={this.state.locationName}
-              onChange={this.handleNameChange}/>
-          </div>
-
-          <button>Add Location</button>
+          <button>Create Location</button>
         </form>
       </div>
     )

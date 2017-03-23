@@ -2,6 +2,11 @@
   height: 100vh;
 }
 
+.Dashboard-nav-container {
+  height: 8vh;
+  width: 100vw;
+}
+
 .Dashboard-main-container {
   height: 80vh;
   display: flex;
@@ -16,4 +21,34 @@
 .Dashboard-tools-container {
   height: 100%;
   width: 30vw;
+}
+
+.Dashboard-tools-newlocation {
+  height: 30%;
+  width: 100%;
+}
+
+.Dashboard-tools-container h2 {
+  margin: 0;
+}
+
+.Dashboard-tools-offensetype {
+  height: 35%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.Dashboard-tools-reportinfo {
+  height: 35%;
+  width: 100%;
+}
+
+.Dashboard-tools-reportinfo h4, .Dashboard-tools-reportinfo p, .Dashboard-tools-reportinfo h3 {
+  margin: 0;
+}
+
+.Dashboard-location-summary-container {
+  height: 12vh;
+  width: 100vw;
 }

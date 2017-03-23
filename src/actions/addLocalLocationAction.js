@@ -2,9 +2,9 @@ import { fetchPoliceReports } from './policeReportsAction';
 
 import { combineLocations } from './combineLocationsAction';
 
-export function addLocalLocation(locationName, lat, lng, length) {
+export function addLocalLocation(lat, lng, length) {
   const location = {
-    location_title: locationName,
+    location_title: `temp${length + 1}`,
     lat,
     lng,
     identity: `temp${length + 1}`

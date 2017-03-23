@@ -17,32 +17,37 @@
 }
 
 .Dashboard-features-container {
-  width: 65vw;
+  width: 63vw;
 }
 
 .Dashboard-map-container {
   height: 75vh;
   width: 100%;
   position: relative;
+  border-right: 3px solid #4C4B4C;
+  border-bottom: 3px solid #4C4B4C;
+  border-bottom-right-radius: 3px;
 }
 
 .Dashboard-tools-container {
-  width: 35vw;
-  padding: 10px;
+  width: 37vw;
+  padding: 20px;
   box-sizing: border-box;
 }
 
 .Dashboard-tools-newlocation {
   width: 100%;
-  margin-bottom: 2%;
-}
-.Dashboard-tools-offensetype {
-  width: 100%;
+  margin-bottom: 3%;
 }
 
 .Dashboard-tools-reportinfo {
   width: 100%;
-  margin-bottom: 2%;
+  margin-bottom: 3%;
+}
+
+.Dashboard-tools-offensetype {
+  width: 100%;
+  margin-bottom: 3%;
 }
 
 .Dashboard-tools-reportinfo h4, .Dashboard-tools-reportinfo p, .Dashboard-tools-reportinfo h3 {
@@ -52,7 +57,7 @@
 .Dashboard-location-summary-container {
   /*height: 30vh;*/
   min-height: 17vh;
-  width: 65vw;
+  width: 100%;
   padding: 10px;
   box-sizing: border-box;
 }

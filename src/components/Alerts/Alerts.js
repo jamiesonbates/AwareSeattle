@@ -5,6 +5,7 @@ import { Link } from 'react-router';
 import { getAlerts } from '../../actions/alertsAction';
 import { deleteLocation } from '../../actions/deleteLocationAction';
 import { deleteAlert } from '../../actions/deleteAlertAction';
+import { authenticateUser } from '../../actions/authenticateAction';
 
 import LocationList from './Locations/LocationList';
 import AlertsList from './AlertsList/AlertsList';
@@ -16,7 +17,16 @@ import './alerts.css';
 
 class Alerts extends Component {
   componentWillMount() {
-    this.props.dispatch(getAlerts(this.props.userId))
+    console.log(this.props);
+    console.log(this.props.isAuthenticated);
+    console.log(this.props.userId);
+    this.props.dispatch(getAlerts(this.props.userId));
+
+    setTimeout(() => {
+      if (!this.props.isAuthenticated) {
+        this.props.dispatch(authenticateUser());
+      }
+    }, 1000)
   }
 
   deleteLocation(location_id) {
@@ -32,29 +42,17 @@ class Alerts extends Component {
   }
 
   render() {
-    let areLocations = false;
-
-    if (this.props.locations.userLocations.length) {
-      areLocations = true;
-    }
-
-    let areAlerts = false;
-
-    if (this.props.alerts.length) {
-      areAlerts = true;
-    }
-
     console.log(this.props);
     return (
       <div>
-        <Nav />
+        <Nav {...this.props}/>
         <div className="Alerts-container">
           <div className="Alerts-location-container">
             <div className="Alerts-location-title">
               <h2>Locations</h2>
             </div>
             {
-              areLocations ?
+              this.props.areLocations ?
                 <div className="Alerts-wrapper">
                   <AddLocation {...this.props} />
                   <LocationList
@@ -71,7 +69,7 @@ class Alerts extends Component {
               <h2>Alerts</h2>
             </div>
             {
-              areAlerts ?
+              this.props.hasAlerts ?
                 <div className="Alerts-wrapper">
                   <AddAlert />
                   <AlertsList
@@ -91,10 +89,13 @@ class Alerts extends Component {
 
 const mapStateToProps = function(store) {
   return {
-    locations: store.locations,
+    locations: store.locations.userLocations,
     userId: store.user.userId,
+    isAuthenticated: store.user.isAuthenticated,
     alerts: store.alerts.alerts,
-    offenseTypes: store.offenseTypes.offenseTypes
+    offenseTypes: store.offenseTypes.offenseTypes,
+    areLocations: store.locations.areLocations,
+    hasAlerts: store.alerts.hasAlerts
   }
 }
 

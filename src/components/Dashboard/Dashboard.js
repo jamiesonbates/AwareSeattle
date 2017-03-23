@@ -29,7 +29,7 @@ class Dashboard extends Component {
     }
   }
   componentWillMount() {
-    setTimeout((2000) => {
+    setTimeout(() => {
       if (!this.props.isAuthenticated) {
         navigator.geolocation.getCurrentPosition((position) => {
           const lat = position.coords.latitude;
@@ -38,7 +38,7 @@ class Dashboard extends Component {
           this.props.dispatch(addLocalLocation(lat, lng, 0));
         })
       }
-    });
+    }, 2000);
 
 
 
@@ -50,7 +50,7 @@ class Dashboard extends Component {
     return (
       <div className="Dashboard-container">
         <div className="Dashboard-nav-container">
-          <Nav />
+          <Nav {...this.props}/>
         </div>
 
         <div className="Dashboard-main-container">

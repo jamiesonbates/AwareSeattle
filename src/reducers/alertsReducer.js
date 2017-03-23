@@ -1,5 +1,6 @@
 export default function reducer(state={
-  alerts: []
+  alerts: [],
+  hasAlerts: false
 }, action) {
 
   switch (action.type) {
@@ -11,6 +12,16 @@ export default function reducer(state={
     case 'FETCH_USER_ALERTS_FAILURE':
       return {
         ...state
+      }
+    case 'USER_HAS_ALERTS_SET':
+      return {
+        ...state,
+        hasAlerts: action.payload
+      }
+    case 'USER_HAS_NO_ALERTS_SET':
+      return {
+        ...state,
+        hasAlerts: action.payload
       }
   }
 

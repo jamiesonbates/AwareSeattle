@@ -1,14 +1,18 @@
 .Nav-container {
-  height: 100%;
+  height: 8vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  background-color: black;
 }
 
 .Nav-title {
-  padding: 5px
+  font-weight: 700;
+  color: white;
+  padding: 5px;
+  margin: 0;
 }
 
 .Nav-btn-container {

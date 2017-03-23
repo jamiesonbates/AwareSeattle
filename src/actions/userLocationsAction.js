@@ -20,7 +20,6 @@ export function getUserLocations(userId) {
           payload: locations
         })
 
-        dispatch(combineLocations());
 
         for (const location of locations) {
           const lat = location.lat;
@@ -29,6 +28,8 @@ export function getUserLocations(userId) {
           const identity = location.identity;
           dispatch(fetchPoliceReports(lat, lng, range, identity));
         }
+
+        dispatch(combineLocations());
       })
       .catch((err) => {
         dispatch({

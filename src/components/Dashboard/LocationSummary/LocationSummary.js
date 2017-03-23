@@ -10,7 +10,7 @@ function LocationSummary(props) {
           <h4>Select a location to see statistics about crime nearby</h4>
         :
           <div>
-            <h4>Stats</h4>
+            <h4>These stats detail crimes that occured near your</h4>
           </div>
       }
     </div>

@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import { generateMarkersList } from './generateMarkersListAction';
+import { generateStats } from './locationStatsAction';
 
 export function fetchPoliceReports(lat, lng, range, identity) {
   return function(dispatch, getState) {
@@ -16,6 +17,7 @@ export function fetchPoliceReports(lat, lng, range, identity) {
         })
 
         dispatch(generateMarkersList());
+        dispatch(generateStats());
       })
       .catch((err) => {
         dispatch({

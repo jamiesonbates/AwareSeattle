@@ -34,7 +34,7 @@ class Alerts extends Component {
   render() {
     let areLocations = false;
 
-    if (this.props.locations.length) {
+    if (this.props.locations.userLocations.length) {
       areLocations = true;
     }
 
@@ -91,7 +91,7 @@ class Alerts extends Component {
 
 const mapStateToProps = function(store) {
   return {
-    locations: store.locations.locations,
+    locations: store.locations,
     userId: store.user.userId,
     alerts: store.alerts.alerts,
     offenseTypes: store.offenseTypes.offenseTypes

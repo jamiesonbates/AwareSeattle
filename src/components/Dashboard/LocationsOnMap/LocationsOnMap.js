@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { setMapZoom } from '../../../actions/mapZoomAction';
 import { setMapCenter } from '../../../actions/mapCenterAction';
+import { setSelectLocation } from '../../../actions/setSelectedLocation';
 
 import './locationsonmap.css';
 
@@ -16,6 +17,7 @@ class LocationsOnMap extends Component {
   handleLocationClick(zoom, location) {
     this.props.dispatch(setMapZoom(zoom));
     this.props.dispatch(setMapCenter(location));
+    this.props.dispatch()
   }
 
   render() {

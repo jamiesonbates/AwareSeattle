@@ -65,7 +65,7 @@ class AddAlert extends Component {
               <select
                 name="offenseTypes" onChange={this.handleLocationChange.bind(this)}>
                 {
-                  this.props.locations.map(location => (
+                  this.props.locations.userLocations.map(location => (
                     <option
                       key={location.id}
                       value={location.id}>
@@ -117,7 +117,7 @@ class AddAlert extends Component {
 const mapStateToProps = function(store) {
   return {
     offenseTypes: store.offenseTypes.offenseTypes,
-    locations: store.locations.locations,
+    locations: store.locations,
     userId: store.user.userId
   }
 }

@@ -1,7 +1,9 @@
 export default function reducer(state={
   userLocations: [],
   localLocations: [],
-  combinedLocations: []
+  combinedLocations: [],
+  locationStats: {},
+  areLocations: false
 }, action) {
 
   switch(action.type) {
@@ -23,6 +25,16 @@ export default function reducer(state={
       return {
         ...state,
         combinedLocations: action.payload
+      }
+    case 'ARE_THERE_LOCATIONS':
+      return {
+        ...state,
+        areLocations: action.payload
+      }
+    case 'GENERATE_LOCATION_STATS':
+      return {
+        ...state,
+        locationStats: action.payload
       }
   }
 

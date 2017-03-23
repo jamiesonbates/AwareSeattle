@@ -3,8 +3,10 @@ export default function reducer(state={
   localLocations: [],
   combinedLocations: [],
   locationStats: {},
+  areStats: false,
   areLocations: false,
-  selectedLocation: ''
+  selectedLocation: '',
+  locationIsSelected: false
 }, action) {
 
   switch(action.type) {
@@ -35,13 +37,14 @@ export default function reducer(state={
     case 'GENERATE_LOCATION_STATS':
       return {
         ...state,
-        locationStats: action.payload
+        locationStats: action.payload,
+        areStats: true
       }
     case 'SET_SELECTED_LOCATION':
       return {
         ...state,
-        selectedLocation: action.payload
-
+        selectedLocation: action.payload,
+        locationIsSelected: true
       }
   }
 

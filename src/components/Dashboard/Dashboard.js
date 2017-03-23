@@ -11,6 +11,7 @@ import NewLocation from './NewLocation/NewLocation';
 import LocationsOnMap from './LocationsOnMap/LocationsOnMap';
 import ReportInfo from './ReportInfo/ReportInfo';
 import OffenseTypeFilter from './OffenseTypeFilter/OffenseTypeFilter';
+import LocationSummary from './LocationSummary/LocationSummary';
 
 import './dashboard.css';
 
@@ -56,6 +57,12 @@ class Dashboard extends Component {
             <ReportInfo report={this.props.currentReport}/>
           </div>
         </div>
+        {
+          this.props.areStats ?
+            <LocationSummary {...this.props} />
+          :
+          <h4>Waiting...</h4>
+        }
       </div>
     )
   }
@@ -65,7 +72,9 @@ const mapStateToProps = function(store) {
   return {
     policeReports: store.policeReports.reports,
     mergedReports: store.policeReports.mergedReports,
-    currentReport: store.currentReport.currentReports
+    currentReport: store.currentReport.currentReports,
+    areStats: store.locations.areStats,
+    locations: store.locations
   };
 };
 

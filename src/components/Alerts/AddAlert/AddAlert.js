@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Select from 'react-select';
 
 import { addNewAlert } from '../../../actions/addAlertAction';
 
+import 'react-select/dist/react-select.css';
 import './addalert.css';
 
 class AddAlert extends Component {
@@ -16,6 +18,8 @@ class AddAlert extends Component {
       rangeMin: 50,
       rangeMax: 500
     }
+
+    this.buildOptions = this.buildOptions.bind(this);
   }
 
   handleLocationChange(e) {
@@ -36,6 +40,30 @@ class AddAlert extends Component {
     })
   }
 
+  buildOptions(optionSet) {
+    const options = [];
+
+    for (const option of optionSet) {
+      let label;
+
+      if (option.location_title) {
+        label = option.location_title;
+      }
+      else {
+        label = option.offense_name;
+      }
+
+      const opt = {
+        value: option.id,
+        label
+      }
+
+      options.push(opt);
+    }
+
+    return options;
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const userId = this.props.userId;
@@ -54,6 +82,13 @@ class AddAlert extends Component {
   }
 
   render() {
+    const locations = this.props.userLocations;
+    const offenses = this.props.offenseTypes;
+    console.log(offenses);
+    console.log(locations);
+
+    const locationOptions = this.buildOptions(locations);
+    const offenseOptions = this.buildOptions(offenses);
 
     return (
       <div className="AddAlert-container">
@@ -62,35 +97,22 @@ class AddAlert extends Component {
           <div className="AddAlert-input-container">
             <div className="AddAlert-input">
               <label>Select a location</label>
-              <select
-                name="offenseTypes" onChange={this.handleLocationChange.bind(this)}>
-                {
-                  this.props.locations.userLocations.map(location => (
-                    <option
-                      key={location.id}
-                      value={location.id}>
-                      {location.location_title}
-                    </option>
-                  ))
-                }
-              </select>
+              <Select
+                name="locations"
+                value="Select a Location"
+                options={locationOptions}
+                onChange={this.handleLocationChange.bind(this)}
+              />
             </div>
 
             <div className="AddAlert-input">
               <label>Select a crime</label>
-              <select
-                name="offenseTypes" onChange={this.handleOffenseChange.bind(this)}
-              >
-                {
-                  this.props.offenseTypes.map(offense => (
-                    <option
-                      key={offense.id}
-                      value={offense.id}>
-                      {offense.offense_name}
-                    </option>
-                  ))
-                }
-              </select>
+              <Select
+                name="offenses"
+                value="Select an offense"
+                options={offenseOptions}
+                onChange={this.handleOffenseChange.bind(this)}
+              />
             </div>
 
             <div className="AddAlert-input">
@@ -117,7 +139,7 @@ class AddAlert extends Component {
 const mapStateToProps = function(store) {
   return {
     offenseTypes: store.offenseTypes.offenseTypes,
-    locations: store.locations,
+    userLocations: store.locations.userLocations,
     userId: store.user.userId
   }
 }

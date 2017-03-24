@@ -29,6 +29,9 @@ class Dashboard extends Component {
     }
   }
   componentWillMount() {
+    this.props.dispatch(authenticateUser());
+    this.props.dispatch(fetchOffenseTypes());
+
     setTimeout(() => {
       if (!this.props.isAuthenticated) {
         navigator.geolocation.getCurrentPosition((position) => {
@@ -39,11 +42,6 @@ class Dashboard extends Component {
         })
       }
     }, 2000);
-
-
-
-    this.props.dispatch(authenticateUser());
-    this.props.dispatch(fetchOffenseTypes());
   }
 
   render() {

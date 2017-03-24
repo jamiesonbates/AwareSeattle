@@ -6,6 +6,7 @@ import { getAlerts } from '../../actions/alertsAction';
 import { deleteLocation } from '../../actions/deleteLocationAction';
 import { deleteAlert } from '../../actions/deleteAlertAction';
 import { authenticateUser } from '../../actions/authenticateAction';
+import { fetchOffenseTypes } from '../../actions/offenseTypes';
 
 import LocationList from './Locations/LocationList';
 import AlertsList from './AlertsList/AlertsList';
@@ -17,16 +18,13 @@ import './alerts.css';
 
 class Alerts extends Component {
   componentWillMount() {
-    console.log(this.props);
-    console.log(this.props.isAuthenticated);
-    console.log(this.props.userId);
     this.props.dispatch(getAlerts(this.props.userId));
 
     setTimeout(() => {
       if (!this.props.isAuthenticated) {
-        this.props.dispatch(authenticateUser());
+        // this.props.dispatch(authenticateUser());
       }
-    }, 1000)
+    }, 1000);
   }
 
   deleteLocation(location_id) {

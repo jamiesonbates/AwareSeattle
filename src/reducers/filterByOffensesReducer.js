@@ -27,6 +27,11 @@ export default function reducer(state={
         ...state,
         filterByOffenses: nextFilterFromOffenses
       }
+    case 'RESET_OFFENSE_TO_FILTER':
+      return {
+        ...state,
+        filterByOffenses: action.payload
+      }
   }
 
   return state;

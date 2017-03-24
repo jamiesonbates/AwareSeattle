@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { authenticateUser } from '../../actions/authenticateAction';
 import { fetchOffenseTypes } from '../../actions/offenseTypes';
 import { addLocalLocation } from '../../actions/addLocalLocationAction';
+import { resetOffenseFilter } from '../../actions/resetOffenseFilterAction';
 
 import Map from '../Map/Map';
 import Nav from '../Nav/Nav';
@@ -41,6 +42,11 @@ class Dashboard extends Component {
         })
       }
     }, 2000);
+  }
+
+  componentWillUnmount() {
+    this.props.dispatch(resetOffenseFilter());
+    console.log('unmounted');
   }
 
   render() {

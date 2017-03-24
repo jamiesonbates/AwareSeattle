@@ -6,6 +6,7 @@ import { fetchOffenseTypes } from '../../actions/offenseTypes';
 import { addLocalLocation } from '../../actions/addLocalLocationAction';
 import { resetOffenseFilter } from '../../actions/resetOffenseFilterAction';
 import { resetLocations } from '../../actions/resetLocationsAction';
+import { resetMarkers } from '../../actions/resetReportsAction';
 
 import Map from '../Map/Map';
 import Nav from '../Nav/Nav';
@@ -30,10 +31,11 @@ class Dashboard extends Component {
     }
   }
   componentWillMount() {
-    this.props.dispatch(resetOffenseFilter());
     this.props.dispatch(resetLocations(false));
-    this.props.dispatch(authenticateUser());
+    this.props.dispatch(resetMarkers());
     this.props.dispatch(fetchOffenseTypes());
+    this.props.dispatch(resetOffenseFilter());
+    this.props.dispatch(authenticateUser());
 
     setTimeout(() => {
       if (!this.props.isAuthenticated) {
@@ -100,6 +102,7 @@ const mapStateToProps = function(store) {
     currentReport: store.currentReport.currentReports,
     areStats: store.locations.areStats,
     locations: store.locations,
+    combinedLocations: store.locations.combineLocations,
     isAuthenticated: store.user.isAuthenticated
   };
 };

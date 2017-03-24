@@ -21,6 +21,12 @@ export default function reducer(state={
         mergedReports: action.payload
       }
     }
+    case 'UPDATE_REPORTS_SET': {
+      return {
+        ...state,
+        reports: action.payload
+      }
+    }
   }
 
   return state;

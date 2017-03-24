@@ -30,6 +30,8 @@ class Dashboard extends Component {
     }
   }
   componentWillMount() {
+    this.props.dispatch(resetOffenseFilter());
+    this.props.dispatch(resetLocations(false));
     this.props.dispatch(authenticateUser());
     this.props.dispatch(fetchOffenseTypes());
 
@@ -43,11 +45,6 @@ class Dashboard extends Component {
         })
       }
     }, 2000);
-  }
-
-  componentWillUnmount() {
-    this.props.dispatch(resetOffenseFilter());
-    this.props.dispatch(resetLocations(false));
   }
 
   render() {

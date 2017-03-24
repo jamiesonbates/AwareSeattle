@@ -39,17 +39,16 @@ class TimeFilter extends Component {
 
     // Calculate time between range handles (in days or months)
     const start = Moment().subtract(endValue, 'days');
-    const end = Moment().subtract(startValue + 1, 'days');
+    const end = Moment().subtract(startValue, 'days');
     let timeBetween = end.diff(start, 'days');
-    console.log(timeBetween);
 
     if (timeBetween > 170) {
       timeBetween = '6 months';
     }
-    else if (timeBetween > 29) {
+    else if (timeBetween >= 62) {
       timeBetween = `${end.diff(start, 'months')} months`;
     }
-    else if (timeBetween < 60) {
+    else if (timeBetween < 62) {
       timeBetween = `${timeBetween} month`;
     }
     else {
@@ -67,7 +66,7 @@ class TimeFilter extends Component {
   }
 
   setNewRange() {
-    this.props.dispatch(setTimeFilter(this.state.startingMilliseconds, this.state.endingMilliseconds));
+    this.props.dispatch(setTimeFilter(this.state.startingMilliseconds, this.state.endingMilliseconds, this.state.startDate, this.state.endDate, this.state.timeBetween));
 
   }
 
@@ -79,7 +78,8 @@ class TimeFilter extends Component {
         </div>
         <div className="TimeFilter-body-container">
           <div>
-            <h4>Change map and view {this.state.timeBetween} {this.state.startDate} and {this.state.endDate}</h4>
+            <h4>Current</h4>
+            <p>{this.props.timeBetween} from {this.props.startDate} and {this.props.endDate}</p>
           </div>
           <Range
             defaultValue={[150, 180]}
@@ -100,7 +100,9 @@ class TimeFilter extends Component {
 
 const mapStateToProps = function(store) {
   return {
-
+    startDate: store.timeFilter.startDate,
+    endDate: store.timeFilter.endDate,
+    timeBetween: store.timeFilter.timeBetween
   }
 }
 

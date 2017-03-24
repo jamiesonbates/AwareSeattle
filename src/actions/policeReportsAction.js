@@ -16,7 +16,7 @@ export function fetchPoliceReports(lat, lng, range, identity, milliseconds) {
           payload: nextReports
         })
 
-        dispatch(generateMarkersList(milliseconds));
+        dispatch(generateMarkersList());
         dispatch(generateStats());
       })
       .catch((err) => {

@@ -66,3 +66,11 @@
 .Nav-Signup-btn:hover {
   background-color: #1EAD31;
 }
+
+.Nav-Signout-btn {
+  background-color: #8A9296;
+}
+
+.Nav-Signout-btn:hover {
+  background-color: #676D70;
+}

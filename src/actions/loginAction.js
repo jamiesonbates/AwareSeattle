@@ -17,7 +17,7 @@ export function loginUser(email, password) {
 
       dispatch(authenticateUser());
 
-      browserHistory.push('/alerts');
+      browserHistory.push('/');
     })
     .catch((err) => {
       dispatch({

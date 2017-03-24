@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import NavHelper from './NavHelper';
+import SignOut from './SignOut';
 
 import './nav.css';
 
@@ -11,7 +12,7 @@ function Nav(props) {
   const onDashboard = currentPath === '/';
   const onAlerts = currentPath === '/alerts';
   const onSignup = currentPath === '/signup';
-  const onLogin = currentPath === './login'
+  const onLogin = currentPath === './login';
 
   return (
     <nav className="Nav-container">
@@ -20,33 +21,46 @@ function Nav(props) {
         {
           props.isAuthenticated ?
             onDashboard ?
-              <NavHelper
-                linkTo={'/Alerts'}
-                name="Alerts"
-                class="Nav-Alerts-btn"/>
+              <div className="Nav-btns">
+                <NavHelper
+                  linkTo={'/Alerts'}
+                  name="Alerts"
+                  class="Nav-Alerts-btn"/>
+                <SignOut />
+              </div>
             :
               onAlerts ?
-                <NavHelper
-                  linkTo={'/'}
-                  name="Dashboard"
-                  class="Nav-Dashboard-btn"/>
+                <div className="Nav-btns">
+                  <NavHelper
+                    linkTo={'/'}
+                    name="Dashboard"
+                    class="Nav-Dashboard-btn"/>
+                  <SignOut />
+                </div>
               :
                 onLogin ?
-                  <NavHelper
-                    linkTo={'/signup'}
-                    name="Sign Up"
-                    class="Nav-Signup-btn"/>
+                  <div className="Nav-btns">
+                    <NavHelper
+                      linkTo={'/signup'}
+                      name="Sign Up"
+                      class="Nav-Signup-btn"/>
+                  </div>
                 :
                   onSignup ?
-                    <NavHelper
-                      linkTo={'/login'}
-                      name="Login"
-                      class="Nav-Login-btn"/>
+                    <div className="Nav-btns">
+                      <NavHelper
+                        linkTo={'/login'}
+                        name="Login"
+                        class="Nav-Login-btn"/>
+                    </div>
                   :
-                    <NavHelper
-                      linkTo={'/'}
-                      name="Dashboard"
-                      class="Nav-Dashboard-btn"/>
+                    <div className="Nav-btns">
+                      <NavHelper
+                        linkTo={'/'}
+                        name="Dashboard"
+                        class="Nav-Dashboard-btn"/>
+                      <SignOut />
+                    </div>
           :
             <div className="Nav-btns">
               <NavHelper linkTo={'/login'} name="Login" />

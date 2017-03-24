@@ -8,13 +8,12 @@ const style = {
 
 function NavHelper(props) {
   return (
-    <div className="Nav-btns">
-      <button className={`Nav-btn ${props.class}`}>
-        <Link to={props.linkTo} style={style}>
-          {props.name}
-        </Link>
-      </button>
-    </div>
+    <Link
+      to={props.linkTo}
+      style={style}
+      className={`Nav-btn ${props.class}`}>
+      {props.name}
+    </Link>
   )
 }
 

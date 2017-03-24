@@ -1,4 +1,4 @@
-export function generateMarkersList() {
+export function generateMarkersList(months) {
   return function(dispatch, getState) {
     const state = getState();
     const reports = state.policeReports.reports;

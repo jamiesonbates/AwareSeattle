@@ -12,13 +12,11 @@ const style = {
 class SignOut extends Component {
   render() {
     return (
-      <Link
-        to='/'
-        style={style}
+      <button
         className="Nav-btn Nav-Signout-btn"
-        onClick={this.props.dispatch(signOutUser())}>
+        onClick={() => this.props.dispatch(signOutUser())}>
         Sign Out
-      </Link>
+      </button>
     )
   }
 }

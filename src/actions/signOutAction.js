@@ -7,8 +7,8 @@ export function signOutUser() {
   return function(dispatch) {
     axios.delete('/api/token')
       .then((res) => {
-        dispatch(resetLocations(true));
         browserHistory.push('/');
+        window.location.reload();
       })
       .catch((err) => {
         console.error(err);

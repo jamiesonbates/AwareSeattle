@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchPoliceReports } from '../../actions/policeReportsAction';
 import { authenticateUser } from '../../actions/authenticateAction';
 import { fetchOffenseTypes } from '../../actions/offenseTypes';
 import { addLocalLocation } from '../../actions/addLocalLocationAction';

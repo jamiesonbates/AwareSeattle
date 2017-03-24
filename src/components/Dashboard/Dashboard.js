@@ -5,6 +5,7 @@ import { authenticateUser } from '../../actions/authenticateAction';
 import { fetchOffenseTypes } from '../../actions/offenseTypes';
 import { addLocalLocation } from '../../actions/addLocalLocationAction';
 import { resetOffenseFilter } from '../../actions/resetOffenseFilterAction';
+import { resetLocations } from '../../actions/resetLocationsAction';
 
 import Map from '../Map/Map';
 import Nav from '../Nav/Nav';
@@ -46,7 +47,7 @@ class Dashboard extends Component {
 
   componentWillUnmount() {
     this.props.dispatch(resetOffenseFilter());
-    console.log('unmounted');
+    this.props.dispatch(resetLocations(false));
   }
 
   render() {

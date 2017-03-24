@@ -46,6 +46,32 @@ export default function reducer(state={
         selectedLocation: action.payload,
         locationIsSelected: true
       }
+    case 'RESET_LOCAL_LOCATIONS':
+      return {
+        ...state,
+        localLocations: action.payload,
+      }
+    case 'RESET_SELECTED_LOCATION':
+      return {
+        ...state,
+        selectedLocation: action.payload,
+        locationIsSelected: false
+      }
+    case 'RESET_USER_LOCATIONS':
+      return {
+        ...state,
+        userLocations: action.payload
+      }
+    case 'UPDATE_LOCATION_STATS':
+      return {
+        ...state,
+        locationStats: action.payload
+      }
+    case 'RESET_LOCATION_STATS':
+      return {
+        ...state,
+        locationStats: action.payload
+      }
   }
 
   return state;

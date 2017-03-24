@@ -10,7 +10,6 @@ const style = {
 }
 
 class SignOut extends Component {
-
   render() {
     return (
       <Link
@@ -26,7 +25,7 @@ class SignOut extends Component {
 
 const mapStateToProps = function(store) {
   return {
-    
+
   }
 }
 

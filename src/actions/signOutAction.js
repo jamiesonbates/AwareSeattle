@@ -1,11 +1,13 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 
+import { resetLocations } from './resetLocationsAction';
+
 export function signOutUser() {
-  return function() {
+  return function(dispatch) {
     axios.delete('/api/token')
       .then((res) => {
-        console.log('logged out');
+        dispatch(resetLocations());
       })
       .catch((err) => {
         console.error(err);

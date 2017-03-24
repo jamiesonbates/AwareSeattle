@@ -3,7 +3,7 @@ import axios from 'axios';
 import { generateMarkersList } from './generateMarkersListAction';
 import { generateStats } from './locationStatsAction';
 
-export function fetchPoliceReports(lat, lng, range, identity, months) {
+export function fetchPoliceReports(lat, lng, range, identity, milliseconds) {
   return function(dispatch, getState) {
     axios.get(`/api/police_reports/${lat}/${lng}/${range}`)
       .then((res) => {
@@ -16,7 +16,7 @@ export function fetchPoliceReports(lat, lng, range, identity, months) {
           payload: nextReports
         })
 
-        dispatch(generateMarkersList(months));
+        dispatch(generateMarkersList(milliseconds));
         dispatch(generateStats());
       })
       .catch((err) => {

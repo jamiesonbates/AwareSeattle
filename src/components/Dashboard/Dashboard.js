@@ -15,6 +15,7 @@ import LocationsOnMap from './LocationsOnMap/LocationsOnMap';
 import ReportInfo from './ReportInfo/ReportInfo';
 import OffenseTypeFilter from './OffenseTypeFilter/OffenseTypeFilter';
 import LocationSummary from './LocationSummary/LocationSummary';
+import TimeFilter from './TimeFilter/TimeFilter';
 
 import './dashboard.css';
 
@@ -87,6 +88,10 @@ class Dashboard extends Component {
 
             <div className="Dashboard-tools-offensetype">
               <OffenseTypeFilter />
+            </div>
+
+            <div className="Dashboard-tools-timefilter">
+              <TimeFilter />
             </div>
           </div>
         </div>

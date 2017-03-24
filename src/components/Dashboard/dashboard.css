@@ -50,6 +50,11 @@
   margin-bottom: 3%;
 }
 
+.Dashboard-tools-timefilter {
+  width: 100%;
+  marg-bottom: 3%;
+}
+
 .Dashboard-tools-reportinfo h4, .Dashboard-tools-reportinfo p, .Dashboard-tools-reportinfo h3 {
   margin: 0;
 }

@@ -1,11 +1,11 @@
-.ReportInfo-container {
+.TimeFilter-container {
   width: 100%;
   border: 1px solid #2B2B2B;
   border-radius: 3px;
   background-color: white;
 }
 
-.ReportInfo-header {
+.TimeFilter-header {
   width: 100%;
   box-sizing: border-box;
   background-color: #2B2B2B;
@@ -14,12 +14,12 @@
   border-bottom: 1px solid #D9D6D5;
 }
 
-.ReportInfo-header h3 {
+.TimeFilter-header h3 {
+  margin: 0;
   color: white;
-  font-weight: 700;
 }
 
-.ReportInfo-body-container {
+.TimeFilter-body-container {
   width: 100%;
   padding: 10px;
   box-sizing:   border-box;
@@ -28,18 +28,4 @@
   align-items: center;
   justify-content: center;
   min-height: 100px;
-}
-
-.ReportInfo-body {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.ReportInfo-stat {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
 }

@@ -4,12 +4,15 @@ import Moment from 'moment';
 
 import Nav from '../Nav/Nav';
 
+import { authenticateUser } from '../../actions/authenticateAction';
 import { getReportsList } from '../../actions/getReportsListAction';
 
 import './reportslist.css';
 
 class ReportsList extends Component {
   componentWillMount() {
+    this.props.dispatch(authenticateUser());
+
     const { lat, lng, range, offenseId } = this.props.params;
     const offenseFilterForList = this.props.offenseFilterForList;
     const timeFilter = this.props.timeFilter;
@@ -92,7 +95,8 @@ const mapStateToProps = function(store) {
   return {
     offenseFilterForList: store.offenseFilter.filterByOffenses,
     timeFilter: store.timeFilter,
-    activeReportsForList: store.policeReports.activeReportsForList
+    activeReportsForList: store.policeReports.activeReportsForList,
+    isAuthenticated: store.user.isAuthenticated
   }
 }
 

@@ -49,7 +49,7 @@ class TimeFilter extends Component {
       timeBetween = `${end.diff(start, 'months')} months`;
     }
     else if (timeBetween < 62) {
-      timeBetween = `${timeBetween} month`;
+      timeBetween = `${end.diff(start, 'months')} month`;
     }
     else {
       timeBetween = `${timeBetween} days`;

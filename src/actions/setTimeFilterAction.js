@@ -1,17 +1,13 @@
+import Moment from 'moment';
 import { generateMarkersList } from './generateMarkersListAction';
 
-export function setTimeFilter(startingMilliseconds, endingMilliseconds, startDate, endDate, timeBetween) {
+export function setTimeFilter(startDate, endDate) {
   return function(dispatch) {
     dispatch({
       type: 'SET_TIME_FILTER',
       payload: {
-        milliseconds: {
-          startingMilliseconds,
-          endingMilliseconds
-        },
-        startDate,
-        endDate,
-        timeBetween
+        startingMilliseconds: startDate.valueOf(),
+        endingMilliseconds: endDate.valueOf()
       }
     })
 

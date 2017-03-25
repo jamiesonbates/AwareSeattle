@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Slider, { Range } from 'rc-slider';
+import DatePicker from 'react-datepicker';
 import Moment from 'moment';
 
 import { setTimeFilter } from '../../../actions/setTimeFilterAction';
 
+import 'react-datepicker/dist/react-datepicker.css';
 import 'rc-slider/assets/index.css';
 import './timefilter.css';
 
@@ -13,61 +15,52 @@ class TimeFilter extends Component {
     super();
 
     this.state = {
-      currentRange: [0, 30],
-      startDate: Moment().format('MM-DD-YYYY'),
-      endDate: Moment().subtract(30, 'days').format('MM-DD-YYYY'),
-      timeBetween: '1 month',
-      startingMilliseconds: Moment().subtract(30, 'days').valueOf(),
-      endingMilliseconds: Moment().subtract(0, 'days').valueOf()
+      endDate: Moment(),
+      startDate: Moment().subtract(30, 'days'),
+      includeDates: []
     }
-    this.handleRangeChange = this.handleRangeChange.bind(this);
-    this.setNewRange = this.setNewRange.bind(this);
+
+    this.updateMap = this.updateMap.bind(this);
+    this.onStartDateChange = this.onStartDateChange.bind(this);
+    this.onEndDateChange = this.onEndDateChange.bind(this);
   }
 
-  handleRangeChange(value) {
-    // Convert value into days since "0"
-    const startValue = ((value[1] * -1) + 180);
-    const endValue = ((value[0] * -1) +180);
+  componentWillMount() {
+    const includeDates = [];
 
-    // Calculate milliseconds in Unix timestamp
-    const startingMilliseconds = Moment().subtract(endValue, 'days').valueOf();
-    const endingMilliseconds = Moment().subtract(startValue, 'days').valueOf();
-
-    // Calculate start and end date of range handles (i.e. 01-01-1990)
-    const startDate = Moment().subtract(endValue, 'days').format('MM-DD-YYYY');
-    const endDate = Moment().subtract(startValue, 'days').format('MM-DD-YYYY');
-
-    // Calculate time between range handles (in days or months)
-    const start = Moment().subtract(endValue, 'days');
-    const end = Moment().subtract(startValue, 'days');
-    let timeBetween = end.diff(start, 'days');
-
-    if (timeBetween > 170) {
-      timeBetween = '6 months';
-    }
-    else if (timeBetween >= 62) {
-      timeBetween = `${end.diff(start, 'months')} months`;
-    }
-    else if (timeBetween < 62) {
-      timeBetween = `${timeBetween} month`;
-    }
-    else {
-      timeBetween = `${timeBetween} days`;
+    for (let i = 0; i <= 180; i++) {
+      includeDates.push(Moment().subtract(i, 'days'));
     }
 
     this.setState({
-      currentRange: value,
-      startDate,
-      endDate,
-      timeBetween,
-      startingMilliseconds,
-      endingMilliseconds
+      includeDates
     })
   }
 
-  setNewRange() {
-    this.props.dispatch(setTimeFilter(this.state.startingMilliseconds, this.state.endingMilliseconds, this.state.startDate, this.state.endDate, this.state.timeBetween));
+  onStartDateChange(day) {
+    if (this.state.endDate.valueOf() < day.valueOf()) {
+      day = this.state.endDate.subtract(1, 'days');
+    }
 
+    this.setState({
+      startDate: day
+    })
+  }
+
+  onEndDateChange(day) {
+    if (this.state.startDate.valueOf() > day.valueOf()) {
+      day = this.state.startDate.add(1, 'days');
+    }
+
+    this.setState({
+      endDate: day
+    })
+  }
+
+  updateMap() {
+    const startDate = this.state.startDate;
+    const endDate = this.state.endDate;
+    this.props.dispatch(setTimeFilter(startDate, endDate));
   }
 
   render() {
@@ -77,19 +70,29 @@ class TimeFilter extends Component {
           <h3>Filter by Date of Crime</h3>
         </div>
         <div className="TimeFilter-body-container">
-          <div>
-            <h4>Current</h4>
-            <p>{this.props.timeBetween} from {this.props.startDate} and {this.props.endDate}</p>
+          <div className="TimeFilter-datepicker-container">
+            <div className="TimeFilter-datepicker">
+              <h4>Start Date</h4>
+
+              <DatePicker
+                selected={this.state.startDate}
+                onChange={this.onStartDateChange}
+                includeDates={this.state.includeDates}/>
+            </div>
+
+            <div className="TimeFilter-datepicker">
+              <h4>End Date</h4>
+
+              <DatePicker
+                selected={this.state.endDate}
+                onChange={this.onEndDateChange}
+                includeDates={this.state.includeDates}/>
+            </div>
           </div>
-          <Range
-            defaultValue={[150, 180]}
-            min={0}
-            max={180}
-            allowCross={false}
-            onAfterChange={this.handleRangeChange}/>
-            {this.state.timeBetween} between {this.state.startDate} and {this.state.endDate}
+
           <button
-            onClick={this.setNewRange}>
+            className="TimeFilter-btn"
+            onClick={this.updateMap}>
             Update Map
           </button>
         </div>

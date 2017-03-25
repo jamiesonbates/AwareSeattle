@@ -8,7 +8,7 @@
 }
 
 .Dashboard-nav-container {
-  height: 8vh;
+  /*height: 8vh;*/
   width: 100vw;
 }
 
@@ -32,6 +32,7 @@
 .Dashboard-tools-container {
   width: 37vw;
   padding: 20px;
+  padding-top: 10px;
   box-sizing: border-box;
 }
 

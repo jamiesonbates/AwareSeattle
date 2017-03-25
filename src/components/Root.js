@@ -5,6 +5,7 @@ import Dashboard from './Dashboard/Dashboard';
 import Signup from './Signup/Signup';
 import Login from './Login/Login';
 import Alerts from './Alerts/Alerts';
+import ReportsList from './ReportsList/ReportsList';
 
 const Root = ({ store }) => (
   <Provider store={store}>
@@ -13,6 +14,7 @@ const Root = ({ store }) => (
       <Route path="/signup" component={Signup} />
       <Route path="/login" component={Login} />
       <Route path="/alerts" component={Alerts} />
+      <Route path="/reports/:lat/:lng/:range/:offenseId" component={ReportsList} />
     </Router>
   </Provider>
 );

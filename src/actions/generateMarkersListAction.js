@@ -35,8 +35,6 @@ export function generateMarkersList() {
       return occurredMilliseconds.isBetween(startingMilliseconds, endingMilliseconds);
     })
 
-
-
     dispatch({
       type: 'GENERATE_MARKERS_LIST',
       payload: markersList

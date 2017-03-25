@@ -1,6 +1,7 @@
 export default function reducer(state={
   reports: {},
-  mergedReports: []
+  mergedReports: [],
+  activeReportsForList: []
 }, action) {
 
   switch (action.type) {
@@ -25,6 +26,12 @@ export default function reducer(state={
       return {
         ...state,
         reports: action.payload
+      }
+    }
+    case 'SET_ACTIVE_REPORT_FOR_LIST': {
+      return {
+        ...state,
+        activeReportsForList: action.payload
       }
     }
   }

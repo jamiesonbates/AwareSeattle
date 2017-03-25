@@ -5,8 +5,8 @@ export function generateMarkersList() {
     const state = getState();
     const reports = state.policeReports.reports;
     const offenseFilter = state.offenseFilter.filterByOffenses;
-    const startingMilliseconds = state.timeFilter.milliseconds.startingMilliseconds;
-    const endingMilliseconds = state.timeFilter.milliseconds.endingMilliseconds;
+    const startingMilliseconds = state.timeFilter.startingMilliseconds;
+    const endingMilliseconds = state.timeFilter.endingMilliseconds;
 
     const reportsAsArray = [];
 

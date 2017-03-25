@@ -25,7 +25,58 @@
   box-sizing:   border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   min-height: 100px;
+}
+
+.TimeFilter-datepicker-container {
+  display: flex;
+  width: 100%;
+}
+
+.TimeFilter-datepicker {
+  width: 50%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.TimeFilter-datepicker h4 {
+  margin: 0;
+}
+
+.react-datepicker__input-container {
+  width: 100%;
+  box-sizing:border-box;
+}
+
+.react-datepicker__input-container input {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 8px;
+  font-size: 0.85em;
+}
+
+.react-datepicker__input-container input:focus {
+  outline: 0;
+}
+
+.TimeFilter-btn {
+  width: 35%;
+  min-width: 160px;
+  margin: 0 auto;
+  margin-top: 2.5%;
+  border: 1px solid #BEC2BE;
+  padding: 12px 6px;
+  background-color: #E9EDE9;
+  border-radius: 5px;
+  line-height: 75%;
+  font-size: 1em;
+  font-family: 'Bree Serif';
+  color: #1BCC36;
+}
+
+.TimeFilter-btn:hover {
+  background-color: #1BCC36;
+  color: white;
+  cursor: pointer;
 }

@@ -36,24 +36,9 @@ class TimeFilter extends Component {
       includeDates
     })
   }
-
-<<<<<<< HEAD
-    if (timeBetween > 170) {
-      timeBetween = '6 months';
-    }
-    else if (timeBetween >= 62) {
-      timeBetween = `${end.diff(start, 'months')} months`;
-    }
-    else if (timeBetween < 62) {
-      timeBetween = `${end.diff(start, 'months')} month`;
-    }
-    else {
-      timeBetween = `${timeBetween} days`;
-=======
   onStartDateChange(day) {
     if (this.state.endDate.valueOf() < day.valueOf()) {
       day = this.state.endDate.subtract(1, 'days');
->>>>>>> time
     }
 
     this.setState({

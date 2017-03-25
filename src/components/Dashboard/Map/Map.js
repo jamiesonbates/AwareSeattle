@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { GoogleMapLoader, GoogleMap, Marker, Circle, InfoWindow } from 'react-google-maps';
 
-import { setCurrentReport } from '../../actions/currentReportAction';
+import { setCurrentReport } from '../../../actions/currentReportAction';
 
 import MapStyles from './mapStyles';
 
@@ -84,11 +84,6 @@ class Map extends Component {
                     );
                   })
                 }
-
-                {/* <Circle
-                  center={{ lat: 47.6062, lng: -122.3321 }}
-                  radius={500}
-                /> */}
               </GoogleMap>
             }
           />

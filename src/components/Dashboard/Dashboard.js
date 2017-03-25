@@ -8,7 +8,7 @@ import { resetOffenseFilter } from '../../actions/resetOffenseFilterAction';
 import { resetLocations } from '../../actions/resetLocationsAction';
 import { resetMarkers } from '../../actions/resetReportsAction';
 
-import Map from '../Map/Map';
+import Map from './Map/Map';
 import Nav from '../Nav/Nav';
 import NewLocation from './NewLocation/NewLocation';
 import LocationsOnMap from './LocationsOnMap/LocationsOnMap';

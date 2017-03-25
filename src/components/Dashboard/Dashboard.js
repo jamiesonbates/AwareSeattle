@@ -16,6 +16,7 @@ import ReportInfo from './ReportInfo/ReportInfo';
 import OffenseTypeFilter from './OffenseTypeFilter/OffenseTypeFilter';
 import LocationSummary from './LocationSummary/LocationSummary';
 import TimeFilter from './TimeFilter/TimeFilter';
+import Status from './Status/Status';
 
 import './dashboard.css';
 
@@ -67,14 +68,18 @@ class Dashboard extends Component {
               <LocationsOnMap />
             </div>
 
-            <div className="Dashboard-location-summary-container">
+            <div className="Dashboard-status-container">
+              <Status {...this.props}/>
+            </div>
+
+            {/* <div className="Dashboard-location-summary-container">
               {
                 this.props.areStats ?
                   <LocationSummary {...this.props} />
                 :
                 <h4>Waiting...</h4>
               }
-            </div>
+            </div> */}
           </div>
 
           <div className="Dashboard-tools-container">
@@ -108,7 +113,8 @@ const mapStateToProps = function(store) {
     areStats: store.locations.areStats,
     locations: store.locations,
     combinedLocations: store.locations.combineLocations,
-    isAuthenticated: store.user.isAuthenticated
+    isAuthenticated: store.user.isAuthenticated,
+    timeFilter: store.timeFilter
   };
 };
 

@@ -1,0 +1,15 @@
+.Status-container {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #2B2B2B;
+  padding: 10px;
+  color: white;
+}
+
+.Status-diff {
+  color: yellow;
+}
+
+.Status-location {
+  color: red;
+}

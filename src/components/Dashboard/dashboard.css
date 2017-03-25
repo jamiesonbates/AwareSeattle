@@ -25,6 +25,7 @@
   height: 75vh;
   width: 100%;
   position: relative;
+  box-sizing: border-box;
   border-right: 1px solid #4C4B4C;
   border-bottom: 1px solid #4C4B4C;
 }
@@ -66,4 +67,9 @@
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
+}
+
+.Dashboard-status-container {
+  width: 100%;
+  padding-right: 10px;
 }

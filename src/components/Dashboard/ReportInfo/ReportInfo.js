@@ -1,4 +1,5 @@
 import React from 'react';
+import Moment from 'moment';
 
 import './reportinfo.css';
 
@@ -18,7 +19,7 @@ function ReportInfo(props) {
             <div className="ReportInfo-body">
               <div className="ReportInfo-stat">
                 <h4>Date Occurred</h4>
-                <p>{report.date_occurred}</p>
+                <p>{Moment(report.date_occurred).format('MM-DD-YYYY')}</p>
               </div>
 
               <div className="ReportInfo-stat">

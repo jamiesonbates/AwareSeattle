@@ -39,6 +39,19 @@ export function getReportsList(lat, lng, range, defaultTime, offenseList) {
         return occurredMilliseconds.isBetween(startingMilliseconds, endingMilliseconds);
       })
 
+      nextReports = nextReports.sort((a, b) => {
+        const aVal = parseFloat(Moment(a.date_occurred).valueOf());
+        const bVal = parseFloat(Moment(b.date_occurred).valueOf());
+
+        if (aVal < bVal) {
+          return 1;
+        }
+        if (aVal > bVal) {
+          return -1;
+        }
+        return 0;
+      });
+
       dispatch({
         type: 'SET_ACTIVE_REPORT_FOR_LIST',
         payload: nextReports

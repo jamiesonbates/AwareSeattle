@@ -11,12 +11,6 @@ import { getReportsList } from '../../actions/getReportsListAction';
 import './reportslist.css';
 
 class ReportsList extends Component {
-  constructor() {
-    super();
-
-    this.filterList = this.filterList.bind(this);
-  }
-
   componentWillMount() {
     this.props.dispatch(authenticateUser());
 
@@ -33,10 +27,6 @@ class ReportsList extends Component {
       console.log('here');
       this.props.dispatch(getReportsList(lat, lng, range, timeFilter, offenseFilterForList));
     }
-  }
-
-  filterList(property) {
-    
   }
 
   render() {

@@ -1,13 +1,35 @@
 .LocationSummary-container {
-  height: 100%;
   width: 100%;
+  border: 1px solid #2B2B2B;
+  border-radius: 3px;
+  background-color: white;
+}
+
+.LocationSummary-container h4, .LocationSummary-container h5 {
+  margin: 0;
+}
+
+.LocationSummary-header {
+  background-color: #2B2B2B;
+  padding: 15px 5px;
+  padding-left: 10px;
+  border-bottom: 1px solid #D9D6D5;
+}
+
+.LocationSummary-header h3 {
+  color: white;
+  font-weight: 700;
+  margin: 0;
 }
 
 .LocationSummary-stats-container {
-  height: 100%;
-  width: 100%;
   display: flex;
+  box-sizing: border-box;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  min-height: 100px;
 }
 
 .LocationSummary-stats-container h5, .LocationSummary-stats-container p {
@@ -15,7 +37,6 @@
 }
 
 .LocationSummary-stats-header {
-  height: 20%;
   width: 100%;
   display: flex;
   align-items: center;
@@ -30,9 +51,9 @@
 }
 
 .LocationSummary-stats {
-  height: 80%;
   margin: 0 auto;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -40,7 +61,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
   min-width: 175px;
   background-color: white;
 }

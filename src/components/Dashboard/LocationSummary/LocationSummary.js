@@ -5,19 +5,23 @@ import './locationsummary.css';
 function LocationSummary(props) {
   const locationIsSelected = props.locations.locationIsSelected;
   const areLocations = props.locations.areLocations;
+  const selectedLocation = props.locations.selectedLocation;
 
   return (
     <div className="LocationSummary-container">
-      <div>
-        <h4></h4>
-      </div>
-      {
-        areLocations ?
+      <div className="LocationSummary-header">
+        {
           locationIsSelected ?
-            <div className="LocationSummary-stats-container">
-              <div className="LocationSummary-stats-header">
-                <h4>These stats detail crimes that occured near your {props.locations.selectedLocation.name} location within 500 meters in the last month</h4>
-              </div>
+            <h3>Metrics for "{selectedLocation.name}" Location on Map</h3>
+          :
+            <h3>Metrics for a Location on Map</h3>
+        }
+      </div>
+
+      <div className="LocationSummary-stats-container">
+        {
+          areLocations ?
+            locationIsSelected ?
               <div className="LocationSummary-stats">
                 <div className="LocationSummary-single-stat-container">
                   <div className="LocationSummary-single-stat">
@@ -36,12 +40,12 @@ function LocationSummary(props) {
                   ))
                 }
               </div>
-            </div>
+            :
+            <h4>Select a location on the map to see statistics about crime nearby</h4>
           :
-          <h4>Select a location to see statistics about crime nearby</h4>
-        :
-        <h4>Add a location to see statistics about crime nearby</h4>
-      }
+            <h4>Add a location from the toolbar to see statistics about crime nearby</h4>
+        }
+      </div>
     </div>
   )
 }

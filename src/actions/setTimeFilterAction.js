@@ -1,5 +1,7 @@
 import Moment from 'moment';
 import { generateMarkersList } from './generateMarkersListAction';
+import { generateStats } from './locationStatsAction';
+import { updateMapStatus } from './updateMapStatus';
 
 export function setTimeFilter(startDate, endDate) {
   return function(dispatch) {
@@ -12,5 +14,7 @@ export function setTimeFilter(startDate, endDate) {
     })
 
     dispatch(generateMarkersList());
+    dispatch(generateStats());
+    dispatch(updateMapStatus());
   }
 }

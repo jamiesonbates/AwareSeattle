@@ -6,11 +6,8 @@ export function updateMapStatus() {
     const locationIsSelected = state.locations.locationIsSelected;
     const selectedLocation = state.locations.selectedLocation;
     const name = selectedLocation.name || '';
-    console.log(name);
     const lat = selectedLocation.lat || '';
-    console.log(lat);
     const lng = selectedLocation.lng || '';
-    console.log(lng);
     let locationCount = state.locations.combinedLocations.length;
     const offenses = state.offenseFilter.filterByOffenses;
     const start = Moment(state.timeFilter.startingMilliseconds);

@@ -24,7 +24,6 @@ class ReportsList extends Component {
       this.props.dispatch(getReportsList(lat, lng, range, timeFilter, offenseId));
     }
     else {
-      console.log('here');
       this.props.dispatch(getReportsList(lat, lng, range, timeFilter, offenseFilterForList));
     }
   }

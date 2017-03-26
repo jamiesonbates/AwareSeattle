@@ -55,4 +55,5 @@
 .Status-btn-inactive:hover {
   color: #AAB5BA;
   background-color: #E9EDE9;
+  border: 1px solid #BEC2BE;
 }

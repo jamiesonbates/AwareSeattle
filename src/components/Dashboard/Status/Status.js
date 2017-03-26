@@ -16,7 +16,7 @@ class Status extends Component {
               <Link
                 to={`/reports/${this.props.status.lat}/${this.props.status.lng}/500/false`}
                 className="Status-btn">
-                See Incidents Near {this.props.status.name}
+                Incident List for "{this.props.status.name}"
              </Link>
             :
             <button className="Status-btn Status-btn-inactive">See List of Incidents</button>

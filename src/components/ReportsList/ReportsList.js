@@ -12,13 +12,10 @@ import './reportslist.css';
 class ReportsList extends Component {
   componentWillMount() {
     this.props.dispatch(authenticateUser());
-    console.log('----------------------------------------------------------------------------------------------------');
-    console.log(this.props.params);
 
     const { lat, lng, range, offenseId } = this.props.params;
     const offenseFilterForList = this.props.offenseFilterForList;
     const timeFilter = this.props.timeFilter;
-    console.log(timeFilter);
 
     const areOffenses = parseInt(offenseId);
 

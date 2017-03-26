@@ -6,7 +6,6 @@ export function getReportsList(lat, lng, range, defaultTime, offenseList) {
     axios.get(`/api/police_reports/${lat}/${lng}/${range}`)
     .then((res) => {
       const reports = res.data;
-      console.log(reports);
       const startingMilliseconds = defaultTime.startingMilliseconds;
       const endingMilliseconds = defaultTime.endingMilliseconds;
       let nextReports = [];
@@ -22,7 +21,6 @@ export function getReportsList(lat, lng, range, defaultTime, offenseList) {
       }
       else if (typeof offenseList === 'object' && !offenseList.length) {
         nextReports = nextReports.concat(reports);
-        console.log(nextReports);
       }
       else {
         const filteredReports = reports.filter(report => {
@@ -40,8 +38,6 @@ export function getReportsList(lat, lng, range, defaultTime, offenseList) {
 
         return occurredMilliseconds.isBetween(startingMilliseconds, endingMilliseconds);
       })
-
-      console.log(nextReports);
 
       dispatch({
         type: 'SET_ACTIVE_REPORT_FOR_LIST',

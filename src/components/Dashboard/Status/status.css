@@ -24,6 +24,13 @@
   color: red;
 }
 
+.Status-button-container {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .Status-btn {
   min-width: 160px;
   border: 1px solid #BEC2BE;
@@ -56,4 +63,25 @@
   color: #AAB5BA;
   background-color: #E9EDE9;
   border: 1px solid #BEC2BE;
+}
+
+.Status-info {
+  display: flex;
+}
+
+.Status-updating {
+  width: 70%;
+}
+
+.Status-data-disclaimer {
+  width: 30%;
+  position: relative;
+}
+
+.Status-data-disclaimer p {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-bottom: 3px;
+  margin: 0;
 }

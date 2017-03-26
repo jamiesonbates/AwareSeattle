@@ -18,6 +18,8 @@ import LocationSummary from './LocationSummary/LocationSummary';
 import TimeFilter from './TimeFilter/TimeFilter';
 import Status from './Status/Status';
 import Footer from '../Footer/Footer';
+import AboutData from '../AboutData/AboutData';
+import AboutProject from '../AboutProject/AboutProject';
 
 import './dashboard.css';
 
@@ -100,6 +102,11 @@ class Dashboard extends Component {
               <TimeFilter />
             </div>
           </div>
+        </div>
+
+        <div className="Dashboard-about">
+          <AboutProject />
+          <AboutData />
         </div>
 
         <Footer />

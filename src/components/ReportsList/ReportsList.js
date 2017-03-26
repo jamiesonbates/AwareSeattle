@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Moment from 'moment';
 
 import Nav from '../Nav/Nav';
+import Footer from '../Footer/Footer';
 
 import { authenticateUser } from '../../actions/authenticateAction';
 import { getReportsList } from '../../actions/getReportsListAction';
@@ -89,6 +90,8 @@ class ReportsList extends Component {
             </div>
           </div>
         </div>
+
+        <Footer />
       </div>
     )
   }

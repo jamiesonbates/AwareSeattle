@@ -1,3 +1,5 @@
+import { updateMapStatus } from './updateMapStatus';
+
 export function setSelectedLocation(identity) {
   return function(dispatch, getState) {
     const state = getState();
@@ -9,5 +11,7 @@ export function setSelectedLocation(identity) {
       type: 'SET_SELECTED_LOCATION',
       payload: selectedLocation
     })
+
+    dispatch(updateMapStatus());
   }
 }

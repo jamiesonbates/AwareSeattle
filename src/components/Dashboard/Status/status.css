@@ -6,6 +6,16 @@
   color: white;
 }
 
+.Status-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Status-header h3 {
+  margin: 0;
+  vertical-align: bottom;
+}
+
 .Status-diff {
   color: yellow;
 }
@@ -15,10 +25,7 @@
 }
 
 .Status-btn {
-  width: 35%;
   min-width: 160px;
-  margin: 0 auto;
-  margin-top: 2.5%;
   border: 1px solid #BEC2BE;
   padding: 12px 6px;
   background-color: #E9EDE9;
@@ -33,4 +40,17 @@
   background-color: #1BCC36;
   color: white;
   cursor: pointer;
+}
+
+.Status-btn:focus {
+  outline: 0;
+}
+
+.Status-btn-inactive {
+  color: #AAB5BA;
+}
+
+.Status-btn-inactive:hover {
+  color: #AAB5BA;
+  background-color: #E9EDE9;
 }

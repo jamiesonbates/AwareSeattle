@@ -9,6 +9,7 @@ import currentReport from './currentReportReducer';
 import mapDetails from './mapDetailsReducer';
 import offenseFilter from './filterByOffensesReducer';
 import timeFilter from './setTimeFilterReducer';
+import status from './updateMapStatusReducer';
 
 export default combineReducers({
   policeReports,
@@ -19,5 +20,6 @@ export default combineReducers({
   currentReport,
   mapDetails,
   offenseFilter,
-  timeFilter
+  timeFilter,
+  status
 })

@@ -69,7 +69,7 @@ class Dashboard extends Component {
             </div>
 
             <div className="Dashboard-status-container">
-              <Status {...this.props}/>
+              <Status />
             </div>
 
             {/* <div className="Dashboard-location-summary-container">

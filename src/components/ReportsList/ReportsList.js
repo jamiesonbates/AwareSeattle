@@ -12,15 +12,21 @@ import './reportslist.css';
 class ReportsList extends Component {
   componentWillMount() {
     this.props.dispatch(authenticateUser());
+    console.log('----------------------------------------------------------------------------------------------------');
+    console.log(this.props.params);
 
     const { lat, lng, range, offenseId } = this.props.params;
     const offenseFilterForList = this.props.offenseFilterForList;
     const timeFilter = this.props.timeFilter;
+    console.log(timeFilter);
 
-    if (offenseId) {
+    const areOffenses = parseInt(offenseId);
+
+    if (areOffenses) {
       this.props.dispatch(getReportsList(lat, lng, range, timeFilter, offenseId));
     }
     else {
+      console.log('here');
       this.props.dispatch(getReportsList(lat, lng, range, timeFilter, offenseFilterForList));
     }
   }

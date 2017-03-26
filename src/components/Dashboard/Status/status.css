@@ -13,3 +13,24 @@
 .Status-location {
   color: red;
 }
+
+.Status-btn {
+  width: 35%;
+  min-width: 160px;
+  margin: 0 auto;
+  margin-top: 2.5%;
+  border: 1px solid #BEC2BE;
+  padding: 12px 6px;
+  background-color: #E9EDE9;
+  border-radius: 5px;
+  line-height: 75%;
+  font-size: 1em;
+  font-family: 'Bree Serif';
+  color: #1BCC36;
+}
+
+.Status-btn:hover {
+  background-color: #1BCC36;
+  color: white;
+  cursor: pointer;
+}

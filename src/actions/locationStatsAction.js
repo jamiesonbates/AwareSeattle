@@ -8,6 +8,8 @@ export function generateStats() {
     const locationStats = combinedLocations.reduce((acc, location) => {
       const stats = {};
 
+      stats.lat = location.lat;
+      stats.lng = location.lng;
       stats.totalCrimes = reports[`'${location.identity}'`].length;
       stats.offenseBreakdown = [];
       stats.name = location.location_title;

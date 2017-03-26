@@ -74,15 +74,6 @@ class Dashboard extends Component {
             <div className="Dashboard-status-container">
               <Status />
             </div>
-
-            {/* <div className="Dashboard-location-summary-container">
-              {
-                this.props.areStats ?
-                  <LocationSummary {...this.props} />
-                :
-                <h4>Waiting...</h4>
-              }
-            </div> */}
           </div>
 
           <div className="Dashboard-tools-container">
@@ -102,6 +93,10 @@ class Dashboard extends Component {
               <TimeFilter />
             </div>
           </div>
+        </div>
+
+        <div className="Dashboard-metrics">
+          
         </div>
 
         <div className="Dashboard-about">

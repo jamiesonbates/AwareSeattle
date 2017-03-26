@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=News+Cycle:400,700');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
 
 .Dashboard-container {
-  font-family: 'Raleway';
+  font-family: 'Lato';
   background-color: #EDE9ED;
 }
 
 .Dashboard-nav-container {
-  /*height: 8vh;*/
   width: 100vw;
 }
 

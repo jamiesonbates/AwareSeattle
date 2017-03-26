@@ -52,22 +52,6 @@
   background-color: #202896;
 }
 
-.Nav-Login-btn {
-  background-color: #FADE28;
-}
-
-.Nav-Login-btn:hover {
-  background-color: #CCB521;
-}
-
-.Nav-Signup-btn {
-  background-color: #25D63C;
-}
-
-.Nav-Signup-btn:hover {
-  background-color: #1EAD31;
-}
-
 .Nav-Signout-btn {
   background-color: #8A9296;
   color: white;

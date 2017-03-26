@@ -1,3 +1,5 @@
+import { updateMapStatus } from './updateMapStatus';
+
 export function combineLocations() {
   return function(dispatch, getState) {
     const state = getState();
@@ -16,5 +18,7 @@ export function combineLocations() {
       type: 'ARE_THERE_LOCATIONS',
       payload: areLocations
     })
+
+    dispatch(updateMapStatus());
   }
 }

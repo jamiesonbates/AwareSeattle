@@ -9,19 +9,21 @@ class Status extends Component {
   render() {
     return (
       <div className="Status-container">
-        <h3>What's in this map?</h3>
-        <p>Police incident reports from the last <span className="Status-diff">{this.state.diff}</span> within 500 meters of <span className="Status-location">{this.props.combinedLocations.length} locations</span> in Seattle, WA.
+        <div className="Status-header">
+          <h3>What's in this map?</h3>
+          {
+            this.props.locationIsSelected ?
+              <Link
+                to={`/reports/${this.props.status.lat}/${this.props.status.lng}/500/false`}
+                className="Status-btn">
+                See Incidents Near {this.props.status.name}
+             </Link>
+            :
+            <button className="Status-btn Status-btn-inactive">See List of Incidents</button>
+          }
+        </div>
+        <p>Police incident reports from the last <span className="Status-diff">{this.props.status.diff}</span> within 500 meters of <span className="Status-location">{this.props.status.locationCount} locations</span> in Seattle, WA.
         </p>
-        {
-          this.props.locationIsSelected ?
-            <Link
-              to={`/reports/${this.props.status.state.lat}/${this.props.status.state.lng}/500/false`}
-              className="Status-btn">
-              See Incidents Near {this.props.status.name}
-           </Link>
-          :
-          <div></div>
-        }
       </div>
     )
   }
@@ -29,11 +31,7 @@ class Status extends Component {
 
 const mapStateToProps = function(store) {
   return {
-    selectedLocation: store.locations.selectedLocation,
-    combinedLocations: store.locations.combinedLocations,
     locationIsSelected: store.locations.locationIsSelected,
-    timeFilter: store.timeFilter,
-    offenses: store.offenseFilter.fitlerByOffenses,
     status: store.status
   }
 }

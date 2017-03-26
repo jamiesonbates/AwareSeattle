@@ -34,6 +34,12 @@ export default function reducer(state={
         activeReportsForList: action.payload
       }
     }
+    case 'SORT_REPORTS_LIST': {
+      return {
+        ...state,
+        activeReportsForList: action.payload
+      }
+    }
   }
 
   return state;

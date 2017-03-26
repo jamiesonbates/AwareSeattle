@@ -17,6 +17,7 @@ import OffenseTypeFilter from './OffenseTypeFilter/OffenseTypeFilter';
 import LocationSummary from './LocationSummary/LocationSummary';
 import TimeFilter from './TimeFilter/TimeFilter';
 import Status from './Status/Status';
+import Footer from '../Footer/Footer';
 
 import './dashboard.css';
 
@@ -100,6 +101,8 @@ class Dashboard extends Component {
             </div>
           </div>
         </div>
+
+        <Footer />
       </div>
     )
   }

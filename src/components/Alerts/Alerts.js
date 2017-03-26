@@ -13,6 +13,7 @@ import AlertsList from './AlertsList/AlertsList';
 import AddLocation from './AddLocation/AddLocation';
 import AddAlert from './AddAlert/AddAlert';
 import Nav from '../Nav/Nav';
+import Footer from '../Footer/Footer';
 
 import './alerts.css';
 
@@ -80,6 +81,8 @@ class Alerts extends Component {
             }
           </div>
         </div>
+        
+        <Footer />
       </div>
     )
   }

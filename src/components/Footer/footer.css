@@ -1,0 +1,12 @@
+.Footer-container {
+  padding: 25px 0;
+  background-color: #5B5C5B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Footer-btn {
+  font-size: 1.25em;
+  color: #1E2021;
+}

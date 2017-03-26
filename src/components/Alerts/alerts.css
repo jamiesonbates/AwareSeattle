@@ -4,7 +4,9 @@
 .Alerts-container {
   display: flex;
   align-items: flex-start;
+  min-height: 100vh;
   background-color: #EDE9ED;
+  padding-bottom: 50px;
 }
 
 .Alerts-wrapper {

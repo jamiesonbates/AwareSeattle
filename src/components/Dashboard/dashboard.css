@@ -75,9 +75,10 @@
 }
 
 .Dashboard-about {
-  width: 70%;
+  width: 100%;
   padding: 50px;
   margin: 0 auto;
-  margin-botton: 50px;
+  margin-bottom: 50px;
+  margin-top: 50px;
   background-color: white;
 }

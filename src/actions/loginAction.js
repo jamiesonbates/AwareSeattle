@@ -15,6 +15,8 @@ export function loginUser(email, password) {
         payload: res.data
       })
 
+      console.log('res cookie', res);
+
       console.log('cookie /token', document.cookie);
       dispatch(authenticateUser());
 

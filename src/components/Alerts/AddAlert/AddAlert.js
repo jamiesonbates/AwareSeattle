@@ -29,18 +29,21 @@ class AddAlert extends Component {
     this.setState({
       userAlertLocationId: selected.value
     })
+    console.log(this.state);
   }
 
   handleOffenseChange(selected) {
     this.setState({
       offenseTypeId: selected.value
     })
+    console.log(this.state);
   }
 
   handleRangeChange(e) {
     this.setState({
       rangeVal: e.target.value
     })
+    console.log(this.state);
   }
 
   buildOptions(optionSet) {
@@ -73,13 +76,8 @@ class AddAlert extends Component {
     const offenseTypeId = this.state.offenseTypeId;
     const range = this.state.rangeVal;
     let userAlertLocationId;
-
-    if (this.props.locations.length === 1) {
-      userAlertLocationId = this.props.locations[0].id;
-    }
-    else {
-      userAlertLocationId = this.state.userAlertLocationId;
-    }
+    userAlertLocationId = this.state.userAlertLocationId;
+    console.log(userId, userAlertLocationId, offenseTypeId);
 
     this.props.dispatch(addNewAlert(userId, userAlertLocationId, offenseTypeId, range));
   }

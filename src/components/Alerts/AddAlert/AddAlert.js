@@ -12,8 +12,8 @@ class AddAlert extends Component {
     super();
 
     this.state = {
-      userAlertLocationId: '',
-      offenseTypeId: '',
+      userAlertLocationId: 'Select a location',
+      offenseTypeId: 'Select an offense',
       rangeVal: 250,
       rangeMin: 50,
       rangeMax: 500
@@ -98,7 +98,7 @@ class AddAlert extends Component {
               <label>Select a location</label>
               <Select
                 name="locations"
-                value="Select a Location"
+                value={this.state.userAlertLocationId}
                 options={locationOptions}
                 onChange={this.handleLocationChange}
               />
@@ -108,7 +108,7 @@ class AddAlert extends Component {
               <label>Select a crime</label>
               <Select
                 name="offenses"
-                value="Select an offense"
+                value={this.state.offenseTypeId}
                 options={offenseOptions}
                 onChange={this.handleOffenseChange}
               />

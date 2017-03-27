@@ -15,6 +15,7 @@
     "react-dom": "^15.4.2",
     "react-geosuggest": "^2.1.0",
     "react-google-maps": "^4.11.0",
+    "react-icons": "^2.2.3",
     "react-logger": "^1.1.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.7.0",

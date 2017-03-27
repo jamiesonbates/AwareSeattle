@@ -69,3 +69,23 @@
 .Nav-Signout-btn:hover {
   background-color: #676D70;
 }
+
+.Nav-btn-response {
+  display: none;
+}
+
+@media (max-width: 750px) {
+  .Nav-container {
+    justify-content: flex-start;
+  }
+
+  .Nav-btn {
+    font-size: 15px;
+    margin-right: 5px;
+    padding: 6px 10px;
+  }
+
+  .Nav-title {
+    margin-left: 5px;
+  }
+}

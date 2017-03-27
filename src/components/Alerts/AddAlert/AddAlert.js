@@ -25,22 +25,19 @@ class AddAlert extends Component {
     this.handleRangeChange = this.handleRangeChange.bind(this);
   }
 
-  handleLocationChange(e) {
-    console.log(e);
+  handleLocationChange(selected) {
     this.setState({
-      userAlertLocationId: e.target.value
+      userAlertLocationId: selected.value
     })
   }
 
-  handleOffenseChange(e) {
-    console.log(e);
+  handleOffenseChange(selected) {
     this.setState({
-      offenseTypeId: e.target.value
+      offenseTypeId: selected.value
     })
   }
 
   handleRangeChange(e) {
-    console.log(e);
     this.setState({
       rangeVal: e.target.value
     })

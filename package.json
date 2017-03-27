@@ -8,7 +8,10 @@
   },
   "dependencies": {
     "axios": "^0.15.3",
+    "express": "^4.15.2",
     "moment": "^2.18.1",
+    "morgan": "^1.8.1",
+    "path": "^0.12.7",
     "rc-slider": "^6.3.1",
     "react": "^15.4.2",
     "react-datepicker": "^0.43.0",
@@ -27,9 +30,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-prod": "env PORT=3000 nodemon server/bin/www",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "heroku-postbuild": "export NODE_ENV=production; knex migrate:latest"
+  },
+  "engines": {
+  "node": "7.4.0"
   }
 }

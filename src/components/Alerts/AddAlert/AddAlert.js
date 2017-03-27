@@ -20,6 +20,9 @@ class AddAlert extends Component {
     }
 
     this.buildOptions = this.buildOptions.bind(this);
+    this.handleLocationChange = this.handleLocationChange.bind(this);
+    this.handleOffenseChange = this.handleOffenseChange.bind(this);
+    this.handleRangeChange = this.handleRangeChange.bind(this);
   }
 
   handleLocationChange(e) {
@@ -84,8 +87,6 @@ class AddAlert extends Component {
   render() {
     const locations = this.props.userLocations;
     const offenses = this.props.offenseTypes;
-    console.log(offenses);
-    console.log(locations);
 
     const locationOptions = this.buildOptions(locations);
     const offenseOptions = this.buildOptions(offenses);
@@ -101,7 +102,7 @@ class AddAlert extends Component {
                 name="locations"
                 value="Select a Location"
                 options={locationOptions}
-                onChange={this.handleLocationChange.bind(this)}
+                onChange={this.handleLocationChange}
               />
             </div>
 
@@ -111,7 +112,7 @@ class AddAlert extends Component {
                 name="offenses"
                 value="Select an offense"
                 options={offenseOptions}
-                onChange={this.handleOffenseChange.bind(this)}
+                onChange={this.handleOffenseChange}
               />
             </div>
 
@@ -120,7 +121,7 @@ class AddAlert extends Component {
               <input
                 type="range"
                 value={this.state.rangeVal}
-                onChange={this.handleRangeChange.bind(this)}
+                onChange={this.handleRangeChange}
                 min={this.state.rangeMin}
                 max={this.state.rangeMax}
               />

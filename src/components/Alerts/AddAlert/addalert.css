@@ -73,3 +73,15 @@
 .AddAlert-range-val {
   color: #454544;
 }
+
+@media (max-width: 750px) {
+  .AddAlert-input-container {
+    flex-direction: column;
+  }
+
+  .AddAlert-input {
+    width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+}

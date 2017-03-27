@@ -127,3 +127,15 @@
 .geosuggest__item--active:focus {
   background: #ccc;
 }
+
+@media (max-width: 750px) {
+  .AddLocation-input-container {
+    flex-direction: column;
+  }
+
+  .AddLocation-input {
+    width: 90%;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+}

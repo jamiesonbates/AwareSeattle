@@ -49,9 +49,9 @@
 }
 
 .LocationList-delete-btn {
-  height: 75%;
+  /*height: 75%;*/
   border: 1px solid #BEC2BE;
-  padding: 2px 12px;
+  padding: 10px 12px;
   background-color: #E9EDE9;
   border-radius: 5px;
   line-height: 75%;
@@ -64,4 +64,30 @@
   background-color: #FF311F;
   color: white;
   cursor: pointer;
+}
+
+@media (max-width: 750px) {
+  .LocationList-locationtitle {
+    width: 25%;
+  }
+
+  .LocationList-addresstitle {
+    width: 45%;
+  }
+
+  .LocationList-deletetitle {
+    width: 30%;
+  }
+
+  .Location-name {
+    width: 25%;
+  }
+
+  .Location-address {
+    width: 45%;
+  }
+
+  .Location-deletelocation {
+    width: 30%;
+  }
 }

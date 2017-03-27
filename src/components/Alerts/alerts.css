@@ -62,3 +62,13 @@
   align-items: center;
   flex-grow: 1;
 }
+
+@media (max-width: 750px) {
+  .Alerts-container {
+    flex-direction: column;
+  }
+  .Alerts-location-container, .Alerts-list-container {
+    width: 90%;
+    margin: 1% 5%;
+  }
+}

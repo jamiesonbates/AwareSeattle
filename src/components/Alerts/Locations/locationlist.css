@@ -49,7 +49,6 @@
 }
 
 .LocationList-delete-btn {
-  /*height: 75%;*/
   border: 1px solid #BEC2BE;
   padding: 10px 12px;
   background-color: #E9EDE9;
@@ -89,5 +88,9 @@
 
   .Location-deletelocation {
     width: 30%;
+  }
+
+  .LocationList-delete-btn {
+    font-size: 1em;
   }
 }

@@ -64,9 +64,8 @@
 }
 
 .AlertsList-delete-btn {
-  height: 75%;
   border: 1px solid #BEC2BE;
-  padding: 2px 12px;
+  padding: 10px 12px;
   background-color: #E9EDE9;
   border-radius: 5px;
   line-height: 75%;
@@ -79,4 +78,10 @@
   background-color: #FF311F;
   color: white;
   cursor: pointer;
+}
+
+@media (max-width: 750px) {
+  .AlertsList-delete-btn {
+    font-size: 1em;
+  }
 }

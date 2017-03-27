@@ -1,25 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+
 .Signup-container {
   height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.Signup-form-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #EDE9ED;
 }
 
 .Signup-form {
-  height: 50%;
-  width: 75vw;
+  height: 65%;
+  width: 30vw;
   display: flex;
+  padding: 20px;
+  box-sizing: border-box;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  background-color: white;
+  border: 1px solid #E0DDE0;
+  border-radius: 3px;
+}
+
+.Signup-form h2 {
+  margin: 0;
 }
 
 .Signup-input-container {
   display: flex;
   flex-direction: column;
   height: 10%;
-  width: 40%;
+  width: 100%;
+}
+
+.Signup-input-container input {
+  font-size: 1em;
+  padding: 7px;
 }
 
 .Signup-error {

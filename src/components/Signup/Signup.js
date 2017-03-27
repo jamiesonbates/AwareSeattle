@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { signupNewUser } from '../../actions/signupAction';
 
+import Nav from '../Nav/Nav';
+
 import './signup.css';
 
 class Signup extends Component {
@@ -19,7 +21,6 @@ class Signup extends Component {
     const username = this.refs.username.value;
     const email = this.refs.email.value;
     const password = this.refs.password.value;
-    console.log(password.length);
 
     if (username.length > 15) {
       this.setState({
@@ -52,34 +53,35 @@ class Signup extends Component {
   render() {
     return (
       <div className="Signup-container">
-        <h1>AwareSeattle</h1>
-        <form onSubmit={this.handleSubmit.bind(this)} ref="signupForm" className="Signup-form">
-          <div className="Signup-input-container">
-            <label>Username</label>
-            <input type="text" ref="username" />
-          </div>
+        <Nav />
 
-          <div className="Signup-input-container">
-            <label>Email</label>
-            <input type="text" ref="email" />
-          </div>
+        <div className="Signup-form-container">
+          <form onSubmit={this.handleSubmit.bind(this)} ref="signupForm" className="Signup-form">
+            <h2>Sign Up</h2>
+            <div className="Signup-input-container">
+              <input type="text" ref="username" placeholder="Username"/>
+            </div>
 
-          <div className="Signup-input-container">
-            <label>Password</label>
-            <input type="text" ref="password" />
-          </div>
+            <div className="Signup-input-container">
+              <input type="text" ref="email" placeholder="Email"/>
+            </div>
 
-          {
-            this.state.error ?
-              <div className="Signup-error">
-                <p>{this.state.error}</p>
-              </div>
-            :
-              null
-          }
+            <div className="Signup-input-container">
+              <input type="text" ref="password" placeholder="Password"/>
+            </div>
 
-          <button type="submit">Signup</button>
-        </form>
+            {
+              this.state.error ?
+                <div className="Signup-error">
+                  <p>{this.state.error}</p>
+                </div>
+              :
+                null
+            }
+
+            <button type="submit">Signup</button>
+          </form>
+        </div>
       </div>
     )
   }

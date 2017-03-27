@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+@import url('https://fonts.googleapis.com/css?family=News+Cycle:400,700');
 
 .Nav-container {
   padding: 15px 0;
@@ -19,6 +20,7 @@
   color: white;
   padding: 5px;
   margin: 0;
+  font-family: 'News Cycle';
 }
 
 .Nav-btn-container {

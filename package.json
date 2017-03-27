@@ -8,7 +8,12 @@
     "test": "tests"
   },
   "devDependencies": {
-    "react-scripts": "0.9.5"
+    "chai": "^3.5.0",
+    "foreman": "^2.0.0",
+    "mocha": "^3.2.0",
+    "nock": "^9.0.9",
+    "react-scripts": "^0.9.5",
+    "supertest": "^3.0.0"
   },
   "dependencies": {
     "axios": "^0.15.3",
@@ -43,20 +48,12 @@
     "redux-thunk": "^2.2.0",
     "request": "^2.81.0"
   },
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "foreman": "^2.0.0",
-    "mocha": "^3.2.0",
-    "nock": "^9.0.9",
-    "supertest": "^3.0.0"
-  },
-  "scripts":  {
-    "test": "mocha",
+  "scripts": {
+    "test": "react-scripts test --env=jsdom",
     "knex": "knex",
-    "start": "react-scripts start && nodemon server/bin/www",
+    "start": "react-scripts start & nodemon server/bin/www",
     "start-prod": "env PORT=3000 nodemon server/bin/www",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "heroku-postbuild": "export NODE_ENV=production; knex migrate:latest"
   },

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export function fetchOffenseTypes() {
   return function(dispatch) {
-    axios.get('https://awareseattle-backend.herokuapp.com/api/offenseTypes')
+    axios.get('/api/offenseTypes')
       .then((res) => {
         dispatch({
           type: 'FETCH_OFFENSE_TYPES_SUCCESS',

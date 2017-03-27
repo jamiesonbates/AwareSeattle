@@ -5,7 +5,7 @@ import { authenticateUser } from './authenticateAction';
 
 export function signupNewUser(username, email, password) {
   return function(dispatch) {
-    axios.post('https://awareseattle-backend.herokuapp.com/api/users', {
+    axios.post('/api/users', {
       username,
       email,
       password

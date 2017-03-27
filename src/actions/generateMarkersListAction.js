@@ -7,10 +7,6 @@ export function generateMarkersList() {
     const offenseFilter = state.offenseFilter.filterByOffenses;
     const startingMilliseconds = state.timeFilter.startingMilliseconds;
     const endingMilliseconds = state.timeFilter.endingMilliseconds;
-    console.log(reports);
-    console.log(offenseFilter);
-    console.log(startingMilliseconds);
-    console.log(endingMilliseconds);
 
     const reportsAsArray = [];
 
@@ -23,7 +19,6 @@ export function generateMarkersList() {
 
         return acc;
     }, []);
-    console.log(combinedReports);
 
     const offenseFiltered = combinedReports.filter(report => {
       if (offenseFilter.length) {
@@ -33,14 +28,12 @@ export function generateMarkersList() {
         return true;
       }
     });
-    console.log(offenseFiltered);
 
     const markersList = offenseFiltered.filter(report => {
       const occurredMilliseconds = Moment(report.date_occurred);
 
       return occurredMilliseconds.isBetween(startingMilliseconds, endingMilliseconds);
     })
-    console.log(markersList);
 
     dispatch({
       type: 'GENERATE_MARKERS_LIST',

@@ -5,7 +5,7 @@ import { combineLocations } from './combineLocationsAction';
 
 export function getUserLocations(userId) {
   return function(dispatch) {
-    axios.get(`https://awareseattle-backend.herokuapp.com/api/locations/${userId}`)
+    axios.get(`/api/locations/${userId}`)
       .then((res) => {
         const locations = res.data;
 

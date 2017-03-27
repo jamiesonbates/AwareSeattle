@@ -5,7 +5,7 @@ import { resetLocations } from './resetLocationsAction';
 
 export function signOutUser() {
   return function(dispatch) {
-    axios.delete('https://awareseattle-backend.herokuapp.com/api/token')
+    axios.delete('/api/token')
       .then((res) => {
         browserHistory.push('/');
         window.location.reload();

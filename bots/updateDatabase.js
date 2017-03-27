@@ -17,10 +17,12 @@ const deleteOldReports = function() {
 }
 
 // Get police reports from API within "length" months
-const getPoliceReports = function(length) {
-  const base = `https://data.seattle.gov/resource/y7pv-r3kh.json?$limit=50000&$where=date_reported >`;
-  const monthsAgo = moment().subtract(length, 'months').format('YYYY-MM-DDTHH:mm:ss.SSS');
-  const url = `${base} '${monthsAgo}'`;
+const getPoliceReports = function(start, end) {
+  const base = `https://data.seattle.gov/resource/y7pv-r3kh.json?$limit=50000&$where=date_reported between`;
+  const monthsAgoStart = moment().subtract(start, 'months').format('YYYY-MM-DDTHH:mm:ss.SSS');
+  const monthsAgoEnd = moment().subtract(end, 'months').format('YYYY-MM-DDTHH:mm:ss.SSS')
+
+  const url = `${base} '${monthsAgoStart}' and ${monthsAgoEnd}`;
 
   return axios.get(url)
     .then((res) => {
@@ -231,7 +233,7 @@ const updateAlteredData = function(report) {
 }
 
 // Use above functions to update the database in this scheduled job
-const runDatabaseJob = function(count) {
+const runDatabaseJob = function(start, end) {
   let dataFromAPI;
   let dataFromDB;
   let crimeDictionary;

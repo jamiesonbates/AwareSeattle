@@ -43,8 +43,8 @@ router.get('/police_reports/:lat/:lng/:range', (req, res, next) => {
   })
 });
 
-router.get('/runjob/:count', (req, res, next) => {
-  runDatabaseJob(req.params.count)
+router.get('/runjob/:start/:end', (req, res, next) => {
+  runDatabaseJob(req.params.start, req.params.end)
     .then(() => {
       sendAlertsJob();
     })

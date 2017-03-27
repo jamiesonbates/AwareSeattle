@@ -22,7 +22,7 @@ const getPoliceReports = function(start, end) {
   const monthsAgoStart = moment().subtract(start, 'months').format('YYYY-MM-DDTHH:mm:ss.SSS');
   const monthsAgoEnd = moment().subtract(end, 'months').format('YYYY-MM-DDTHH:mm:ss.SSS')
 
-  const url = `${base} '${monthsAgoStart}' and ${monthsAgoEnd}`;
+  const url = `${base} '${monthsAgoStart}' and '${monthsAgoEnd}'`;
 
   return axios.get(url)
     .then((res) => {

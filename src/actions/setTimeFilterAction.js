@@ -8,9 +8,7 @@ import { setSelectedLocation } from './setSelectedLocationAction';
 export function setTimeFilter(startDate, endDate) {
   return function(dispatch, getState) {
     const state = getState();
-    console.log(state.locations.selectedLocation);
     const identity = state.locations.selectedLocation.identity;
-    console.log(identity);
 
     dispatch({
       type: 'SET_TIME_FILTER',
@@ -24,7 +22,6 @@ export function setTimeFilter(startDate, endDate) {
     dispatch(generateStats());
 
     if (identity) {
-      console.log('here');
       dispatch(setSelectedLocation(identity));
     }
 

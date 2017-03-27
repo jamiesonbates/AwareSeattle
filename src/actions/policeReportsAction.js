@@ -5,7 +5,7 @@ import { generateStats } from './locationStatsAction';
 
 export function fetchPoliceReports(lat, lng, range, identity, milliseconds) {
   return function(dispatch, getState) {
-    axios.get(`/api/police_reports/${lat}/${lng}/${range}`)
+    axios.get(`https://awareseattle-backend.herokuapp.com/api/police_reports/${lat}/${lng}/${range}`)
       .then((res) => {
         const nextReports = getState().policeReports.reports;
 

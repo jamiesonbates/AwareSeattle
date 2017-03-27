@@ -6,8 +6,6 @@ export function setSelectedLocation(identity) {
     const locationStats = state.locations.locationStats;
     const selectedLocation = locationStats[identity];
     selectedLocation.identity = identity;
-    console.log(selectedLocation);
-
 
     dispatch({
       type: 'SET_SELECTED_LOCATION',

@@ -23,6 +23,7 @@ export function generateMarkersList() {
 
         return acc;
     }, []);
+    console.log(combinedReports);
 
     const offenseFiltered = combinedReports.filter(report => {
       if (offenseFilter.length) {
@@ -32,12 +33,14 @@ export function generateMarkersList() {
         return true;
       }
     });
+    console.log(offenseFiltered);
 
     const markersList = offenseFiltered.filter(report => {
       const occurredMilliseconds = Moment(report.date_occurred);
 
       return occurredMilliseconds.isBetween(startingMilliseconds, endingMilliseconds);
     })
+    console.log(markersList);
 
     dispatch({
       type: 'GENERATE_MARKERS_LIST',

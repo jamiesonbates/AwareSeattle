@@ -79,7 +79,11 @@ class Signup extends Component {
                 null
             }
 
-            <button type="submit">Signup</button>
+            <button
+              type="submit"
+              className="Signup-btn">
+              Start
+            </button>
           </form>
         </div>
       </div>

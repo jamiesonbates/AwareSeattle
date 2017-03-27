@@ -77,8 +77,26 @@
 .Dashboard-about {
   width: 100%;
   padding: 50px;
+  box-sizing: border-box;
   margin: 0 auto;
-  margin-bottom: 50px;
   margin-top: 50px;
   background-color: white;
+}
+
+@media (max-width: 750px) {
+  .Dashboard-main-container {
+    flex-direction: column;
+  }
+
+  .Dashboard-map-container {
+    height: 60vh;
+  }
+
+  .Dashboard-features-container {
+    width: 100%;
+  }
+
+  .Dashboard-tools-container {
+    width: 100%;
+  }
 }

@@ -85,3 +85,31 @@
   padding-bottom: 3px;
   margin: 0;
 }
+
+@media (max-width: 750px) {
+  .Status-header {
+    flex-direction: column-reverse;
+  }
+
+  .Status-data-disclaimer {
+    width: 100%;
+  }
+
+  .Status-data-disclaimer p {
+    margin-bottom: 3%;
+    position: relative;
+  }
+
+  .Status-info {
+    flex-direction: column;
+  }
+
+  .Status-updating {
+    width: 100%;
+  }
+
+  .Status-button-container {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

@@ -80,3 +80,9 @@
 .LocationSummary-single-stat p {
   font-size: 1.5em;
 }
+
+@media (max-width: 750px) {
+  .LocationSummary-single-stat-container {
+    min-width: 150px;
+  }
+}

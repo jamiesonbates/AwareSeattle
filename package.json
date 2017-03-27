@@ -33,8 +33,7 @@
     "start-prod": "env PORT=3000 nodemon server/bin/www",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "NODE_ENV=production"
+    "eject": "react-scripts eject"
   },
   "engines": {
     "node": "7.4.0"

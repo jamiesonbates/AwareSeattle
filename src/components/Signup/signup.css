@@ -21,3 +21,12 @@
   height: 10%;
   width: 40%;
 }
+
+.Signup-error {
+  padding: 10px;
+  background-color: white;
+}
+
+.Signup-error p {
+  color: #BA1814;
+}

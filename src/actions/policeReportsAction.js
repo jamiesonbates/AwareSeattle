@@ -11,6 +11,7 @@ export function fetchPoliceReports(lat, lng, range, identity, milliseconds) {
 
         nextReports[`'${identity}'`] = res.data;
 
+        console.log('here');
         dispatch({
           type: 'FETCH_POLICE_REPORTS_FULFILLED',
           payload: nextReports

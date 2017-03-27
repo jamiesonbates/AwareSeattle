@@ -25,12 +25,16 @@ class Login extends Component {
       this.setState({
         error: 'Bad email or password.'
       })
+
+      return;
     }
 
     if (password.length < 8) {
       this.setState({
         error: 'Bad email or password.'
       })
+
+      return;
     }
 
     this.props.dispatch(loginUser(email, password));

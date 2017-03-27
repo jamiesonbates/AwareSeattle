@@ -4,7 +4,7 @@ import { getUserLocations } from './userLocationsAction';
 
 export function addNewLocation(user_id, location_title, location, lat, lng) {
   return function(dispatch) {
-    axios.post('/api/locations', {
+    axios.post('https://awareseattle.herokuapp.com/api/locations', {
       user_id,
       location_title,
       location,

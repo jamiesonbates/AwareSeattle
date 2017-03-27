@@ -5,7 +5,7 @@ import { getUserLocations } from './userLocationsAction';
 export function authenticateUser() {
   return function(dispatch) {
     console.log('cookie /users', document.cookie);
-    axios.get('/api/users')
+    axios.get('https://awareseattle.herokuapp.com/api/users')
       .then((res) => {
         dispatch({
           type: 'USER_AUTHENTICATE_SUCCESS',

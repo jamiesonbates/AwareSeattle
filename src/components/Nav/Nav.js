@@ -12,7 +12,7 @@ function Nav(props) {
   const onDashboard = currentPath === '/';
   const onAlerts = currentPath === '/alerts';
   const onSignup = currentPath === '/signup';
-  const onLogin = currentPath === './login';
+  const onLogin = currentPath === '/login';
   const onReports = currentPath.includes('reports');
 
   return (
@@ -45,6 +45,10 @@ function Nav(props) {
                       linkTo={'/signup'}
                       name="Sign Up"
                       class="Nav-Signup-btn"/>
+                    <NavHelper
+                      linkTo={'/'}
+                      name="Dashboard"
+                      class="Nav-Dashboard-btn"/>
                   </div>
                 :
                   onSignup ?
@@ -53,6 +57,10 @@ function Nav(props) {
                         linkTo={'/login'}
                         name="Login"
                         class="Nav-Login-btn"/>
+                      <NavHelper
+                        linkTo={'/'}
+                        name="Dashboard"
+                        class="Nav-Dashboard-btn"/>
                     </div>
                   :
                     onReports ?
@@ -88,24 +96,47 @@ function Nav(props) {
                   linkTo={'/login'}
                   name="Login"
                   class="Nav-Login-btn"/>
-
                 <NavHelper
                   linkTo={'/signup'}
                   name="Sign Up"
                   class="Nav-Signup-btn"/>
               </div>
             :
-              <div className="Nav-btns">
-                <NavHelper
-                  linkTo={'/login'}
-                  name="Login"
-                  class="Nav-Login-btn"/>
+              onSignup ?
+                <div className="Nav-btns">
+                  <NavHelper
+                    linkTo={'/login'}
+                    name="Login"
+                    class="Nav-Login-btn"/>
+                  <NavHelper
+                    linkTo={'/'}
+                    name="Dashboard"
+                    class="Nav-Dashboard-btn"/>
+                </div>
+              :
+               onLogin ?
+                 <div className="Nav-btns">
+                   <NavHelper
+                     linkTo={'/signup'}
+                     name="Sign Up"
+                     class="Nav-Signup-btn"/>
+                   <NavHelper
+                     linkTo={'/'}
+                     name="Dashboard"
+                     class="Nav-Dashboard-btn"/>
+                 </div>
+               :
+                <div className="Nav-btns">
+                  <NavHelper
+                    linkTo={'/login'}
+                    name="Login"
+                    class="Nav-Login-btn"/>
 
-                <NavHelper
-                  linkTo={'/signup'}
-                  name="Sign Up"
-                  class="Nav-Signup-btn"/>
-              </div>
+                  <NavHelper
+                    linkTo={'/signup'}
+                    name="Sign Up"
+                    class="Nav-Signup-btn"/>
+                </div>
         }
       </div>
     </nav>

@@ -2,7 +2,9 @@ export default function reducer(state={
   userId: null,
   username: null,
   email: null,
-  isAuthenticated: false
+  isAuthenticated: false,
+  signUpError: null,
+  loginError: null
 }, action) {
 
   switch(action.type) {
@@ -12,12 +14,14 @@ export default function reducer(state={
         userId: action.payload.id,
         username: action.payload.username,
         email: action.payload.email,
-        isAuthenticated: true
+        isAuthenticated: true,
+        loginError: null
       }
     case 'USER_LOGIN_FAILURE':
       return {
         ...state,
-        isAuthenticated: false
+        isAuthenticated: false,
+        loginError: action.payload
       }
     case 'USER_SIGNUP_SUCCESS':
       return {
@@ -30,7 +34,8 @@ export default function reducer(state={
     case 'USER_SIGNUP_FAILURE':
       return {
         ...state,
-        isAuthenticated: false
+        isAuthenticated: false,
+        signUpError: action.payload
       }
     case 'USER_AUTHENTICATE_SUCCESS':
       return {
@@ -38,7 +43,8 @@ export default function reducer(state={
         userId: action.payload.id,
         username: action.payload.username,
         email: action.payload.email,
-        isAuthenticated: true
+        isAuthenticated: true,
+        signUpError: null
 
       }
     case 'USER_AUTHENTICATE_FAILURE':

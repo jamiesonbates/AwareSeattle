@@ -38,6 +38,12 @@ class Signup extends Component {
       return;
     }
 
+    if (!email) {
+      this.setState({
+        error: 'Email must not be blank.'
+      })
+    }
+
     if (!email.includes('@')) {
       this.setState({
         error: 'Must use valid email.'
@@ -53,7 +59,7 @@ class Signup extends Component {
   render() {
     return (
       <div className="Signup-container">
-        <Nav />
+        <Nav {...this.props} />
 
         <div className="Signup-form-container">
           <form onSubmit={this.handleSubmit.bind(this)} ref="signupForm" className="Signup-form">
@@ -71,9 +77,9 @@ class Signup extends Component {
             </div>
 
             {
-              this.state.error ?
+              this.state.error || this.props.signUpError ?
                 <div className="Signup-error">
-                  <p>{this.state.error}</p>
+                  <p>{this.state.error || this.props.signUpError}</p>
                 </div>
               :
                 null
@@ -93,7 +99,8 @@ class Signup extends Component {
 
 const mapStateToProps = function(store) {
   return {
-
+    isAuthenticated: store.user.isAuthenticated,
+    signUpError: store.user.signUpError
   }
 }
 

@@ -17,13 +17,13 @@ export function signupNewUser(username, email, password) {
       })
 
       dispatch(authenticateUser());
-      
+
       browserHistory.push('/alerts');
     })
     .catch((err) => {
       dispatch({
         type: 'USER_SIGNUP_FAILURE',
-        payload: err
+        payload: err.response.data
       })
     })
   }

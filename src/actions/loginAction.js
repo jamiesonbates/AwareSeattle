@@ -20,9 +20,10 @@ export function loginUser(email, password) {
       browserHistory.push('/');
     })
     .catch((err) => {
+      console.log(err);
       dispatch({
         type: 'USER_LOGIN_FAILURE',
-        payload: err
+        payload: 'Bad email or password.'
       })
     })
   }

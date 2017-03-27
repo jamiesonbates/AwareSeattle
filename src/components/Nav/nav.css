@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+
 .Nav-container {
   padding: 15px 0;
   box-sizing: border-box;
@@ -7,6 +11,7 @@
   justify-content: center;
   position: relative;
   background-color: #2B2B2B;
+  font-family: ''
 }
 
 .Nav-title {
@@ -25,6 +30,7 @@
 
 .Nav-btn {
   padding: 8px 15px;
+  font-family: 'Bree Serif';
   background-color: #CC3527;
   border-radius: 5px;
   border: 1px solid black;
@@ -33,6 +39,7 @@
 }
 
 .Nav-btn:hover {
+  background-color: #9C281E;
   cursor: pointer;
 }
 
@@ -45,7 +52,7 @@
 }
 
 .Nav-Dashboard-btn {
-  background-color: #313DE3;
+  background-color: #3E4FD1;
 }
 
 .Nav-Dashboard-btn:hover {

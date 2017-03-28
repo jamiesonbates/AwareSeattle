@@ -54,7 +54,7 @@ class Login extends Component {
             </div>
 
             <div className="Login-input-container">
-              <input type="text" ref="password" placeholder="Password"/>
+              <input type="password" ref="password" placeholder="Password"/>
             </div>
 
             {

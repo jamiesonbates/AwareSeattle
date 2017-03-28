@@ -73,7 +73,7 @@ class AddLocation extends Component {
               <Geosuggest
                 onSuggestSelect={(place) => this.updatePlace(place)}
                 ref={el => this.geoSuggest = el}
-              />
+                placeholder={'Enter an address or place'}/>
             </div>
           </div>
 

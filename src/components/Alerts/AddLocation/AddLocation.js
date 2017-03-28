@@ -45,6 +45,13 @@ class AddLocation extends Component {
     const lng = this.state.lng;
 
     this.props.dispatch(addNewLocation(userId, locationTitle, locationName, lat, lng));
+
+    this.setState({
+      locationTitle: '',
+      locationName: '',
+      lat: '',
+      lng: ''
+    })
   }
 
   render() {
@@ -63,11 +70,16 @@ class AddLocation extends Component {
 
             <div className="AddLocation-input">
               <label>Enter a location</label>
-              <Geosuggest onSuggestSelect={(place) => this.updatePlace(place)} />
+              <Geosuggest
+                onSuggestSelect={(place) => this.updatePlace(place)}
+                ref={el => this.geoSuggest = el}
+              />
             </div>
           </div>
 
-        <button className="AddLocation-btn">Add Location</button>
+        <button
+          onClick={() => this.geoSuggest.clear()}
+          className="AddLocation-btn">Add Location</button>
         </form>
       </div>
     )

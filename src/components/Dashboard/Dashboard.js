@@ -41,28 +41,6 @@ class Dashboard extends Component {
     this.props.dispatch(fetchOffenseTypes());
     this.props.dispatch(resetOffenseFilter());
     this.props.dispatch(authenticateUser());
-
-    setTimeout(() => {
-      if (!this.props.isAuthenticated) {
-        let lat;
-        let lng;
-
-        navigator.geolocation.getCurrentPosition((position) => {
-          lat = position.coords.latitude;
-          lng = position.coords.longitude;
-
-          this.props.dispatch(addLocalLocation(lat, lng, 0));
-        })
-
-        if (!lat || !lng) {
-          lat = this.state.defaultCircle.lat;
-          lng = this.state.defaultCircle.lng;
-
-
-          this.props.dispatch(addLocalLocation(lat, lng, 0));
-        }
-      }
-    }, 2000);
   }
 
   render() {

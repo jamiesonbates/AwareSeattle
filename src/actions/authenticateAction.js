@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 import { getUserLocations } from './userLocationsAction';
+import { addLocalLocation } from './addLocalLocationAction';
 
 export function authenticateUser() {
   return function(dispatch) {
-    console.log('cookie /users', document.cookie);
     axios.get('https://awareseattle.herokuapp.com/api/users')
       .then((res) => {
         dispatch({
@@ -15,6 +15,16 @@ export function authenticateUser() {
         dispatch(getUserLocations(res.data.id));
       })
       .catch((err) => {
+        let lat;
+        let lng;
+
+        navigator.geolocation.getCurrentPosition((position) => {
+          lat = position.coords.latitude;
+          lng = position.coords.longitude;
+
+          dispatch(addLocalLocation(lat, lng, 0));
+        })
+
         dispatch({
           type: 'USER_AUTHENTICATE_FAILURE',
           payload: err

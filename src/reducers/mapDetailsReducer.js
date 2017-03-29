@@ -1,5 +1,5 @@
 export default function reducer(state={
-  mapZoom: 13,
+  mapZoom: 14,
   mapCenter: { lat: 47.6062, lng: -122.3321 }
 }, action) {
 

@@ -14,16 +14,11 @@ export function loginUser(email, password) {
         type: 'USER_LOGIN_SUCCESS',
         payload: res.data
       })
-
-      console.log('res cookie', res);
-
-      console.log('cookie /token', document.cookie);
       dispatch(authenticateUser());
 
       browserHistory.push('/');
     })
     .catch((err) => {
-      console.log(err);
       dispatch({
         type: 'USER_LOGIN_FAILURE',
         payload: 'Bad email or password.'

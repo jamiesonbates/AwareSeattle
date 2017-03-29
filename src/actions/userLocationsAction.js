@@ -2,6 +2,7 @@ import axios from 'axios';
 
 import { fetchPoliceReports } from './policeReportsAction';
 import { combineLocations } from './combineLocationsAction';
+import { setMapCenter } from './mapCenterAction';
 
 export function getUserLocations(userId) {
   return function(dispatch) {
@@ -20,6 +21,7 @@ export function getUserLocations(userId) {
           payload: locations
         })
 
+        dispatch(setMapCenter({ lat: locations[0].lat, lng: locations[0].lng }))
 
         for (const location of locations) {
           const lat = location.lat;

@@ -1,6 +1,7 @@
 import { fetchPoliceReports } from './policeReportsAction';
 
 import { combineLocations } from './combineLocationsAction';
+import { setMapCenter } from './mapCenterAction';
 
 export function addLocalLocation(lat, lng, length) {
   const location = {
@@ -23,6 +24,8 @@ export function addLocalLocation(lat, lng, length) {
     })
 
     dispatch(combineLocations());
+
+    dispatch(setMapCenter({ lat: location.lat, lng: location.lng }));
 
     dispatch(fetchPoliceReports(lat, lng, 500, location.identity));
   }

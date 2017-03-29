@@ -44,14 +44,25 @@ class Dashboard extends Component {
 
     setTimeout(() => {
       if (!this.props.isAuthenticated) {
+        let lat;
+        let lng;
+
         navigator.geolocation.getCurrentPosition((position) => {
-          const lat = position.coords.latitude;
-          const lng = position.coords.longitude;
-          console.log(lat);
-          console.log(lng);
+          lat = position.coords.latitude;
+          lng = position.coords.longitude;
 
           this.props.dispatch(addLocalLocation(lat, lng, 0));
         })
+
+        console.log(lat);
+        console.log(lng);
+
+        if (!lat || !lng) {
+          lat = this.state.lat;
+          lng = this.state.lng;
+
+          this.props.dispatch(addLocalLocation(lat, lng, 0));
+        }
       }
     }, 2000);
   }

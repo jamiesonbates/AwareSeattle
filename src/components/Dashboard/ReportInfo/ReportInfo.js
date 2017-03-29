@@ -19,7 +19,7 @@ function ReportInfo(props) {
             <div className="ReportInfo-body">
               <div className="ReportInfo-stat">
                 <h4>Date Occurred</h4>
-                <p>{Moment(report.date_occurred).format('MM-DD-YYYY')}</p>
+                <p>{Moment(report.date_occurred).format('MM-DD-YYYY, HH:mm A')}</p>
               </div>
 
               <div className="ReportInfo-stat">

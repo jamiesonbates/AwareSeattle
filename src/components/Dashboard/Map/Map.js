@@ -41,11 +41,17 @@ class Map extends Component {
                     }
 
                     return (
-                      <Marker
+                      <Circle
                         key={i}
-                        position={position}
-                        info={location}
-                        zIndex={2}
+                        center={position}
+                        radius={500}
+                        options={{
+                          fillColor: 'red',
+                          fillOpacity: 0.2,
+                          strokeColor: 'red',
+                          strokeOpacity: 1,
+                          strokeWeight: 1
+                        }}
                       />
                     );
                   })

@@ -54,14 +54,9 @@ class Dashboard extends Component {
           this.props.dispatch(addLocalLocation(lat, lng, 0));
         })
 
-        console.log(lat);
-        console.log(lng);
-
         if (!lat || !lng) {
           lat = this.state.defaultCircle.lat;
           lng = this.state.defaultCircle.lng;
-          console.log(lat);
-          console.log(lng);
 
 
           this.props.dispatch(addLocalLocation(lat, lng, 0));

@@ -47,6 +47,8 @@ class Dashboard extends Component {
         navigator.geolocation.getCurrentPosition((position) => {
           const lat = position.coords.latitude;
           const lng = position.coords.longitude;
+          console.log(lat);
+          console.log(lng);
 
           this.props.dispatch(addLocalLocation(lat, lng, 0));
         })

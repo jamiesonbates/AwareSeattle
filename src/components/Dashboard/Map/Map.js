@@ -46,11 +46,11 @@ class Map extends Component {
                         center={position}
                         radius={500}
                         options={{
-                          fillColor: 'red',
-                          fillOpacity: 0.2,
-                          strokeColor: 'red',
+                          fillColor: '#4272FF',
+                          fillOpacity: 0.15,
+                          strokeColor: '#150F99',
                           strokeOpacity: 1,
-                          strokeWeight: 1
+                          strokeWeight: 0.5
                         }}
                       />
                     );

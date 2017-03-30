@@ -5,12 +5,24 @@ import './reportinfo.css';
 
 function ReportInfo(props) {
   const report = props.report;
+  console.log(report);
   const reportSelected = Object.keys(props.report).length > 0;
 
   return (
     <div className="ReportInfo-container">
       <div className="ReportInfo-header">
         <h3>Incident Information</h3>
+        {
+          reportSelected ?
+            <div
+              style={{ backgroundColor: report.color }} className="ReportInfo-indicator">
+            </div>
+          :
+            <div
+              style={{ backgroundColor: 'white' }} className="ReportInfo-indicator">
+            </div>
+
+        }
       </div>
 
       <div className="ReportInfo-body-container">

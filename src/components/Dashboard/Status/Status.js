@@ -12,7 +12,7 @@ class Status extends Component {
         <div className="Status-header">
           <h3>What's in this map?</h3>
           <div className="Status-data-disclaimer">
-            <p>Data up to 24 hours old.</p>
+            <p>Data Updated Every 24 Hours</p>
           </div>
         </div>
         <div className="Status-info">

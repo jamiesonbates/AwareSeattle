@@ -4,6 +4,7 @@
   background-color: #2B2B2B;
   padding: 10px;
   color: white;
+  position: relative;
 }
 
 .Status-header {
@@ -75,13 +76,13 @@
 
 .Status-data-disclaimer {
   width: 30%;
-  position: relative;
+  /*position: relative;*/
 }
 
 .Status-data-disclaimer p {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top: 1px;
+  right: 2px;
   padding-bottom: 3px;
   margin: 0;
 }

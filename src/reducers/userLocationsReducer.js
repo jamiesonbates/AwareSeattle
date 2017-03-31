@@ -62,6 +62,12 @@ export default function reducer(state={
         ...state,
         locationStats: action.payload
       }
+    case 'CLEAR_SELECTED_LOCATION':
+      return {
+        ...state,
+        selectedLocation: action.payload,
+        locationIsSelected: false
+      }
   }
 
   return state;

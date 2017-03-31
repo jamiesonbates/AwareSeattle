@@ -17,6 +17,15 @@ class LocationsOnMap extends Component {
   handleLocationClick(zoom, coords, identity, e) {
     const buttons = document.querySelectorAll('.LocationsOnMap-btn');
 
+    if (e.target.classList.contains('LocationsOnMap-btn-selected')) {
+      e.target.classList.remove('LocationsOnMap-btn-selected');
+
+      this.props.dispatch(setMapZoom(14));
+      this.props.dispatch(setSelectedLocation('clear'));
+
+      return;
+    }
+
     buttons.forEach((button) => {
       if (button === e.target) {
         e.target.classList.add('LocationsOnMap-btn-selected');
@@ -34,6 +43,7 @@ class LocationsOnMap extends Component {
   render() {
     return (
       <div className="LocationsOnMap-container">
+        <h3>Locations</h3>
         {
           this.props.locations.combinedLocations.map((location, i) => (
             <button

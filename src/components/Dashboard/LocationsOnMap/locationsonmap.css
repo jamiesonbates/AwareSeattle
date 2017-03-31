@@ -7,6 +7,11 @@
   flex-direction: column;
 }
 
+.LocationsOnMap-container h3 {
+  margin: 0;
+  text-shadow: 1px 1px white;
+}
+
 .LocationsOnMap-btn {
   border: none;
   margin-top: 5%;

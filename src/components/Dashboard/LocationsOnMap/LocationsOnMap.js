@@ -43,7 +43,6 @@ class LocationsOnMap extends Component {
   render() {
     return (
       <div className="LocationsOnMap-container">
-        <h3>Locations</h3>
         {
           this.props.locations.combinedLocations.map((location, i) => (
             <button

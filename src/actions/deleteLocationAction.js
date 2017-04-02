@@ -4,7 +4,7 @@ import { getUserLocations } from './userLocationsAction';
 
 export function deleteLocation(location_id, user_id) {
   return function(dispatch) {
-    axios.delete(`https://awareseattle.herokuapp.com/api/locations/${location_id}`)
+    axios.delete(`https://crime-watch-seattle.herokuapp.com/api/locations/${location_id}`)
       .then((res) => {
         dispatch(getUserLocations(user_id))
       })

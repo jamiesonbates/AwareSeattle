@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export function getAlerts(userId) {
   return function(dispatch) {
-    axios.get(`https://awareseattle.herokuapp.com/api/alerts/${userId}`)
+    axios.get(`https://crime-watch-seattle.herokuapp.com/api/alerts/${userId}`)
       .then((res) => {
         dispatch({
           type: 'FETCH_USER_ALERTS_SUCCESS',

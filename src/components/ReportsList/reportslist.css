@@ -1,17 +1,21 @@
 body {
   margin: 0;
+  height: 100%;
 }
 
 .ReportsList-container {
   width: 100%;
   min-height: 100vh;
+  height: 100%;
+  position: relative;
 }
 
 .ReportsList-list-container {
   width: 95%;
   margin: 0 auto;
   margin-top: 3%;
-  margin-bottom: 50px;
+  margin-bottom: 150px;
+  box-sizing: border-box;
   border: 1px solid #2B2B2B;
   border-radius: 3px;
   background-color: white;
@@ -32,7 +36,16 @@ body {
 }
 
 .ReportsList-list {
+  box-sizing: border-box;
+}
 
+.ReportsList-list-data {
+}
+
+.ReportsList-row p, .ReportsList-list-headers h4 {
+  margin: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .ReportsList-list-headers, .ReportsList-row {
@@ -43,6 +56,7 @@ body {
 
 .ReportsList-row {
   border-top: 1px solid gray;
+  box-sizing: border-box;
 }
 
 .ReportsList-generaloffensenumber {
@@ -63,4 +77,11 @@ body {
 
 .ReportsList-offensetype {
   width: 20%;
+}
+
+.ReportsList-footer-container {
+  /*margin-top: 50px;*/
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }

@@ -90,7 +90,9 @@ class ReportsList extends Component {
           </div>
         </div>
 
-        <Footer />
+        <div className="ReportsList-footer-container">
+          <Footer />
+        </div>
       </div>
     )
   }

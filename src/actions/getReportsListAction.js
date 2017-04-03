@@ -5,9 +5,8 @@ export function getReportsList(lat, lng, range, defaultTime, offenseList) {
   return function(dispatch) {
     axios.get(`https://crime-watch-seattle.herokuapp.com/api/police_reports/${lat}/${lng}/${range}`)
     .then((res) => {
+      console.log('data', res.data);
       const reports = res.data;
-      const startingMilliseconds = defaultTime.startingMilliseconds;
-      const endingMilliseconds = defaultTime.endingMilliseconds;
       let nextReports = [];
 
       if (typeof offenseList === 'object' && offenseList.length) {
@@ -26,6 +25,7 @@ export function getReportsList(lat, lng, range, defaultTime, offenseList) {
         const filteredReports = reports.filter(report => {
           const reportOffenseId = parseInt(report.offense_type_id);
           const offenseId = parseInt(offenseList);
+          console.log(reportOffenseId, offenseId);
 
           return reportOffenseId === offenseId;
         })
@@ -33,11 +33,11 @@ export function getReportsList(lat, lng, range, defaultTime, offenseList) {
         nextReports = nextReports.concat(filteredReports);
       }
 
-      nextReports = nextReports.filter(report => {
-        const occurredMilliseconds = Moment(report.date_occurred);
-
-        return occurredMilliseconds.isBetween(startingMilliseconds, endingMilliseconds);
-      })
+      // nextReports = nextReports.filter(report => {
+      //   const occurredMilliseconds = Moment(report.date_occurred);
+      //
+      //   return occurredMilliseconds.isBetween(startingMilliseconds, endingMilliseconds);
+      // })
 
       nextReports = nextReports.sort((a, b) => {
         const aVal = parseFloat(Moment(a.date_occurred).valueOf());
@@ -51,6 +51,7 @@ export function getReportsList(lat, lng, range, defaultTime, offenseList) {
         }
         return 0;
       });
+      console.log(nextReports);
 
       dispatch({
         type: 'SET_ACTIVE_REPORT_FOR_LIST',

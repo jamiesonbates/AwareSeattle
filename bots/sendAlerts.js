@@ -19,15 +19,13 @@ const getAllAlerts = function() {
 
 // For each alert, check whether new data is within the alert's given radius
 const checkForMatches = function(alert) {
-  console.log('matches api call', alert);
   const promise = new Promise((resolve, reject) => {
     return knex.raw(`
       SELECT *
       FROM police_reports
-      WHERE ST_DWithin(police_reports.location, ST_POINT(${parseFloat(alert.lng)}, ${parseFloat(alert.lat)}), ${alert.range}) AND police_reports.new = true AND police_reports.offense_type_id = ${alert.offense_type_id};
+      WHERE ST_DWithin(police_reports.location, ST_POINT(${parseFloat(alert.lng)}, ${parseFloat(alert.lat)}), ${alert.range}) AND police_reports.new = true AND police_reports.offense_type_id = ${alert.offenseTypeId};
     `)
     .then((data) => {
-      console.log('api call', data.rows);
       if (data.rows.length) {
         const mergedData = alert;
         mergedData.reports = data.rows;
@@ -45,15 +43,60 @@ const checkForMatches = function(alert) {
 }
 
 // Group all alerts by user
-const mapMatchesToUsers = function(matches) {
+const mapMatchesToUsersByLocation = function(matches) {
+  console.log('matches', matches);
   const matchesByUser = matches.reduce((acc, match) => {
-    const userId = match.user_id;
+    const currentUserId = match.userId;
+    const currentLocationId = match.locationId;
+    const currentOffenseTypeId = match.offenseTypeId;
+    const user = {
+      userId: match.userId,
+      email: match.email,
+      username: match.username
+    };
+    const location = {
+      locationId: match.locationId,
+      name: match.location,
+      address: match.address,
+      lat: match.lat,
+      lng: match.lng
+    };
+    const alert = {
+      offenseTypeId: match.offenseTypeId,
+      offenseName: match.offenseName,
+      range: match.range,
+      reports: match.reports
+    }
 
-    if (!acc.hasOwnProperty(userId)) {
-      acc[userId] = match;
+    if (!acc.hasOwnProperty(currentUserId)) {
+      acc[currentUserId] = user;
+
+      if (!acc[currentUserId].hasOwnProperty(currentLocationId)) {
+        acc[currentUserId][currentLocationId] = location;
+        acc[currentUserId][currentLocationId][currentOffenseTypeId] = alert;
+      }
+      else {
+        if (!acc[currentUserId][currentLocationId].hasOwnProperty(currentOffenseTypeId)) {
+          acc[currentUserId][currentLocationId][currentOffenseTypeId] = alert;
+        }
+        else {
+          acc[currentUserId][currentLocationId][currentOffenseTypeId].reports = acc[currentUserId][currentLocationId][currentOffenseTypeId].reports.concat(alert.reports);
+        }
+      }
     }
     else {
-      acc[userId].reports = acc[userId].reports.concat(match.reports);
+      if (!acc[currentUserId].hasOwnProperty(currentLocationId)) {
+        acc[currentUserId][currentLocationId] = location;
+        acc[currentUserId][currentLocationId][currentOffenseTypeId] = alert;
+      }
+      else {
+        if (!acc[currentUserId][currentLocationId].hasOwnProperty(currentOffenseTypeId)) {
+          acc[currentUserId][currentLocationId][currentOffenseTypeId] = alert;
+        }
+        else {
+          acc[currentUserId][currentLocationId][currentOffenseTypeId].reports = acc[currentUserId][currentLocationId][currentOffenseTypeId].reports.concat(alert.reports);
+        }
+      }
     }
 
     return acc;
@@ -69,11 +112,19 @@ const sendAlertsFromMatches = function(matchesByUser) {
   }
 }
 
+const updateReportsAsOld = function() {
+  return knex('police_reports').where('new', '=', true).update({
+    new: false
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+}
+
 // This job will get alerts, find matches, and send alerts
 const sendAlertsJob = function() {
   getAllAlerts()
     .then((alerts) => {
-      console.log(alerts);
       const res = [];
 
       for (const alert of alerts) {
@@ -83,7 +134,6 @@ const sendAlertsJob = function() {
       return Promise.all(res);
     })
     .then((data) => {
-      console.log('data', data);
       const matches = [];
       for (const result of data) {
         if (result) {
@@ -94,19 +144,66 @@ const sendAlertsJob = function() {
       return matches;
     })
     .then((matches) => {
-      return mapMatchesToUsers(matches);
+      return mapMatchesToUsersByLocation(matches);
     })
     .then((matchesByUser) => {
-      console.log(matchesByUser);
+      console.log('matchesByUser', matchesByUser);
       for (const user in matchesByUser) {
-        console.log(user.reports);
+        let emailDiv = '<div>';
+        const emailDivEnd = '</div>';
+        console.log(user);
+        console.log(matchesByUser[user]);
+        const currentUser = matchesByUser[user];
+
+        for (const location in currentUser) {
+          if (parseInt(location) >= 0) {
+            const locationName = currentUser[location].name;
+            const locationAddress = currentUser[location].address;
+            let locationDiv = `<div><h3>Here is a breakdown of incident reports nearby ${locationAddress}</h3>`;
+            const locationDivEnd = '</div>';
+            const locationLat = currentUser[location].lat;
+            const locationLng = currentUser[location].lng;
+            const currentLocation = currentUser[location];
+
+            for (const offense in currentLocation) {
+              if (parseInt(offense) >= 0) {
+                console.log('offense', offense);
+                console.log(currentLocation[offense]);
+                console.log('reports', currentLocation[offense].reports);
+                const offenseName = currentLocation[offense].offenseName;
+                console.log('offenseName', offenseName);
+                const reports = currentLocation[offense].reports;
+                let offenseCount;
+
+                if (reports === undefined) {
+                  offenseCount = 0;
+                }
+                else {
+                  offenseCount = reports.length;
+                }
+                console.log('offenseCount', offenseCount);
+                const alertRange = currentLocation[offense].range;
+                const offenseTypeId = currentLocation[offense].offenseTypeId;
+                const offenseDiv =
+                  `<div>
+                    <p>A ${offenseName} incident occured ${offenseCount} times near '${locationName}' recently.<span><a href="https://crime-watch-seattle.herokuapp.com/reports/${parseFloat(locationLat)}/${parseFloat(locationLng)}/${parseInt(alertRange)}/${parseInt(offenseTypeId)}">See list</a></span></p>
+                  </div>`;
+                locationDiv = locationDiv + offenseDiv;
+              }
+            }
+            locationDiv = locationDiv + locationDivEnd;
+            emailDiv = emailDiv + locationDiv;
+          }
+        }
+
+        emailDiv = emailDiv + emailDivEnd;
         const mailgun = new Mailgun({ apiKey, domain });
 
         const data = {
           from: 'jamiesonbates@gmail.com',
           to: 'jamiesonbates@gmail.com',
-          subject: 'Does this work?',
-          html: `${matchesByUser[user].reports.length} crimes occurred nearby.`
+          subject: 'New Crimes Were Reported Near You',
+          html: emailDiv
         }
 
         mailgun.messages().send(data, (err, body) => {
@@ -119,6 +216,8 @@ const sendAlertsJob = function() {
         })
       }
 
+      updateReportsAsOld();
+
       return;
     })
     .catch((err) => {
@@ -130,6 +229,6 @@ module.exports = {
   sendAlertsJob,
   getAllAlerts,
   checkForMatches,
-  mapMatchesToUsers,
+  mapMatchesToUsersByLocation,
   sendAlertsFromMatches
 };

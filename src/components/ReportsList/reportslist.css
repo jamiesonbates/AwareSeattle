@@ -4,6 +4,7 @@ body {
 
 .ReportsList-container {
   width: 100%;
+  min-height: 100vh;
 }
 
 .ReportsList-list-container {

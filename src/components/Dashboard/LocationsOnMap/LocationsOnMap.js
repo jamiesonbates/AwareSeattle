@@ -5,6 +5,7 @@ import { setMapZoom } from '../../../actions/mapZoomAction';
 import { setMapCenter } from '../../../actions/mapCenterAction';
 import { setSelectedLocation } from '../../../actions/setSelectedLocationAction';
 
+import FaListUl from 'react-icons/lib/fa/list-ul';
 import './locationsonmap.css';
 
 class LocationsOnMap extends Component {
@@ -43,6 +44,10 @@ class LocationsOnMap extends Component {
   render() {
     return (
       <div className="LocationsOnMap-container">
+        <div className="LocationsOnMap-title">
+          <FaListUl className="LocationsOnMap-icon"/>
+          <h3>Locations</h3>
+        </div>
         {
           this.props.locations.combinedLocations.map((location, i) => (
             <button

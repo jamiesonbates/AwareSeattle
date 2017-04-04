@@ -1,10 +1,32 @@
 .LocationsOnMap-container {
-  padding: 10px;
+  padding: 5px;
   position: absolute;
-  left: 0;
+  left: 10px;
   top: 15%;
   display: flex;
   flex-direction: column;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.LocationsOnMap-title {
+  margin: 0;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  padding: 6px 9px;
+  display: flex;
+  align-items: center;
+}
+
+.LocationsOnMap-icon {
+  font-size: 0.9em;
+  padding: 0 2px 0 0;
+}
+
+.LocationsOnMap-title h3 {
+  margin: 0;
+  font-size: 0.9em;
+  padding: 0 0 0 5px;
 }
 
 .LocationsOnMap-btn {
@@ -16,7 +38,7 @@
   background-color: #454545;
   border-radius: 5px;
   line-height: 75%;
-  font-size: 1em;
+  font-size: 0.9em;
   font-family: 'Bree Serif';
   color: white;
 }

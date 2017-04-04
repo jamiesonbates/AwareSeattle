@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import NavHelper from './NavHelper';
 import SignOut from './SignOut';
 
+import FaMap from 'react-icons/lib/fa/map';
 import './nav.css';
 
 function Nav(props) {
@@ -17,7 +18,10 @@ function Nav(props) {
 
   return (
     <nav className="Nav-container">
-      <h1 className="Nav-title">Aware Seattle</h1>
+      <div className="Nav-title-container">
+        <FaMap className="Nav-title-icon"/>
+        <h1 className="Nav-title">Aware Seattle</h1>
+      </div>
       <div className="Nav-btn-container">
         {
           props.isAuthenticated ?

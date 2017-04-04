@@ -12,15 +12,27 @@
   justify-content: center;
   position: relative;
   background-color: #2B2B2B;
-  font-family: ''
+}
+
+.Nav-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .Nav-title {
   font-weight: 700;
   color: white;
-  font-size: 2em;
+  font-size: 1.75em;
   margin: 0;
   font-family: 'News Cycle';
+  padding: 0 5px;
+}
+
+.Nav-title-icon {
+  font-size: 2em;
+  color: #FDBC1D;
+  padding: 0 5px;
 }
 
 .Nav-btn-container {
@@ -85,7 +97,7 @@
     padding: 6px 10px;
   }
 
-  .Nav-title {
+  .Nav-title-container {
     margin-left: 5px;
   }
 }

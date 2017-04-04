@@ -5,10 +5,10 @@ import { setMapCenter } from './mapCenterAction';
 
 export function addLocalLocation(lat, lng, length) {
   const location = {
-    location_title: `temp${length + 1}`,
+    location_title: `Sample ${length + 1}`,
     lat,
     lng,
-    identity: `temp${length + 1}`
+    identity: `Sample ${length + 1}`
   }
   return function(dispatch, getState) {
     const state = getState();

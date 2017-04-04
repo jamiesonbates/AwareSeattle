@@ -38,7 +38,7 @@ class Dashboard extends Component {
     }
   }
   componentWillMount() {
-    this.props.dispatch(setTimeFilterAction())
+    this.props.dispatch(setTimeFilter())
     this.props.dispatch(setMapZoom(14));
     this.props.dispatch(resetLocations(false));
     this.props.dispatch(resetMarkers());

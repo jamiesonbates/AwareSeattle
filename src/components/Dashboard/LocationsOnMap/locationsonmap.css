@@ -13,19 +13,19 @@
   margin: 0;
   margin-left: 0.5%;
   margin-right: 0.5%;
-  padding: 6px 9px;
+  padding: 2px 5px;
   display: flex;
   align-items: center;
 }
 
 .LocationsOnMap-icon {
-  font-size: 0.9em;
+  font-size: 1em;
   padding: 0 2px 0 0;
 }
 
 .LocationsOnMap-title h3 {
   margin: 0;
-  font-size: 0.9em;
+  font-size: 1em;
   padding: 0 0 0 5px;
 }
 
@@ -38,7 +38,7 @@
   background-color: #454545;
   border-radius: 5px;
   line-height: 75%;
-  font-size: 0.9em;
+  font-size: 1em;
   font-family: 'Bree Serif';
   color: white;
 }
@@ -58,4 +58,35 @@
 
 .LocationsOnMap-btn-selected:hover {
   background-color: #2BBA3F;
+}
+
+.LocationsOnMap-guide {
+  padding: 20px 5px 0 5px;
+}
+
+.LocationsOnMap-selected-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.LocationsOnMap-selected-container p {
+  margin: 0;
+  font-size: 0.5em;
+  padding: 0 0 0 5px;
+}
+
+.LocationsOnMap-selected {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #2BBA3F;
+}
+
+
+.LocationsOnMap-notselected {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #454545;
 }

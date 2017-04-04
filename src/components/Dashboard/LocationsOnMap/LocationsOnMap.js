@@ -58,6 +58,16 @@ class LocationsOnMap extends Component {
             </button>
           ))
         }
+        <div className="LocationsOnMap-guide">
+          <div className="LocationsOnMap-selected-container">
+            <div className="LocationsOnMap-selected"></div>
+            <p>Selected</p>
+          </div>
+          <div className="LocationsOnMap-selected-container">
+            <div className="LocationsOnMap-notselected"></div>
+            <p>Not selected</p>
+          </div>
+        </div>
       </div>
     )
   }

@@ -73,7 +73,7 @@ class Map extends Component {
                       path: window.google.maps.SymbolPath.CIRCLE,
                       fillOpacity: 1,
                       fillColor: report.color,
-                      scale: (4 * (this.props.mapDetails.mapZoom / 13)),
+                      scale: (4 * (this.props.mapDetails.mapZoom / 14)),
                       strokeWeight: 0.1
                     }
 

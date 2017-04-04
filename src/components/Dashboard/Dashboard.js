@@ -7,6 +7,7 @@ import { addLocalLocation } from '../../actions/addLocalLocationAction';
 import { resetOffenseFilter } from '../../actions/resetOffenseFilterAction';
 import { resetLocations } from '../../actions/resetLocationsAction';
 import { resetMarkers } from '../../actions/resetReportsAction';
+import { setMapZoom } from '../../actions/mapZoomAction';
 
 import Map from './Map/Map';
 import Nav from '../Nav/Nav';
@@ -36,6 +37,7 @@ class Dashboard extends Component {
     }
   }
   componentWillMount() {
+    this.props.dispatch(setMapZoom(14));
     this.props.dispatch(resetLocations(false));
     this.props.dispatch(resetMarkers());
     this.props.dispatch(fetchOffenseTypes());

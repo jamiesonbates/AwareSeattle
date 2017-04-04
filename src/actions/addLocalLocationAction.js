@@ -25,7 +25,7 @@ export function addLocalLocation(lat, lng, length) {
 
     dispatch(combineLocations());
 
-    if (length > 0) {
+    if (length === 0) {
       dispatch(setMapCenter({ lat: location.lat, lng: location.lng }));
     }
 

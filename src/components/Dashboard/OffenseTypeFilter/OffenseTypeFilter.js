@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { addOffenseToFilter } from '../../../actions/addOffenseToFilterAction';
 import { removeOffenseFromFilter } from '../../../actions/removeOffenseFromFilterAction';
 
+import FaFilter from 'react-icons/lib/fa/filter';
 import './offensetypefilter.css';
 
 class OffenseTypeFilter extends Component {
@@ -32,7 +33,8 @@ class OffenseTypeFilter extends Component {
     return (
       <div className="OffenseTypeFilter-container">
         <div className="OffenseTypeFilter-header">
-          <h3>Filter by Crime</h3>
+          <FaFilter className="OffenseTypeFilter-icon"/>
+          <h3>Filter by Incident</h3>
         </div>
 
         <div className="OffenseTypeFilter-btns">

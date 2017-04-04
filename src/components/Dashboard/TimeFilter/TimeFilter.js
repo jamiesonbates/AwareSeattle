@@ -6,6 +6,7 @@ import Moment from 'moment';
 
 import { setTimeFilter } from '../../../actions/setTimeFilterAction';
 
+import FaCalendar from 'react-icons/lib/fa/calendar';
 import 'react-datepicker/dist/react-datepicker.css';
 import 'rc-slider/assets/index.css';
 import './timefilter.css';
@@ -66,7 +67,8 @@ class TimeFilter extends Component {
     return (
       <div className="TimeFilter-container">
         <div className="TimeFilter-header">
-          <h3>Filter by Date of Crime</h3>
+          <FaCalendar className="TimeFilter-icon"/>
+          <h3>Filter by Date</h3>
         </div>
         <div className="TimeFilter-body-container">
           <div className="TimeFilter-datepicker-container">

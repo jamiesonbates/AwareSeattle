@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Geosuggest from 'react-geosuggest';
 
+import FaMapMarker from 'react-icons/lib/fa/map-marker';
 import { addLocalLocation } from '../../../actions/addLocalLocationAction';
 
 import './newlocation.css';
@@ -40,7 +41,8 @@ class NewLocation extends Component {
     return (
       <div className="NewLocation-container">
         <div className="NewLocation-header">
-          <h3>Create a Location to See Crime Nearby</h3>
+          <FaMapMarker className="NewLocation-icon"/>
+          <h3>Add a Location</h3>
         </div>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <Geosuggest
@@ -50,7 +52,7 @@ class NewLocation extends Component {
           <button
             onClick={() => this.geoSuggest.clear()}
             className="NewLocation-btn">
-            Create Location
+            Update Map
           </button>
         </form>
       </div>

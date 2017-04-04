@@ -10,12 +10,22 @@
   padding: 15px 5px;
   padding-left: 10px;
   border-bottom: 1px solid #D9D6D5;
+  display: flex;
+  align-items: center;
+}
+
+.OffenseTypeFilter-icon {
+  font-size: 1.75em;
+  color: #FDBC1D;
+  padding: 0 2px 0 0;
 }
 
 .OffenseTypeFilter-header h3 {
   color: white;
   font-weight: 700;
+  font-size: 1.4em;
   margin: 0;
+  padding: 0 2px;
 }
 
 .OffenseTypeFilter-container h3 {

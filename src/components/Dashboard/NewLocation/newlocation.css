@@ -10,11 +10,21 @@
   padding: 15px 5px;
   padding-left: 10px;
   border-bottom: 1px solid #D9D6D5;
+  display: flex;
+  align-items: center;
+}
+
+.NewLocation-icon {
+  font-size: 1.75em;
+  color: #CC3527;
+  padding: 0 2px 0 0;
 }
 
 .NewLocation-header h3 {
   color: white;
   font-weight: 700;
+  font-size: 1.4em;
+  padding: 0 2px;
   margin: 0;
 }
 

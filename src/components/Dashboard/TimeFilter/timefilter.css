@@ -5,6 +5,7 @@
   background-color: white;
 }
 
+
 .TimeFilter-header {
   width: 100%;
   box-sizing: border-box;
@@ -12,11 +13,21 @@
   padding: 15px 5px;
   padding-left: 10px;
   border-bottom: 1px solid #D9D6D5;
+  display: flex;
+  align-items: center;
+}
+
+.TimeFilter-icon {
+  font-size: 1.5em;
+  color: #49E85B;
+  padding: 0 2px 0 0;
 }
 
 .TimeFilter-header h3 {
   margin: 0;
   color: white;
+  font-size: 1.4em;
+  padding: 0 5px;
 }
 
 .TimeFilter-body-container {

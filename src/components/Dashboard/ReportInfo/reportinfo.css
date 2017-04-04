@@ -16,9 +16,22 @@
   align-items: center;
 }
 
+.ReportInfo-title-container {
+  display: flex;
+  align-items: center;
+}
+
+.ReportInfo-icon {
+  font-size: 1.75em;
+  color: #3676FB;
+  padding: 0 2px 0 0;
+}
+
 .ReportInfo-header h3 {
   color: white;
+  font-size: 1.4em;
   font-weight: 700;
+  padding: 0 3px;
 }
 
 .ReportInfo-indicator {

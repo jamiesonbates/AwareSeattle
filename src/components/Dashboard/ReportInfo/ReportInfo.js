@@ -1,6 +1,7 @@
 import React from 'react';
 import Moment from 'moment';
 
+import FaInfoCircle from 'react-icons/lib/fa/info-circle';
 import './reportinfo.css';
 
 function ReportInfo(props) {
@@ -11,7 +12,10 @@ function ReportInfo(props) {
   return (
     <div className="ReportInfo-container">
       <div className="ReportInfo-header">
-        <h3>Incident Information</h3>
+        <div className="ReportInfo-title-container">
+          <FaInfoCircle className="ReportInfo-icon"/>
+          <h3>Incident Information</h3>
+        </div>
         {
           reportSelected ?
             <div

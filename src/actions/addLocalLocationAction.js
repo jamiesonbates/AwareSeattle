@@ -25,7 +25,7 @@ export function addLocalLocation(lat, lng, length) {
 
     dispatch(combineLocations());
 
-    dispatch(setMapCenter({ lat: location.lat, lng: location.lng }));
+    // dispatch(setMapCenter({ lat: location.lat, lng: location.lng }));
 
     dispatch(fetchPoliceReports(lat, lng, 500, location.identity));
   }

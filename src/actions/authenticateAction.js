@@ -5,7 +5,7 @@ import { addLocalLocation } from './addLocalLocationAction';
 
 export function authenticateUser() {
   return function(dispatch) {
-    axios.get('https://crime-watch-seattle.herokuapp.com/api/users')
+    axios.get('https://awareseattle.herokuapp.com/api/users')
       .then((res) => {
         dispatch({
           type: 'USER_AUTHENTICATE_SUCCESS',

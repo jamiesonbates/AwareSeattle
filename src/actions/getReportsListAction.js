@@ -3,7 +3,7 @@ import Moment from 'moment';
 
 export function getReportsList(lat, lng, range, defaultTime, offenseList) {
   return function(dispatch) {
-    axios.get(`https://crime-watch-seattle.herokuapp.com/api/police_reports/${lat}/${lng}/${range}`)
+    axios.get(`https://awareseattle.herokuapp.com/api/police_reports/${lat}/${lng}/${range}`)
     .then((res) => {
       console.log('data', res.data);
       const reports = res.data;

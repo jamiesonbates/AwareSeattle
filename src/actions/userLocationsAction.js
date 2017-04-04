@@ -6,7 +6,7 @@ import { setMapCenter } from './mapCenterAction';
 
 export function getUserLocations(userId) {
   return function(dispatch) {
-    axios.get(`https://crime-watch-seattle.herokuapp.com/api/locations/${userId}`)
+    axios.get(`https://awareseattle.herokuapp.com/api/locations/${userId}`)
       .then((res) => {
         const locations = res.data;
 

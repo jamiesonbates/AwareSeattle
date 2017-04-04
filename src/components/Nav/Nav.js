@@ -9,7 +9,7 @@ import './nav.css';
 function Nav(props) {
   const isAuthenticated = props.isAuthenticated;
   const currentPath = window.location.pathname;
-  const onDashboard = currentPath === '/';
+  const onMap = currentPath === '/';
   const onAlerts = currentPath === '/alerts';
   const onSignup = currentPath === '/signup';
   const onLogin = currentPath === '/login';
@@ -17,11 +17,11 @@ function Nav(props) {
 
   return (
     <nav className="Nav-container">
-      <h1 className="Nav-title">AwareSeattle</h1>
+      <h1 className="Nav-title">Aware Seattle</h1>
       <div className="Nav-btn-container">
         {
           props.isAuthenticated ?
-            onDashboard ?
+            onMap ?
               <div className="Nav-btns">
                 <NavHelper
                   linkTo={'/Alerts'}
@@ -34,8 +34,8 @@ function Nav(props) {
                 <div className="Nav-btns">
                   <NavHelper
                     linkTo={'/'}
-                    name="Dashboard"
-                    class="Nav-Dashboard-btn"/>
+                    name="Map"
+                    class="Nav-Map-btn"/>
                   <SignOut />
                 </div>
               :
@@ -47,8 +47,8 @@ function Nav(props) {
                       class="Nav-Signup-btn"/>
                     <NavHelper
                       linkTo={'/'}
-                      name="Dashboard"
-                      class="Nav-Dashboard-btn"/>
+                      name="Map"
+                      class="Nav-Map-btn"/>
                   </div>
                 :
                   onSignup ?
@@ -59,16 +59,16 @@ function Nav(props) {
                         class="Nav-Login-btn"/>
                       <NavHelper
                         linkTo={'/'}
-                        name="Dashboard"
-                        class="Nav-Dashboard-btn"/>
+                        name="Map"
+                        class="Nav-Map-btn"/>
                     </div>
                   :
                     onReports ?
                       <div className="Nav-btns">
                         <NavHelper
                           linkTo={'/'}
-                          name="Dashboard"
-                          class="Nav-Dashboard-btn"
+                          name="Map"
+                          class="Nav-Map-btn"
                         />
                         <NavHelper
                           linkTo={'/alerts'}
@@ -81,8 +81,8 @@ function Nav(props) {
                       <div className="Nav-btns">
                         <NavHelper
                           linkTo={'/'}
-                          name="Dashboard"
-                          class="Nav-Dashboard-btn"/>
+                          name="Map"
+                          class="Nav-Map-btn"/>
                         <SignOut />
                       </div>
           :
@@ -90,8 +90,8 @@ function Nav(props) {
               <div className="Nav-btns">
                 <NavHelper
                   linkTo={'/'}
-                  name="Dashboard"
-                  class="Nav-Dashboard-btn"/>
+                  name="Map"
+                  class="Nav-Map-btn"/>
                 <NavHelper
                   linkTo={'/login'}
                   name="Login"
@@ -110,8 +110,8 @@ function Nav(props) {
                     class="Nav-Login-btn"/>
                   <NavHelper
                     linkTo={'/'}
-                    name="Dashboard"
-                    class="Nav-Dashboard-btn"/>
+                    name="Map"
+                    class="Nav-Map-btn"/>
                 </div>
               :
                onLogin ?
@@ -122,8 +122,8 @@ function Nav(props) {
                      class="Nav-Signup-btn"/>
                    <NavHelper
                      linkTo={'/'}
-                     name="Dashboard"
-                     class="Nav-Dashboard-btn"/>
+                     name="Map"
+                     class="Nav-Map-btn"/>
                  </div>
                :
                 <div className="Nav-btns">

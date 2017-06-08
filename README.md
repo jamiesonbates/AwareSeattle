@@ -35,7 +35,7 @@ This app provides a service in multiple context. It offers discovery in the brow
 The interactive map is usable for both non-registered and registered users. Powered by the Google API, the map can be interacted with via tools such as, "Add a Location," "Filter by Incident," and "Filter by Date." You can also select a given location to navigate around the map itself. Utilizing the tools causes different sets of "incidents" to appear or disappear on the map. 
 
 #### Alert System and Data Sync
-Within the database, data is only 6 months old. Each day the external API is called, new data is parsed and added to the database, and old data is deleted. As soon as a fresh database is created, the new data is compared to existing alerts and emails are generated and sent if there are matches. This is done using the Heroku Scheduler (cronjob esque).
+Within the database, data is only 6 months old. Each day the external API is called, new data is parsed and added to the database, and old data is deleted. As soon as a fresh data set exists, the new data is compared to existing alerts and emails are generated and sent if there are matches. This is done using the Heroku Scheduler (cronjob esque).
 
 #### Location Based
 To determine whether a given incident falls within a certain radius (specified by the user for the alert system), the app uses the power of the postGIS extension. Specifically, utilizing this tool allows tables to be indexed by geographic location and the postGIS function used, provides the means to query for all incidents within a given radius of a point. 
